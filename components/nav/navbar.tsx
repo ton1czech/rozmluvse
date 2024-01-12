@@ -1,8 +1,15 @@
+'use client'
+
 import Link from 'next/link'
 import LanguageSelector from './language-selector'
-import { Menu } from 'lucide-react'
+import { MenuIcon } from 'lucide-react'
+import { useState } from 'react'
+import { Menu } from './menu'
+import { useMenu } from '@/store/use-menu'
 
 export const Navbar = () => {
+  const { isMenuOpen, openMenu } = useMenu()
+
   return (
     <nav className='fixed top-0 w-full py-4 bg-white'>
       <div className='mx-4 grid grid-cols-3 justify-center items-center'>
@@ -16,9 +23,14 @@ export const Navbar = () => {
           rozmluv se
         </Link>
         <div className='place-self-end'>
-          <Menu className='font-bold cursor-pointer' />
+          <MenuIcon
+            className='font-bold cursor-pointer'
+            onClick={() => openMenu()}
+          />
         </div>
       </div>
+
+      {isMenuOpen && <Menu />}
     </nav>
   )
 }
