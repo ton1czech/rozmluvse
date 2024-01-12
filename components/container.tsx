@@ -9,4 +9,4 @@ interface ContainerProps {
 export const Container: FC<PropsWithChildren<ContainerProps>> = ({
   children,
   className,
-}) => <div className={cn('mx-auto px-[3vw]', className)}>{children}</div>
+}) => <div className={cn('mx-auto px-[4vw]', className)}>{children}</div>

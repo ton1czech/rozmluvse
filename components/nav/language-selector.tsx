@@ -41,9 +41,9 @@ const LanguageSelector = () => {
           role='combobox'
           name='language selector'
           aria-expanded={open}
-          className='border-none justify-between text-zinc-900 bg-transparent gap-2'
+          className='border-none text-zinc-900 bg-transparent gap-2'
         >
-          <p className='uppercase'>{language}</p>
+          <p className='uppercase font-stabil text-lg'>{language}</p>
           <ChevronsUpDown className='w-4 h-4 my-2 opacity-90 shrink-0' />
         </Button>
       </PopoverTrigger>

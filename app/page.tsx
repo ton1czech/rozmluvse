@@ -1,9 +1,11 @@
 import { Hero } from '@/containers/hero'
 
-export default function Home() {
+export default function Page() {
   return (
-    <main>
-      <Hero />
-    </main>
+    <>
+      <main className='mt-28 md:mt-32 lg:mt-40'>
+        <Hero />
+      </main>
+    </>
   )
 }
