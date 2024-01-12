@@ -57,3 +57,15 @@
     @apply bg-background text-foreground;
   }
 }
+
+.ffs-1 {
+  font-feature-settings: 'ss01';
+}
+
+.ffs-2 {
+  font-feature-settings: 'ss02';
+}
+
+.ffs-12 {
+  font-feature-settings: 'ss01', 'ss02';
+}
