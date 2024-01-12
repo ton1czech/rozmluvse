@@ -3,6 +3,7 @@ import './globals.css'
 import localFont from '@next/font/local'
 import { cn } from '@/lib/utils'
 import { Footer } from '@/components/footer'
+import { Navbar } from '@/components/nav/navbar'
 
 const stabil = localFont({
   src: '../fonts/StabilGrotesk-Regular.otf',
@@ -27,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={cn('font-labil', stabil.variable, labil.variable)}>
+        <Navbar />
         {children}
         <Footer />
       </body>
