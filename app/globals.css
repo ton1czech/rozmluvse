@@ -69,3 +69,15 @@
 .ffs-12 {
   font-feature-settings: 'ss01', 'ss02';
 }
+
+.ffs-1-hover:hover {
+  font-feature-settings: 'ss01';
+}
+
+.ffs-2-hover:hover {
+  font-feature-settings: 'ss02';
+}
+
+.ffs-12-hover:hover {
+  font-feature-settings: 'ss01', 'ss02';
+}

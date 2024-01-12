@@ -25,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={cn('', stabil.variable, labil.variable)}>
+      <body className={cn('font-labil', stabil.variable, labil.variable)}>
         {children}
       </body>
     </html>
