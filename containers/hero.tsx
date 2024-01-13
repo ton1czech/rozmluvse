@@ -11,7 +11,7 @@ export const Hero = () => {
   return (
     <section id='home' className='scroll-mt-44'>
       <Container>
-        <h1 className='text-6xl ffs-12 font-black lg:text-7xl lg:w-1/3'>
+        <h1 className='text-6xl ffs-12 font-black lg:text-7xl lg:w-2/5'>
           {language === 'cz' &&
             'Jazykové studio, ve kterém se nebudeš bát dělat chyby.'}
           {language === 'en' &&
