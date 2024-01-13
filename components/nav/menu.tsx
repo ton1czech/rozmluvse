@@ -21,7 +21,7 @@ export const Menu = () => {
           <Link
             href={link.href}
             onClick={() => closeMenu()}
-            className='text-3xl font-bold text-center capitalize'
+            className='text-3xl font-black text-center capitalize'
           >
             {language === 'cz' && link.labelCz}
             {language === 'en' && link.labelEn}

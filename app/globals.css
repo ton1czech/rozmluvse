@@ -58,6 +58,8 @@
   }
 }
 
+/* FONT OPTIONS */
+
 .ffs-1 {
   font-feature-settings: 'ss01';
 }
@@ -84,4 +86,23 @@
 
 * {
   scroll-behavior: smooth;
+}
+
+/* SCROLLBAR */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 0px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent;
 }

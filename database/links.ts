@@ -4,14 +4,14 @@ export const links = [
     labelEn: 'select language',
     labelDe: 'Sprache wählen',
     labelUa: 'вибір мови',
-    href: '#language',
+    href: '#languages',
   },
   {
     labelCz: 'zapoj firmu',
     labelEn: 'involve your company',
     labelDe: 'Firma einbeziehen',
     labelUa: 'приєднати фірму',
-    href: '#company',
+    href: '#companies',
   },
   {
     labelCz: 'o nás',
