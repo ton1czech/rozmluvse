@@ -1,5 +1,6 @@
 'use client'
 
+import { Companies } from '@/containers/companies'
 import { Hero } from '@/containers/hero'
 import { Languages } from '@/containers/languages'
 import { useLanguage } from '@/store/use-language'
@@ -23,9 +24,10 @@ export default function Page() {
 
   return (
     <>
-      <main className='mt-28 md:mt-32 lg:mt-40 space-y-40 lg:space-y-60'>
+      <main className='mt-28 md:mt-32 lg:mt-40 space-y-40 lg:space-y-72'>
         <Hero />
         <Languages />
+        <Companies />
       </main>
     </>
   )
