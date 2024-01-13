@@ -3,6 +3,7 @@
 import { Container } from '@/components/container'
 import { InfoText } from '@/components/info-text'
 import { languages } from '@/database/languages'
+import { cn } from '@/lib/utils'
 import { useLanguage } from '@/store/use-language'
 import Link from 'next/link'
 
@@ -48,32 +49,21 @@ export const Languages = () => {
 
         <div className='grid lg:grid-cols-3 gap-8 mt-14'>
           {languages.map(item => (
-            <>
-              {item.disabled ? (
-                <h2
-                  style={{ background: item.color }}
-                  className='text-center text-3xl lg:text-4xl rounded-3xl py-16 lg:py-24 cursor-not-allowed font-black'
-                  key={item.labelCz}
-                >
-                  {language === 'cz' && item.labelCz}
-                  {language === 'en' && item.labelEn}
-                  {language === 'de' && item.labelDe}
-                  {language === 'ua' && item.labelUa}
-                </h2>
-              ) : (
-                <Link
-                  key={item.labelCz}
-                  href='/form'
-                  style={{ background: item.color }}
-                  className='text-center text-3xl lg:text-4xl rounded-3xl py-16 lg:py-24 ffs-12-hover font-black'
-                >
-                  {language === 'cz' && item.labelCz}
-                  {language === 'en' && item.labelEn}
-                  {language === 'de' && item.labelDe}
-                  {language === 'ua' && item.labelUa}
-                </Link>
+            <Link
+              key={item.labelCz}
+              href={item.disabled ? '' : '/form'}
+              style={{ background: item.color }}
+              className={cn(
+                'text-center text-3xl lg:text-4xl rounded-3xl py-16 lg:py-24 font-black',
+                item.disabled && 'cursor-not-allowed',
+                !item.disabled && 'ffs-12-hover'
               )}
-            </>
+            >
+              {language === 'cz' && item.labelCz}
+              {language === 'en' && item.labelEn}
+              {language === 'de' && item.labelDe}
+              {language === 'ua' && item.labelUa}
+            </Link>
           ))}
         </div>
       </Container>

@@ -36,6 +36,7 @@ export const Companies = () => {
             },
           }}
           className='mt-14'
+          style={{ paddingBottom: '30px' }}
         >
           {companies.map(item => (
             <SwiperSlide
@@ -68,8 +69,9 @@ export const Companies = () => {
               </div>
             </SwiperSlide>
           ))}
+
+          <div className='swiper-pagination w-full space-x-2 bottom-0' />
         </Swiper>
-        <div className='swiper-pagination bg-transparent w-full space-x-2' />
       </Container>
     </section>
   )
