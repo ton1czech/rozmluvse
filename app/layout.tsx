@@ -3,6 +3,8 @@ import localFont from 'next/font/local'
 import { cn } from '@/lib/utils'
 import { Footer } from '@/components/footer'
 import { Navbar } from '@/components/nav/navbar'
+import { Newsletter } from '@/components/newsletter'
+import { RemoveOneLetterWords } from '@/providers/remove-one-letter-words'
 
 const stabil = localFont({
   src: '../fonts/StabilGrotesk-Regular.otf',
@@ -21,6 +23,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <Navbar />
         {children}
         <Footer />
+
+        <Newsletter />
+
+        <RemoveOneLetterWords />
       </body>
     </html>
   )
