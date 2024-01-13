@@ -90,7 +90,7 @@ export const Languages = () => {
 
         <div className='grid lg:grid-cols-3 gap-8'>
           {languages.map(item => (
-            <>
+            <div key={item.labelCz}>
               {item.disabled ? (
                 <h2
                   style={{ background: item.color }}
@@ -113,7 +113,7 @@ export const Languages = () => {
                   {language === 'ua' && item.labelUa}
                 </Link>
               )}
-            </>
+            </div>
           ))}
         </div>
       </Container>

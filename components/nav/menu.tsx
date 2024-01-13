@@ -19,6 +19,7 @@ export const Menu = () => {
       <ul className='flex flex-col gap-8'>
         {links.map(link => (
           <Link
+            key={link.href}
             href={link.href}
             onClick={() => closeMenu()}
             className='text-3xl font-black text-center capitalize'
