@@ -81,3 +81,7 @@
 .ffs-12-hover:hover {
   font-feature-settings: 'ss01', 'ss02';
 }
+
+* {
+  scroll-behavior: smooth;
+}
