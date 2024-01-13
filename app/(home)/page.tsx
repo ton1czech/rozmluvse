@@ -25,14 +25,12 @@ export default function Page() {
   }, [language])
 
   return (
-    <>
-      <main className='mt-28 md:mt-32 lg:mt-40 space-y-40 lg:space-y-72'>
-        <Hero />
-        <Languages />
-        <Companies />
-        <Pricelist />
-        <Contact />
-      </main>
-    </>
+    <main className='mt-28 md:mt-32 lg:mt-40 space-y-40 lg:space-y-72'>
+      <Hero />
+      <Languages />
+      <Companies />
+      <Pricelist />
+      <Contact />
+    </main>
   )
 }
