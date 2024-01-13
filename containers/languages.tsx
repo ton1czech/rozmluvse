@@ -90,11 +90,12 @@ export const Languages = () => {
 
         <div className='grid lg:grid-cols-3 gap-8'>
           {languages.map(item => (
-            <div key={item.labelCz}>
+            <>
               {item.disabled ? (
                 <h2
                   style={{ background: item.color }}
                   className='text-center text-3xl lg:text-4xl rounded-3xl py-16 lg:py-24 cursor-not-allowed font-black'
+                  key={item.labelCz}
                 >
                   {language === 'cz' && item.labelCz}
                   {language === 'en' && item.labelEn}
@@ -103,6 +104,7 @@ export const Languages = () => {
                 </h2>
               ) : (
                 <Link
+                  key={item.labelCz}
                   href='/form'
                   style={{ background: item.color }}
                   className='text-center text-3xl lg:text-4xl rounded-3xl py-16 lg:py-24 ffs-12-hover font-black'
@@ -113,7 +115,7 @@ export const Languages = () => {
                   {language === 'ua' && item.labelUa}
                 </Link>
               )}
-            </div>
+            </>
           ))}
         </div>
       </Container>
