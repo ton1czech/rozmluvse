@@ -10,6 +10,7 @@ interface Props {
   textDe: string
   textUa: string
   href?: string
+  external?: boolean
   linkCz?: string
   linkEn?: string
   linkDe?: string
@@ -22,6 +23,7 @@ export const InfoText: FC<Props> = ({
   textDe,
   textUa,
   href,
+  external,
   linkCz,
   linkEn,
   linkDe,
@@ -40,7 +42,7 @@ export const InfoText: FC<Props> = ({
       {href && (
         <Link
           href={href}
-          target='_blank'
+          target={external ? '_blank' : ''}
           className='font-labil font-black ffs-12-hover'
         >
           {language === 'cz' && linkCz}

@@ -41,6 +41,7 @@ export const Languages = () => {
               онлайн-дзвінка або телефонного дзвінка перед початком курсу. Усі
               наші групові курси з вільним місцем чітко перераховані'
           href='https://linktr.ee/rozmluv.se'
+          external
           linkCz='tady ←'
           linkEn='here ←'
           linkDe='aufgelistet ←'
