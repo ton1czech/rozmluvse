@@ -4,6 +4,7 @@ import { Companies } from '@/containers/companies'
 import { Contact } from '@/containers/contact'
 import { Hero } from '@/containers/hero'
 import { Languages } from '@/containers/languages'
+import { Pricelist } from '@/containers/pricelist'
 import { useLanguage } from '@/store/use-language'
 import { useEffect } from 'react'
 
@@ -29,6 +30,7 @@ export default function Page() {
         <Hero />
         <Languages />
         <Companies />
+        <Pricelist />
         <Contact />
       </main>
     </>
