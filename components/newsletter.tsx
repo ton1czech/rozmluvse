@@ -32,12 +32,16 @@ export const Newsletter = () => {
           <div className=' max-w-[450px] mx-4'>
             <h2 className='text-3xl text-center'>
               {removeOneLetterWords(
-                'Novinky ve výuce, tipy na učení i pohled do zákulisí ti pošleme v newsletteru na'
+                language === 'cz'
+                  ? 'Novinky ve výuce, tipy na učení i pohled do zákulisí ti pošleme v newsletteru na'
+                  : language === 'en'
+                  ? 'Our newsletter covers teaching news, learning tips or a backstage insight. Do not miss it and let us send it to you at'
+                  : language === 'de'
+                  ? 'Neuigkeiten aus dem Lernbereich, Lerntipps und auch Blicke hinter die Kulissen senden wir dir gerne in unserem Newsletter unter'
+                  : language === 'ua'
+                  ? 'Навчальні новинки, поради та погляд за лаштунки - все надішлемо у інформаційному листі'
+                  : ''
               )}
-              {language === 'cz' && ''}
-              {language === 'en' && ''}
-              {language === 'de' && ''}
-              {language === 'ua' && ''}
             </h2>
             <input
               type='text'
@@ -50,9 +54,9 @@ export const Newsletter = () => {
                 className='bg-white rounded-full py-7 text-xl text-black hover:bg-zinc-50'
               >
                 {language === 'cz' && 'odebírej'}
-                {language === 'en' && ''}
-                {language === 'de' && ''}
-                {language === 'ua' && ''}
+                {language === 'en' && 'subscribe'}
+                {language === 'de' && 'abonnieren'}
+                {language === 'ua' && 'слідкуй'}
               </Button>
               <Button
                 onClick={() => closeNewsletter()}
@@ -60,9 +64,9 @@ export const Newsletter = () => {
                 className='text-xl hover:bg-transparent'
               >
                 {language === 'cz' && 'zpět'}
-                {language === 'en' && ''}
-                {language === 'de' && ''}
-                {language === 'ua' && ''}
+                {language === 'en' && 'back'}
+                {language === 'de' && 'zurück'}
+                {language === 'ua' && 'назад'}
               </Button>
             </div>
           </div>
