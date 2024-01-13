@@ -1,6 +1,7 @@
 'use client'
 
 import { Companies } from '@/containers/companies'
+import { Contact } from '@/containers/contact'
 import { Hero } from '@/containers/hero'
 import { Languages } from '@/containers/languages'
 import { useLanguage } from '@/store/use-language'
@@ -28,6 +29,7 @@ export default function Page() {
         <Hero />
         <Languages />
         <Companies />
+        <Contact />
       </main>
     </>
   )
