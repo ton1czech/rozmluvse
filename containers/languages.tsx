@@ -11,7 +11,7 @@ export const Languages = () => {
   const { language } = useLanguage()
 
   return (
-    <section id='languages' className='scroll-mt-44'>
+    <section id='languages' className='scroll-mt-28'>
       <Container>
         <InfoText
           textCz='Užij si svoje hodiny individuálně, ve dvojici nebo v malé skupince

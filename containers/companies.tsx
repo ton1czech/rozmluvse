@@ -13,7 +13,7 @@ export const Companies = () => {
   const { language } = useLanguage()
 
   return (
-    <section id='companies' className='scroll-mt-44'>
+    <section id='companies' className='scroll-mt-28'>
       <Container>
         <InfoText
           textCz='Firemní výuku máme v malíčku. Pendlery rozmluvíme německy, cizince česky a kohokoli anglicky nebo čínsky. Sejít se můžeme v klatovské učebně, u vás ve firmě i online odkudkoli na světě.'
