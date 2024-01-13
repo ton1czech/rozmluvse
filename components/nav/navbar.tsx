@@ -12,13 +12,13 @@ export const Navbar = () => {
   return (
     <nav className='fixed top-0 w-full py-4 bg-white z-10'>
       <Container>
-        <div className='grid grid-cols-3 justify-center items-center'>
+        <div className='grid grid-cols-[1fr_2fr_1fr] justify-center items-center'>
           <div className='place-self-start'>
             <LanguageSelector />
           </div>
           <Link
             href='#home'
-            className='ffs-12 text-3xl lg:text-4xl place-self-center'
+            className='ffs-12 text-2xl md:text-3xl lg:text-4xl place-self-center'
           >
             rozmluv se
           </Link>
