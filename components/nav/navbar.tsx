@@ -23,6 +23,7 @@ export const Navbar = () => {
         <div className='justify-self-end'>
           <img
             src='/icons/menu.svg'
+            alt='menu button'
             className='font-bold cursor-pointer'
             onClick={() => openMenu()}
           />
