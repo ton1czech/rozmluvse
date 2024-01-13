@@ -11,7 +11,7 @@ export const Languages = () => {
   return (
     <section id='languages' className='scroll-mt-44'>
       <Container>
-        <p className='font-stabil text-xl lg:text-3xl mb-14'>
+        <span className='font-stabil text-xl lg:text-3xl'>
           {language === 'cz' && (
             <>
               Užij si svoje hodiny individuálně, ve dvojici nebo v malé skupince
@@ -20,14 +20,6 @@ export const Languages = () => {
               online callu nebo telefonátu před zahájením kurzu spolu doladíme
               detaily. Všechny naše skupinové kurzy s volným místem pro tebe
               máme přehledně vypsané{' '}
-              <Link
-                href='https://linktr.ee/rozmluv.se'
-                target='_blank'
-                className='font-bold'
-              >
-                {' '}
-                tady ←
-              </Link>
             </>
           )}
           {language === 'en' && (
@@ -38,14 +30,6 @@ export const Languages = () => {
               10 lessons. We work out the details at a face-to-face meeting or
               during an online call or a phone call before the course begins. We
               have all our available group courses for you listed{' '}
-              <Link
-                href='https://linktr.ee/rozmluv.se'
-                target='_blank'
-                className='font-bold'
-              >
-                {' '}
-                here ←
-              </Link>
             </>
           )}
           {language === 'de' && (
@@ -58,14 +42,6 @@ export const Languages = () => {
               auch per Videoanruf oder telefonisch. Alle unsere Gruppenkurse, in
               denen noch ein freier Platz für dich ist, haben wir hier
               übersichtlich{' '}
-              <Link
-                href='https://linktr.ee/rozmluv.se'
-                target='_blank'
-                className='font-bold'
-              >
-                {' '}
-                aufgelistet ←
-              </Link>
             </>
           )}
           {language === 'ua' && (
@@ -76,19 +52,21 @@ export const Languages = () => {
               уроків. Ми разом узгодимо деталі під час особистої зустрічі,
               онлайн-дзвінка або телефонного дзвінка перед початком курсу. Усі
               наші групові курси з вільним місцем чітко перераховані{' '}
-              <Link
-                href='https://linktr.ee/rozmluv.se'
-                target='_blank'
-                className='font-bold'
-              >
-                {' '}
-                тут ←
-              </Link>
             </>
           )}
-        </p>
+          <Link
+            href='https://linktr.ee/rozmluv.se'
+            target='_blank'
+            className='font-labil font-black'
+          >
+            {language === 'cz' && 'tady ←'}
+            {language === 'en' && 'here ←'}
+            {language === 'de' && 'aufgelistet ←'}
+            {language === 'ua' && 'тут ←'}
+          </Link>
+        </span>
 
-        <div className='grid lg:grid-cols-3 gap-8'>
+        <div className='grid lg:grid-cols-3 gap-8 mt-14'>
           {languages.map(item => (
             <>
               {item.disabled ? (
