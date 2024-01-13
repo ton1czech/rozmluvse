@@ -9,6 +9,7 @@ export const companies = [
       '"Ми щасливі мати у rozmluv se партнера, який просуває нас у тому, що для нас, журналістів, найважливіше - у спілкуванні."',
     img: '/companies/ekonews.webp',
     color: '#FFC900',
+    link: 'https://www.ekonews.cz/',
   },
   {
     textCz:
@@ -19,6 +20,7 @@ export const companies = [
     textUa: '"З rozmluv se ми неодноразово мали гарний досвід. Рекомендуємо. "',
     img: '/companies/vacovsky.webp',
     color: '#FD828C',
+    link: 'https://www.vacovsky.cz/',
   },
   {
     textCz:
@@ -30,5 +32,6 @@ export const companies = [
       '"Якщо ви усе ще вагаєтесь, не вагайтесь. Ця мовна студія розговорить справді кожного. Розговорили нас, розговорять і вас."',
     img: '/companies/voracek.webp',
     color: '#00AB3E',
+    link: 'https://www.facebook.com/TechnickeSluzbyVaclavVoracek/?locale=cs_CZ',
   },
 ]

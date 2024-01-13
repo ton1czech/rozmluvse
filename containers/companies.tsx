@@ -8,6 +8,7 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import { companies } from '@/database/companies'
 import { useLanguage } from '@/store/use-language'
+import Link from 'next/link'
 
 export const Companies = () => {
   const { language } = useLanguage()
@@ -43,7 +44,11 @@ export const Companies = () => {
               className='rounded-3xl min-h-[450px] md:min-h-[520px] 2xl:min-h-[600px]'
               style={{ background: item.color }}
             >
-              <div className='grid place-content-center p-10 min-h-[450px] md:min-h-[520px] 2xl:min-h-[600px] gap-12'>
+              <Link
+                href={item.link}
+                target='_blank'
+                className='grid place-content-center p-10 min-h-[450px] md:min-h-[520px] 2xl:min-h-[600px] gap-12'
+              >
                 <img
                   src={item.img}
                   alt={
@@ -65,7 +70,7 @@ export const Companies = () => {
                   {language === 'de' && item.textDe}
                   {language === 'ua' && item.textUa}
                 </p>
-              </div>
+              </Link>
             </SwiperSlide>
           ))}
 
