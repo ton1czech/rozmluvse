@@ -31,12 +31,11 @@ export const Companies = () => {
             768: {
               slidesPerView: 2,
             },
-            1024: {
+            1280: {
               slidesPerView: 3,
             },
           }}
-          className='mt-14'
-          style={{ paddingBottom: '30px' }}
+          className='mt-14 !pb-10 xl:!pb-0'
         >
           {companies.map(item => (
             <SwiperSlide
@@ -70,7 +69,7 @@ export const Companies = () => {
             </SwiperSlide>
           ))}
 
-          <div className='swiper-pagination w-full space-x-2 bottom-0' />
+          <div className='swiper-pagination w-full space-x-2 !bottom-0' />
         </Swiper>
       </Container>
     </section>

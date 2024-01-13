@@ -23,7 +23,7 @@ export const Menu = () => {
             key={link.href}
             href={link.href}
             onClick={() => closeMenu()}
-            className='text-3xl font-black text-center capitalize'
+            className='text-3xl font-black text-center ffs-12-hover'
           >
             {language === 'cz' && link.labelCz}
             {language === 'en' && link.labelEn}

@@ -26,7 +26,7 @@ export const Navbar = () => {
             <img
               src='/icons/menu.svg'
               alt='menu button'
-              className='font-bold cursor-pointer'
+              className='font-bold cursor-pointer w-[18px]'
               onClick={() => openMenu()}
             />
           </div>
