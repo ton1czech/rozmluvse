@@ -15,7 +15,7 @@ export const Navbar = () => {
           <LanguageSelector />
         </div>
         <Link
-          href='/'
+          href='#home'
           className='ffs-12 text-3xl lg:text-4xl place-self-center'
         >
           rozmluv se

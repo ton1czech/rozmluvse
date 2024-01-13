@@ -9,7 +9,7 @@ export const Hero = () => {
   const { language } = useLanguage()
 
   return (
-    <section id='home'>
+    <section id='home' className='scroll-mt-44'>
       <Container>
         <h1 className='text-6xl ffs-12 font-black lg:text-7xl lg:w-1/3'>
           {language === 'cz' &&

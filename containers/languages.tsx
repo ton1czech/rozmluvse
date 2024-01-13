@@ -9,7 +9,7 @@ export const Languages = () => {
   const { language } = useLanguage()
 
   return (
-    <section id='languages'>
+    <section id='languages' className='scroll-mt-44'>
       <Container>
         <p className='font-stabil text-xl lg:text-3xl mb-14'>
           {language === 'cz' && (
