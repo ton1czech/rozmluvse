@@ -47,7 +47,7 @@ export const Newsletter = () => {
             <div className='flex flex-col gap-4'>
               <Button
                 onClick={() => closeNewsletterPermanently()}
-                className='bg-white rounded-full py-7 text-xl text-black hover:bg-zinc-50'
+                className='bg-white rounded-full py-7 text-xl text-black hover:bg-zinc-50 ffs-12-hover'
               >
                 {language === 'cz' && 'odebírej'}
                 {language === 'en' && 'subscribe'}
