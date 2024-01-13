@@ -2,8 +2,6 @@
 
 import Link from 'next/link'
 import LanguageSelector from './language-selector'
-import { MenuIcon } from 'lucide-react'
-import { useState } from 'react'
 import { Menu } from './menu'
 import { useMenu } from '@/store/use-menu'
 
@@ -23,7 +21,8 @@ export const Navbar = () => {
           rozmluv se
         </Link>
         <div className='justify-self-end'>
-          <MenuIcon
+          <img
+            src='/icons/menu.svg'
             className='font-bold cursor-pointer'
             onClick={() => openMenu()}
           />

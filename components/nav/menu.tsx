@@ -3,7 +3,6 @@
 import { links } from '@/database/links'
 import { useLanguage } from '@/store/use-language'
 import { useMenu } from '@/store/use-menu'
-import { X } from 'lucide-react'
 import Link from 'next/link'
 
 export const Menu = () => {
@@ -12,7 +11,8 @@ export const Menu = () => {
 
   return (
     <div className='fixed right-0 top-0 h-full w-full lg:w-1/3 bg-primary grid place-content-center'>
-      <X
+      <img
+        src='/icons/x.svg'
         className='absolute top-6 right-6 cursor-pointer'
         onClick={() => closeMenu()}
       />

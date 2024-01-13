@@ -65,7 +65,7 @@ const LanguageSelector = () => {
                     language === value ? 'opacity-100' : 'opacity-0'
                   )}
                 />
-                <p className='uppercase'>{value}</p>
+                <p className='uppercase font-stabil'>{value}</p>
               </CommandItem>
             ))}
           </CommandGroup>
