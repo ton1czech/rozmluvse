@@ -11,7 +11,7 @@ export const Navbar = () => {
   const { isMenuOpen, openMenu } = useMenu()
 
   return (
-    <nav className='fixed top-0 w-full py-4 bg-white'>
+    <nav className='fixed top-0 w-full py-4 bg-white z-10'>
       <div className='mx-4 grid grid-cols-3 justify-center items-center'>
         <div className='place-self-start'>
           <LanguageSelector />
@@ -22,7 +22,7 @@ export const Navbar = () => {
         >
           rozmluv se
         </Link>
-        <div className='place-self-end'>
+        <div className='justify-self-end'>
           <MenuIcon
             className='font-bold cursor-pointer'
             onClick={() => openMenu()}

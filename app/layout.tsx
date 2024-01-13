@@ -5,6 +5,7 @@ import { Footer } from '@/components/footer'
 import { Navbar } from '@/components/nav/navbar'
 import { Newsletter } from '@/components/newsletter'
 import { RemoveOneLetterWords } from '@/providers/remove-one-letter-words'
+import { Cookies } from '@/components/cookies'
 
 const stabil = localFont({
   src: '../fonts/StabilGrotesk-Regular.otf',
@@ -18,13 +19,14 @@ const labil = localFont({
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='en'>
+    <html lang='en' suppressHydrationWarning>
       <body className={cn('font-labil', stabil.variable, labil.variable)}>
         <Navbar />
         {children}
         <Footer />
 
         <Newsletter />
+        <Cookies />
 
         <RemoveOneLetterWords />
       </body>

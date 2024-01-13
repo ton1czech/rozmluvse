@@ -27,7 +27,7 @@ export const Newsletter = () => {
   return (
     <>
       {isOpen && (
-        <div className='absolute w-screen h-screen top-0 left-0 bg-[#9F6ACD] grid place-content-center'>
+        <div className='absolute w-screen h-screen top-0 left-0 bg-[#9F6ACD] grid place-content-center z-10'>
           <div className=' max-w-[450px] mx-4'>
             <h2 className='text-3xl text-center'>
               {language === 'cz' &&
