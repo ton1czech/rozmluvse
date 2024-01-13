@@ -38,7 +38,11 @@ export const InfoText: FC<Props> = ({
         {language === 'ua' && textUa}
       </>{' '}
       {href && (
-        <Link href={href} target='_blank' className='font-labil font-black'>
+        <Link
+          href={href}
+          target='_blank'
+          className='font-labil font-black ffs-12-hover'
+        >
           {language === 'cz' && linkCz}
           {language === 'en' && linkEn}
           {language === 'de' && linkDe}
