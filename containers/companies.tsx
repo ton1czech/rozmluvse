@@ -31,19 +31,19 @@ export const Companies = () => {
             768: {
               slidesPerView: 2,
             },
-            1280: {
+            1536: {
               slidesPerView: 3,
             },
           }}
-          className='mt-14 !pb-10 xl:!pb-0'
+          className='mt-14 !pb-10 2xl:!pb-0 !select-none'
         >
           {companies.map(item => (
             <SwiperSlide
               key={item.img}
-              className='rounded-3xl min-h-[450px] md:min-h-[520px] lg:min-h-[600px]'
+              className='rounded-3xl min-h-[450px] md:min-h-[520px] 2xl:min-h-[600px]'
               style={{ background: item.color }}
             >
-              <div className='grid place-content-center p-10 min-h-[450px] md:min-h-[520px] lg:min-h-[600px] gap-12'>
+              <div className='grid place-content-center p-10 min-h-[450px] md:min-h-[520px] 2xl:min-h-[600px] gap-12'>
                 <img
                   src={item.img}
                   alt={

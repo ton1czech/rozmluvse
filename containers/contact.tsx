@@ -18,7 +18,7 @@ export const Contact = () => {
   return (
     <section id='contact' className='scroll-mt-28'>
       <Container>
-        <div className='flex flex-col lg:flex-row gap-12 lg:gap-40 xl:gap-60'>
+        <div className='flex flex-col lg:flex-row gap-12 lg:gap-40 xl:gap-44 2xl:gap-60'>
           <InfoText
             textCz='Do učebny v 1. patře se dostaneš buď z Pavlíkovy ulice, nebo zadním vchodem z Hostašových sadů. Auto můžeš při troše štěstí nechat v ulicích Jiráskova a Dobrovského, v nouzi přímo na náměstí Míru.'
             textEn='You can get to the classroom on the 1st floor either from Pavlíkova Street or by the rear entrance from Hostašovy sady. With a bit of luck, you can leave your car in the streets of Jiráskova and Dobrovského, at a pinch right on the Mír Square (náměstí Míru).'
@@ -51,16 +51,16 @@ export const Contact = () => {
             768: {
               slidesPerView: 2,
             },
-            1280: {
+            1536: {
               slidesPerView: 3,
             },
           }}
-          className='mt-14 !pb-10 xl:!pb-0'
+          className='mt-14 !pb-10 2xl:!pb-0 !select-none'
         >
           {contact.map(item => (
             <SwiperSlide
               key={item}
-              className='rounded-3xl min-h-[450px] md:min-h-[520px] lg:min-h-[600px]'
+              className='rounded-3xl min-h-[450px] md:min-h-[520px] 2xl:min-h-[600px]'
             >
               <img
                 src={item}

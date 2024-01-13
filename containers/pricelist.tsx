@@ -35,11 +35,11 @@ export const Pricelist = () => {
             768: {
               slidesPerView: 2,
             },
-            1280: {
+            1536: {
               slidesPerView: 3,
             },
           }}
-          className='mt-14 !pb-10'
+          className='mt-14 !pb-10 !select-none'
         >
           {pricelist.map(item => (
             <SwiperSlide
