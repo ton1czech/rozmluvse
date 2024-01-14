@@ -48,13 +48,13 @@ export const Pricelist = () => {
               style={{ background: item.color }}
             >
               <div className='grid place-content-center p-10 min-h-[450px] md:min-h-[520px] text-center'>
-                <h3 className='text-3xl lg:text-4xl text-center'>
+                <h3 className='text-3xl lg:text-4xl text-center font-black'>
                   {language === 'cz' && item.labelCz}
                   {language === 'en' && item.labelEn}
                   {language === 'de' && item.labelDe}
                   {language === 'ua' && item.labelUa}
                 </h3>
-                <h3 className='text-3xl lg:text-4xl text-center mb-8'>
+                <h3 className='text-3xl lg:text-4xl text-center mb-8 font-black'>
                   {language === 'cz' && item.peopleCz}
                   {language === 'en' && item.peopleEn}
                   {language === 'de' && item.peopleDe}

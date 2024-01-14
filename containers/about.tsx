@@ -70,7 +70,7 @@ export const About = ({ lectors }: { lectors: any }) => {
                     alt={lector.name}
                     className='mb-4 w-full rounded-3xl'
                   />
-                  <h3 className='text-xl lg:text-2xl text-center'>
+                  <h3 className='text-xl lg:text-2xl text-center font-black'>
                     {lector.name}
                   </h3>
                   <p className='font-stabil text-lg lg:text-xl text-center'>

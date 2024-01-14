@@ -64,7 +64,7 @@ export const Companies = () => {
                   }
                   className='mx-auto max-h-24'
                 />
-                <p className='text-xl lg:text-3xl text-center'>
+                <p className='text-xl lg:text-3xl text-center font-black'>
                   {language === 'cz' && item.textCz}
                   {language === 'en' && item.textEn}
                   {language === 'de' && item.textDe}
