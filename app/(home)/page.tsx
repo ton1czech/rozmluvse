@@ -13,7 +13,7 @@ export default async function Page() {
   const lectors = await cachedClient(LectorsQuery)
 
   return (
-    <main className='mt-28 md:mt-32 lg:mt-40 space-y-40 lg:space-y-72'>
+    <main className='mt-28 md:mt-32 space-y-40 lg:space-y-72'>
       <Hero />
       <Languages />
       <Companies />

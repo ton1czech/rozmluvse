@@ -8,7 +8,7 @@ export default async function Page() {
   const lookingFor = await cachedClient(LookingForQuery)
 
   return (
-    <main className='mt-28 md:mt-32 lg:mt-40 min-h-screen'>
+    <main className='mt-28 md:mt-32 min-h-screen'>
       <ForLectors lookingFor={lookingFor} />
     </main>
   )

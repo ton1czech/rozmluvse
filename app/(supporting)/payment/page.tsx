@@ -21,7 +21,7 @@ export default function Page() {
   }, [language])
 
   return (
-    <main className='font-stabil mt-28 md:mt-32 lg:mt-40 text-xl lg:text-3xl'>
+    <main className='font-stabil mt-28 md:mt-32 text-xl lg:text-3xl'>
       <Container>
         <h2 className='mb-6 lg:mb-10'>
           {language === 'cz' && 'Platební podmínky'}
