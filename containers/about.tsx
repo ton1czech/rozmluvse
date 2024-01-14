@@ -83,7 +83,7 @@ export const About = ({ lectors }: { lectors: any }) => {
               ) : (
                 <div
                   style={{ background: lector.color }}
-                  className='grid place-content-center rounded-3xl px-8 py-72 sm:py-96 md:py-48 lg:py-72 2xl:py-64 text-center !min-h-full'
+                  className='grid place-content-center rounded-3xl px-8 py-52 sm:py-96 md:py-48 lg:py-72 2xl:py-64 text-center !min-h-full'
                 >
                   <h2 className='text-xl sm:text-3xl mb-8'>
                     {language === 'cz' && lector.titleCz}
