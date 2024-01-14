@@ -5,3 +5,13 @@ export const LectorsQuery = groq`
         ...,
     }
 `
+
+export const LectorsPathsQuery = groq`*[_type == "lector" && defined(slug.current)][]{
+    "params": { "slug": slug.current }
+  }
+`
+
+export const LectorQuery = groq`*[_type == "lector" && slug.current == $slug][0]{
+    ...
+  }
+`
