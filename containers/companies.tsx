@@ -41,13 +41,13 @@ export const Companies = () => {
           {companies.map(item => (
             <SwiperSlide
               key={item.img}
-              className='rounded-3xl min-h-[450px] md:min-h-[520px] 2xl:min-h-[600px]'
+              className='rounded-3xl min-h-[450px] md:min-h-[520px] 2xl:min-h-[550px]'
               style={{ background: item.color }}
             >
               <Link
                 href={item.link}
                 target='_blank'
-                className='grid place-content-center p-10 min-h-[450px] md:min-h-[520px] 2xl:min-h-[600px] gap-12'
+                className='grid place-content-center p-10 min-h-[450px] md:min-h-[520px] 2xl:min-h-[550px] gap-12'
               >
                 <img
                   src={item.img}
