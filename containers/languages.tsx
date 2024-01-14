@@ -56,7 +56,7 @@ export const Languages = () => {
               style={{ background: item.color }}
               className={cn(
                 'text-center text-3xl lg:text-4xl rounded-3xl py-16 lg:py-24 font-black',
-                item.disabled && 'cursor-not-allowed',
+                item.disabled && 'pointer-events-none',
                 !item.disabled && 'ffs-12-hover'
               )}
             >
