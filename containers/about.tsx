@@ -9,9 +9,24 @@ import 'swiper/css/pagination'
 import Link from 'next/link'
 import { urlForImage } from '@/sanity/lib/image'
 import { useLanguage } from '@/store/use-language'
+import { Button } from '@/components/ui/button'
 
 export const About = ({ lectors }: { lectors: any }) => {
   const { language } = useLanguage()
+
+  const offer = {
+    titleCz: 'Chceš se stát součástí lektorského týmu?',
+    titleEn: '',
+    titleDe: '',
+    titleUa: '',
+    buttonCz: 'To teda',
+    buttonEn: '',
+    buttonDe: '',
+    buttonUa: '',
+    color: '#FD828C',
+  }
+
+  const lectorsWithOffer = [...lectors, offer]
 
   return (
     <section id='about' className='scroll-mt-28'>
@@ -41,32 +56,54 @@ export const About = ({ lectors }: { lectors: any }) => {
               slidesPerView: 3,
             },
           }}
-          className='mt-14 !pb-10 2xl:!pb-0 !select-none'
+          className='mt-14 !pb-10 !select-none'
         >
-          {lectors.map((lector: any) => (
-            <SwiperSlide
-              key={lector.name}
-              className='rounded-3xl min-h-[450px] md:min-h-[520px] 2xl:min-h-[550px]'
-            >
-              <Link
-                href={`/lectors/${lector.slug.current}`}
-                className='grid place-content-center p-10 min-h-[450px] md:min-h-[520px] 2xl:min-h-[550px]'
-              >
-                <img
-                  src={urlForImage(lector.image)}
-                  alt={lector.name}
-                  className='mb-4 w-full rounded-3xl'
-                />
-                <h3 className='text-xl lg:text-2xl text-center mb-1'>
-                  {lector.name}
-                </h3>
-                <p className='font-stabil text-lg lg:text-xl text-center'>
-                  {language === 'cz' && lector.roleCz}
-                  {language === 'en' && lector.roleEn}
-                  {language === 'de' && lector.roleDe}
-                  {language === 'ua' && lector.roleUa}
-                </p>
-              </Link>
+          {lectorsWithOffer.map((lector: any) => (
+            <SwiperSlide key={lector.name} className='rounded-3xl'>
+              {lector.name ? (
+                <Link
+                  href={`/lectors/${lector.slug.current}`}
+                  className='grid place-content-center'
+                >
+                  <img
+                    src={urlForImage(lector.image)}
+                    alt={lector.name}
+                    className='mb-4 w-full rounded-3xl'
+                  />
+                  <h3 className='text-xl lg:text-2xl text-center mb-1'>
+                    {lector.name}
+                  </h3>
+                  <p className='font-stabil text-lg lg:text-xl text-center'>
+                    {language === 'cz' && lector.roleCz}
+                    {language === 'en' && lector.roleEn}
+                    {language === 'de' && lector.roleDe}
+                    {language === 'ua' && lector.roleUa}
+                  </p>
+                </Link>
+              ) : (
+                <div
+                  style={{ background: lector.color }}
+                  className='grid place-content-center rounded-3xl px-8 py-72 sm:py-96 md:py-48 lg:py-72 2xl:py-64 text-center !min-h-full'
+                >
+                  <h2 className='text-xl sm:text-3xl mb-8'>
+                    {language === 'cz' && lector.titleCz}
+                    {language === 'en' && lector.titleEn}
+                    {language === 'de' && lector.titleDe}
+                    {language === 'ua' && lector.titleUa}
+                  </h2>
+                  <Link href='/for-lectors'>
+                    <Button
+                      className='rounded-full bg-white hover:bg-zinc-100 text-lg sm:text-xl py-6 px-10'
+                      size='lg'
+                    >
+                      {language === 'cz' && lector.buttonCz}
+                      {language === 'en' && lector.buttonEn}
+                      {language === 'de' && lector.buttonDe}
+                      {language === 'ua' && lector.buttonUa}
+                    </Button>
+                  </Link>
+                </div>
+              )}
             </SwiperSlide>
           ))}
 
