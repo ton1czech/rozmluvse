@@ -10,7 +10,7 @@ export const Menu = () => {
   const { closeMenu } = useMenu()
 
   return (
-    <div className='fixed right-0 top-0 h-full w-full lg:w-1/3 bg-primary grid place-content-center'>
+    <div className='fixed right-0 top-0 h-full w-full lg:w-1/3 bg-primary grid place-content-center z-[1003]'>
       <img
         src='/icons/x.svg'
         alt='close button'

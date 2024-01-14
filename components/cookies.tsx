@@ -41,7 +41,7 @@ export const Cookies = () => {
   return (
     <>
       {isOpen && (
-        <div className='bg-[#00ABD3] fixed w-screen min-h-1/4 left-0 bottom-0 py-4 lg:py-12 px-4 lg:px-96 flex flex-col lg:flex-row gap-8 lg:gap-20'>
+        <div className='bg-[#00ABD3] fixed w-screen min-h-1/4 left-0 bottom-0 py-4 lg:py-12 px-4 lg:px-96 flex flex-col lg:flex-row gap-8 lg:gap-20 z-[999]'>
           <h3 className='text-xl max-w-prose'>
             {language === 'cz' &&
               'Máš chuť na cookies, bánh quy nebo 饼干? Ve všech třech případech jde o sušenky. Ty naše naštěstí nedrobí a ani po nich nepřibereš. Ťukni na „v pořádku“ a my soubory cookies využijeme pro účely personalizace a analýzy.'}
@@ -121,7 +121,7 @@ export const Cookies = () => {
           </p>
 
           <Button
-            onClick={handleSubmit}
+            onClick={confirmSettings}
             className='bg-white rounded-full py-7 text-xl text-black hover:bg-zinc-50 w-full mt-6 ffs-12-hover'
           >
             {language === 'cz' && 'uložit a sníst'}

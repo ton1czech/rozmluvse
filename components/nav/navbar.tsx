@@ -10,7 +10,7 @@ export const Navbar = () => {
   const { isMenuOpen, openMenu } = useMenu()
 
   return (
-    <nav className='fixed top-0 w-full py-4 bg-white z-10'>
+    <nav className='fixed top-0 w-full py-4 bg-white z-[1000]'>
       <Container>
         <div className='grid grid-cols-[1fr_2fr_1fr] justify-center items-center'>
           <div className='place-self-start'>
