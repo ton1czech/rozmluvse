@@ -40,6 +40,11 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'order',
+      title: 'Pořadí',
+      type: 'number',
+    }),
+    defineField({
       name: 'image',
       title: 'Obrázek',
       type: 'image',

@@ -3,7 +3,7 @@ import { groq } from 'next-sanity'
 export const LectorsQuery = groq`
     *[_type=='lector'] {
         ...,
-    }
+    } | order(order asc)
 `
 
 export const LectorsPathsQuery = groq`*[_type == "lector" && defined(slug.current)][]{

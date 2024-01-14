@@ -13,8 +13,6 @@ import { useLanguage } from '@/store/use-language'
 export const About = ({ lectors }: { lectors: any }) => {
   const { language } = useLanguage()
 
-  console.log(lectors)
-
   return (
     <section id='about' className='scroll-mt-28'>
       <Container>
@@ -57,7 +55,7 @@ export const About = ({ lectors }: { lectors: any }) => {
                 <img
                   src={urlForImage(lector.image)}
                   alt={lector.name}
-                  className='mb-4 w-full'
+                  className='mb-4 w-full rounded-3xl'
                 />
                 <h3 className='text-xl lg:text-2xl text-center mb-1'>
                   {lector.name}

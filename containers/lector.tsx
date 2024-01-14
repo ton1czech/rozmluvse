@@ -14,10 +14,7 @@ export const Lector = ({ lector }: { lector: any }) => {
       </Link>
 
       <div className='flex flex-col xl:flex-row gap-4 xl:gap-32 h-full w-full py-10 px-10'>
-        <img
-          src={urlForImage(lector.altImage)}
-          className='absolute rounded-3xl'
-        />
+        <img src={urlForImage(lector.altImage)} className='rounded-3xl' />
         <div className='grid place-content-center'>
           <h3 className='text-xl xl:text-4xl mb-2 xl:mb-6'>{lector.name}</h3>
           <p className='font-stabil text-lg xl:text-3xl'>
