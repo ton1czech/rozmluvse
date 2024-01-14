@@ -6,12 +6,20 @@ export const LectorsQuery = groq`
     } | order(order asc)
 `
 
-export const LectorsPathsQuery = groq`*[_type == "lector" && defined(slug.current)][]{
-    "params": { "slug": slug.current }
-  }
+export const LectorsPathsQuery = groq`
+    *[_type == "lector" && defined(slug.current)][]{
+        "params": { "slug": slug.current }
+    }
 `
 
-export const LectorQuery = groq`*[_type == "lector" && slug.current == $slug][0]{
-    ...
-  }
+export const LectorQuery = groq`
+    *[_type == "lector" && slug.current == $slug][0]{
+        ...
+    }
+`
+
+export const LookingForQuery = groq`
+    *[_type=='lookingFor'] {
+        ...,
+    }
 `
