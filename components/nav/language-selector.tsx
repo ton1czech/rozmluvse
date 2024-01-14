@@ -6,10 +6,9 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover'
 import { Command, CommandGroup, CommandItem } from '@/components/ui/command'
-import { Check, ChevronsUpDown } from 'lucide-react'
+import { Check } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useState } from 'react'
-import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { useLanguage } from '@/store/use-language'
 

@@ -1,36 +1,32 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 export const RemoveOneLetterWords = () => {
-  const clearWordBreaks = (target: HTMLElement) =>
-    (target.textContent = target.textContent?.replace(/\u00a0/g, ' ') || '')
+  const [content, setContent] = useState<string>('')
 
-  const noMoreLonelyWords = (target: HTMLElement) => {
-    let textArray = target.textContent?.split(' ') || []
-    let newTextArray: string[] = []
-    textArray.forEach(word => {
-      let textEntry = ''
-      if (word.length === 1) textEntry = word + '\xa0'
-      else textEntry = word + ' '
-      newTextArray.push(textEntry)
-    })
-    target.textContent = newTextArray.join('')
-  }
+  const clearWordBreaks = (text: string) => text.replace(/\u00a0/g, ' ')
 
-  const updateWordBreaks = (target: HTMLElement) => {
-    clearWordBreaks(target)
-    noMoreLonelyWords(target)
-  }
+  const noMoreLonelyWords = (text: string) =>
+    text
+      .split(' ')
+      .map(word => (word.length === 1 ? word + '\xa0' : word))
+      .join(' ')
 
-  const setup = () => {
-    const elements = document.querySelectorAll('p, h2, label, h3')
-    elements.forEach(element => updateWordBreaks(element as HTMLElement))
+  const updateWordBreaks = (text: string) => {
+    const clearedText = clearWordBreaks(text)
+    const modifiedText = noMoreLonelyWords(clearedText)
+    setContent(modifiedText)
   }
 
   useEffect(() => {
-    setup()
+    const elements = document.querySelectorAll('p, h2, label, h3')
+    elements.forEach(element => {
+      if (element instanceof HTMLElement) {
+        updateWordBreaks(element.textContent || '')
+      }
+    })
   }, [])
 
-  return <></>
+  return <div className='opacity-0 pointer-events-none'>{content}</div>
 }
