@@ -1,34 +1,23 @@
-'use client'
-
+import { About } from '@/containers/about'
 import { Companies } from '@/containers/companies'
 import { Contact } from '@/containers/contact'
 import { Hero } from '@/containers/hero'
 import { Languages } from '@/containers/languages'
 import { Pricelist } from '@/containers/pricelist'
-import { useLanguage } from '@/store/use-language'
-import { useEffect } from 'react'
+import { cachedClient } from '@/sanity/lib/client'
+import { LectorsQuery } from '@/sanity/lib/queries'
 
-export default function Page() {
-  const { language } = useLanguage()
+export const revalidate = 60
 
-  useEffect(() => {
-    document.title =
-      language === 'cz'
-        ? 'Jazykové studio | rozmluv se'
-        : language === 'en'
-        ? 'Language studio | rozmluv se'
-        : language === 'de'
-        ? 'Sprachstudio | rozmluv se'
-        : language === 'ua'
-        ? 'мовна студія | rozmluv se'
-        : ''
-  }, [language])
+export default async function Page() {
+  const lectors = await cachedClient(LectorsQuery)
 
   return (
     <main className='mt-28 md:mt-32 lg:mt-40 space-y-40 lg:space-y-72'>
       <Hero />
       <Languages />
       <Companies />
+      <About lectors={lectors} />
       <Pricelist />
       <Contact />
     </main>
