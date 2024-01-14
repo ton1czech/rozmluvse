@@ -3,7 +3,7 @@
 import { Container } from '@/components/container'
 import { InfoText } from '@/components/info-text'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination } from 'swiper/modules'
+import { Navigation, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import Link from 'next/link'
@@ -16,12 +16,12 @@ export const About = ({ lectors }: { lectors: any }) => {
 
   const offer = {
     titleCz: 'Chceš se stát součástí lektorského týmu?',
-    titleEn: '',
-    titleDe: '',
+    titleEn: "Would you like to join the lecturers' team?",
+    titleDe: 'Willst du Teil unseres Lektor*innenteams werden?',
     titleUa: '',
     buttonCz: 'To teda',
-    buttonEn: '',
-    buttonDe: '',
+    buttonEn: 'Hell yeah',
+    buttonDe: 'Aber sowas von!',
     buttonUa: '',
     color: '#FD828C',
   }
@@ -70,7 +70,7 @@ export const About = ({ lectors }: { lectors: any }) => {
                     alt={lector.name}
                     className='mb-4 w-full rounded-3xl'
                   />
-                  <h3 className='text-xl lg:text-2xl text-center mb-1'>
+                  <h3 className='text-xl lg:text-2xl text-center'>
                     {lector.name}
                   </h3>
                   <p className='font-stabil text-lg lg:text-xl text-center'>
