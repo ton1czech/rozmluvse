@@ -27,25 +27,33 @@ const languages = [
   },
 ]
 
-const LanguageSelector = () => {
+interface Props {
+  color: 'white' | 'black'
+}
+
+const LanguageSelector = ({ color }: Props) => {
   const { language, setLanguage } = useLanguage(state => state)
 
   const [open, setOpen] = useState<boolean>(false)
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild className='hover:bg-zinc-300/50'>
+      <PopoverTrigger asChild>
         <Button
           variant='outline'
           role='combobox'
           name='language selector'
           aria-expanded={open}
-          className='border-none text-zinc-900 bg-transparent gap-2'
+          className={cn(
+            'border-none bg-transparent gap-2 hover:bg-transparent',
+            color === 'white' && 'hover:text-white text-white',
+            color === 'black' && 'hover:text-black text-black'
+          )}
         >
           <p className='uppercase font-stabil'>{language}</p>
         </Button>
       </PopoverTrigger>
-      <PopoverContent className='w-[100px] p-2 z-[1001] bg-zinc-100 dark:bg-zinc-900 backdrop-blur-lg border-zinc-500/40'>
+      <PopoverContent className='w-[100px] p-2 z-[1001] bg-zinc-100 backdrop-blur-lg border-zinc-500/40'>
         <Command className='!bg-transparent'>
           <CommandGroup className='space-y-2'>
             {languages.map(({ value }: { value: string }) => (

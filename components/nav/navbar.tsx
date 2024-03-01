@@ -21,11 +21,11 @@ export const Navbar = () => {
             rozmluv se
           </Link>
           <div className='flex items-center gap-1'>
-            <LanguageSelector />
+            <LanguageSelector color='black' />
             <Button
               variant='ghost'
               onClick={() => openMenu()}
-              className='font-stabil'
+              className='font-stabil hover:bg-transparent'
             >
               Menu
             </Button>

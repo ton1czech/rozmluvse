@@ -4,51 +4,90 @@ import { links } from '@/database/links'
 import { useLanguage } from '@/store/use-language'
 import { useMenu } from '@/store/use-menu'
 import Link from 'next/link'
+import { Container } from '../container'
+import LanguageSelector from './language-selector'
+import { Button } from '../ui/button'
+import { useNewsletter } from '@/store/use-newsletter'
 
 export const Menu = () => {
   const { language } = useLanguage()
   const { closeMenu } = useMenu()
+  const { openNewsletter } = useNewsletter()
 
   return (
-    <div className='fixed right-0 top-0 h-full w-full lg:w-1/3 bg-primary grid place-content-center z-[1003]'>
-      <img
-        src='/icons/x.svg'
-        alt='close button'
-        className='absolute top-6 right-6 cursor-pointer'
-        onClick={() => closeMenu()}
-      />
-      <ul className='flex flex-col gap-8'>
-        {links.map(link => (
+    <div className='fixed right-0 top-0 w-full lg:h-1/2 bg-[#9C6ACA] py-4'>
+      <Container className='w-full'>
+        <div className='flex justify-between items-center w-full'>
           <Link
-            key={link.href}
-            href={link.href}
-            onClick={() => closeMenu()}
-            className='text-3xl font-black text-center ffs-12-hover'
+            href='/#home'
+            className='ffs-12 text-2xl md:text-3xl lg:text-4xl place-self-center text-white'
           >
-            {language === 'cz' && link.labelCz}
-            {language === 'en' && link.labelEn}
-            {language === 'de' && link.labelDe}
-            {language === 'ua' && link.labelUa}
+            rozmluv se
           </Link>
-        ))}
-      </ul>
-      <div className='flex justify-between absolute bottom-6 left-0 w-full px-36'>
-        <Link href='https://www.facebook.com/rozmluv.se' target='_blank'>
-          <img src='/social/facebook.webp' alt='facebook' />
-        </Link>
-        <Link href='https://www.instagram.com/rozmluv.se/' target='_blank'>
-          <img src='/social/instagram.webp' alt='instagram' />
-        </Link>
-        <Link href='https://www.tiktok.com/@rozmluv.se' target='_blank'>
-          <img src='/social/tiktok.webp' alt='tiktok' />
-        </Link>
-        <Link
-          href='https://www.linkedin.com/company/rozmluv-se/?originalSubdomain=cz'
-          target='_blank'
-        >
-          <img src='/social/linkedin.webp' alt='linkedin' />
-        </Link>
-      </div>
+          <div className='flex items-center gap-1'>
+            <LanguageSelector color='white' />
+            <Button
+              variant='ghost'
+              onClick={() => closeMenu()}
+              className='font-stabil hover:bg-transparent text-white hover:text-white'
+            >
+              {language === 'cz' && 'Zavřít'}
+              {language === 'en' && 'Close'}
+            </Button>
+          </div>
+        </div>
+
+        <div className='grid grid-cols-2 gap-10 pt-16'>
+          <ul className='grid grid-cols-2 gap-4'>
+            {links.map(link => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => closeMenu()}
+                className='text-3xl font-black ffs-12-hover text-white'
+              >
+                {language === 'cz' && link.labelCz}
+                {language === 'en' && link.labelEn}
+                {language === 'de' && link.labelDe}
+                {language === 'ua' && link.labelUa}
+              </Link>
+            ))}
+          </ul>
+
+          <div className='flex gap-20 text-base text-zinc-200'>
+            <div className='flex flex-col gap-4'>
+              <Link href='https://www.facebook.com/rozmluv.se' target='_blank'>
+                Facebook
+              </Link>
+              <Link
+                href='https://www.instagram.com/rozmluv.se/'
+                target='_blank'
+              >
+                Instagram
+              </Link>
+              <Link
+                href='https://www.linkedin.com/company/rozmluv-se/?originalSubdomain=cz'
+                target='_blank'
+              >
+                Linkedin
+              </Link>
+              <Link href='https://www.tiktok.com/@rozmluv.se' target='_blank'>
+                TikTok
+              </Link>
+            </div>
+            <div className='flex flex-col gap-4'>
+              <Link href='/blog'>Blog</Link>
+              <Button
+                variant='ghost'
+                onClick={() => openNewsletter()}
+                className='hover:bg-transparent p-0 m-0 h-auto w-auto hover:text-zinc-200 !text-base'
+              >
+                Newsletter
+              </Button>
+            </div>
+          </div>
+        </div>
+      </Container>
     </div>
   )
 }
