@@ -42,7 +42,7 @@ const LanguageSelector = () => {
           aria-expanded={open}
           className='border-none text-zinc-900 bg-transparent gap-2'
         >
-          <p className='uppercase font-stabil text-lg'>{language}</p>
+          <p className='uppercase font-stabil'>{language}</p>
         </Button>
       </PopoverTrigger>
       <PopoverContent className='w-[100px] p-2 z-[1001] bg-zinc-100 dark:bg-zinc-900 backdrop-blur-lg border-zinc-500/40'>
