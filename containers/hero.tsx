@@ -1,9 +1,8 @@
 'use client'
 
+import { Cols } from '@/components/cols'
 import { Container } from '@/components/container'
-import { Button } from '@/components/ui/button'
 import { useLanguage } from '@/store/use-language'
-import Link from 'next/link'
 
 export const Hero = () => {
   const { language } = useLanguage()
@@ -11,34 +10,64 @@ export const Hero = () => {
   return (
     <section id='home' className='scroll-mt-44'>
       <Container>
-        <h1 className='text-5xl md:text-6xl font-black lg:text-7xl'>
-          {language === 'cz' &&
-            'Jazykové studio, ve kterém se nebudeš bát dělat chyby.'}
-          {language === 'en' &&
-            'A language studio where you are not afraid of making mistakes.'}
-          {language === 'de' &&
-            'Das Sprachstudio, wo du keine Angst vor Fehlern hast'}
-          {language === 'ua' &&
-            'Мовні курси, де ти не будеш боятись помилитись.'}
-        </h1>
-        <p className='font-stabil text-xl mt-8 lg:text-3xl'>
-          {language === 'cz' &&
-            'Dopřej si lingvistický wellness a nauč se anglicky, německy nebo klidně čínsky.'}
-          {language === 'en' &&
-            'Indulge in linguistic wellness and study English, German or even Chinese.'}
-          {language === 'de' &&
-            'Gönne Dir linguistische Entspannung und lerne Englisch, Deutsch oder auch Chinesisch'}
-          {language === 'ua' &&
-            'Зроби собі "гарне лінгвістичне самопочуття" і вивчи англійську, німецьку або навіть китайську.'}
-        </p>
-        <Link href='https://linktr.ee/rozmluv.se' target='_blank'>
-          <Button className='rounded-full text-xl w-full text-black py-6 mt-10 ffs-2-hover font-black lg:py-8 lg:text-3xl lg:w-1/4'>
-            {language === 'cz' && 'Aktuálně'}
-            {language === 'en' && 'Currently'}
-            {language === 'de' && 'Aktuell'}
-            {language === 'ua' && 'Течія'}
-          </Button>
-        </Link>
+        <Cols>
+          <div />
+          <div>
+            <h1 className='text-3xl sm:text-4xl md:text-5xl font-black lg:text-6xl xl:text-7xl'>
+              {language === 'cz' && (
+                <>
+                  Jazykové studio, <br className='sm:hidden' /> ve kterém se{' '}
+                  <br /> nebudeš bát <br className='sm:hidden' /> dělat chyby.
+                </>
+              )}
+              {language === 'en' && (
+                <>
+                  A language studio <br className='sm:hidden' /> where you are{' '}
+                  <br /> not afraid <br className='sm:hidden' /> of making
+                  mistakes.
+                </>
+              )}
+              {language === 'de' && (
+                <>
+                  Das Sprachstudio, <br className='sm:hidden' /> wo du keine
+                  <br /> Angst vor <br className='sm:hidden' /> Fehlern hast.
+                </>
+              )}
+              {language === 'ua' && (
+                <>
+                  Мовні курси, <br className='sm:hidden' /> де ти не <br />{' '}
+                  будеш боятись <br className='sm:hidden' /> помилитись.
+                </>
+              )}
+            </h1>
+            <p className='font-stabil text-xl mt-8 lg:text-3xl'>
+              {language === 'cz' && (
+                <>
+                  Dopřej si lingvistický wellness a nauč se anglicky,{' '}
+                  <br className='hidden xl:block' /> německy nebo klidně čínsky.
+                </>
+              )}
+              {language === 'en' && (
+                <>
+                  Indulge in linguistic wellness and study English, German or
+                  even Chinese.
+                </>
+              )}
+              {language === 'de' && (
+                <>
+                  Gönne Dir linguistische Entspannung und lerne Englisch,
+                  Deutsch oder auch Chinesisch.
+                </>
+              )}
+              {language === 'ua' && (
+                <>
+                  Зроби собі "гарне лінгвістичне самопочуття" і вивчи
+                  англійську, німецьку або навіть китайську.
+                </>
+              )}
+            </p>
+          </div>
+        </Cols>
       </Container>
     </section>
   )
