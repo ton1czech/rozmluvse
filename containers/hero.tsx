@@ -40,7 +40,7 @@ export const Hero = () => {
                 </>
               )}
             </h1>
-            <p className='font-stabil text-xl mt-8 lg:text-3xl'>
+            <p className='font-stabil text-lg mt-8 xl:text-2xl'>
               {language === 'cz' && (
                 <>
                   Dopřej si lingvistický wellness a nauč se anglicky,{' '}

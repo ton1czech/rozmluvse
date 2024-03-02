@@ -11,7 +11,7 @@ export const SectionTitle = ({ titleCz, titleEn, titleDe, titleUa }: Props) => {
   const { language } = useLanguage()
 
   return (
-    <h3 className='font-stabil text-xl lg:text-3xl'>
+    <h3 className='font-stabil text-lg xl:text-2xl'>
       {language === 'cz' && titleCz}
       {language === 'en' && titleEn}
       {language === 'de' && titleDe}

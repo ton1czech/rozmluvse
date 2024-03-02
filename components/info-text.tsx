@@ -32,7 +32,7 @@ export const InfoText: FC<Props> = ({
   const { language } = useLanguage()
 
   return (
-    <span className='font-stabil text-xl lg:text-3xl'>
+    <span className='font-stabil text-lg xl:text-2xl'>
       <>
         {language === 'cz' && textCz}
         {language === 'en' && textEn}

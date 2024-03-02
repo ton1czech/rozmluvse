@@ -65,7 +65,7 @@ export const Languages = () => {
               href={item.disabled ? '' : '/form'}
               style={{ background: item.color }}
               className={cn(
-                'text-center text-3xl lg:text-4xl rounded-3xl py-16 lg:py-24 font-black',
+                'text-center text-3xl rounded-2xl py-8 font-black',
                 item.disabled && 'pointer-events-none',
                 !item.disabled && 'ffs-12-hover'
               )}
