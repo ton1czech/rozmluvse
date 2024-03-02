@@ -4,6 +4,7 @@ import { Contact } from '@/containers/contact'
 import { Hero } from '@/containers/hero'
 import { Languages } from '@/containers/languages'
 import { Pricelist } from '@/containers/pricelist'
+import { Reviews } from '@/containers/reviews'
 import { cachedClient } from '@/sanity/lib/client'
 import { LectorsQuery } from '@/sanity/lib/queries'
 
@@ -17,6 +18,7 @@ export default async function Page() {
       <Hero />
       <Languages />
       <Pricelist />
+      <Reviews />
       <About lectors={lectors} />
       <Companies />
       <Contact />
