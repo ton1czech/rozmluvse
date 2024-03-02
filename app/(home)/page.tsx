@@ -16,9 +16,9 @@ export default async function Page() {
     <main className='mt-32 xl:mt-16 space-y-16 xl:space-y-32'>
       <Hero />
       <Languages />
-      <Companies />
-      <About lectors={lectors} />
       <Pricelist />
+      <About lectors={lectors} />
+      <Companies />
       <Contact />
     </main>
   )
