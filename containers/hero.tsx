@@ -16,14 +16,14 @@ export const Hero = () => {
             <h1 className='text-3xl sm:text-4xl md:text-5xl font-black lg:text-6xl xl:text-7xl'>
               {language === 'cz' && (
                 <>
-                  Jazykové studio, <br className='sm:hidden' /> ve kterém se{' '}
-                  <br /> nebudeš bát <br className='sm:hidden' /> dělat chyby.
+                  Jazykové studio, <br className='sm:hidden' /> ve kterém <br />{' '}
+                  se nebudeš bát <br className='sm:hidden' /> dělat chyby.
                 </>
               )}
               {language === 'en' && (
                 <>
-                  A language studio <br className='sm:hidden' /> where you are{' '}
-                  <br /> not afraid <br className='sm:hidden' /> of making
+                  A language studio <br className='sm:hidden' /> where you{' '}
+                  <br /> are not afraid <br className='sm:hidden' /> of making
                   mistakes.
                 </>
               )}
