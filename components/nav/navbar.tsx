@@ -16,7 +16,7 @@ export const Navbar = () => {
         <div className='flex justify-between items-center'>
           <Link
             href='/#home'
-            className='ffs-12 text-2xl md:text-3xl lg:text-4xl place-self-center'
+            className='text-2xl md:text-3xl lg:text-4xl place-self-center ffs-12'
           >
             rozmluv se
           </Link>

@@ -20,7 +20,7 @@ export const Menu = () => {
         <div className='flex justify-between items-center w-full'>
           <Link
             href='/#home'
-            className='ffs-12 text-2xl md:text-3xl lg:text-4xl place-self-center text-white'
+            className='text-2xl md:text-3xl lg:text-4xl place-self-center text-white ffs-12'
           >
             rozmluv se
           </Link>
