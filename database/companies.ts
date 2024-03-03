@@ -1,5 +1,6 @@
 export const companies = [
   {
+    title: 'Eko News',
     textCz:
       '„Jsme rádi, že máme v rozmluv se partnera, který nás posouvá v tom, co je pro nás, novináře, nejdůležitější. V komunikaci.“',
     textEn: `"We are happy to have 'Rozmluv se' as a partner who moves us forward in what is the most important to us journalists - in communication."`,
@@ -8,10 +9,11 @@ export const companies = [
     textUa:
       '"Ми щасливі мати у rozmluv se партнера, який просуває нас у тому, що для нас, журналістів, найважливіше - у спілкуванні."',
     img: '/companies/ekonews.webp',
-    color: '#FFC900',
+    color: '#FAB960',
     link: 'https://www.ekonews.cz/',
   },
   {
+    title: 'VK Vacovský',
     textCz:
       '„S rozmluv se máme opakovaně velmi dobrou zkušenost. Doporučujeme.“',
     textEn: `"We have repeatedly had a very good experience with 'Rozmluv se'. Recommended."`,
@@ -19,10 +21,11 @@ export const companies = [
       '"Mit Rozmluv se haben wir immer wieder die besten Erfahrungen gemacht und können es nur empfehlen!"',
     textUa: '"З rozmluv se ми неодноразово мали гарний досвід. Рекомендуємо. "',
     img: '/companies/vacovsky.webp',
-    color: '#FD828C',
+    color: '#FAB960',
     link: 'https://www.vacovsky.cz/',
   },
   {
+    title: 'Technické Služby',
     textCz:
       '„Jestli ještě váháte, neváhejte. Tohle jazykové studio rozmluví opravdu každého. Rozmluvili nás, rozmluví i vás.“',
     textEn: `"If you hesitate, don't hesitate. This language studio really gets you talking. If they helped us, they'll help you too."`,
@@ -31,7 +34,7 @@ export const companies = [
     textUa:
       '"Якщо ви усе ще вагаєтесь, не вагайтесь. Ця мовна студія розговорить справді кожного. Розговорили нас, розговорять і вас."',
     img: '/companies/voracek.webp',
-    color: '#00AB3E',
+    color: '#FAB960',
     link: 'https://www.facebook.com/TechnickeSluzbyVaclavVoracek/?locale=cs_CZ',
   },
 ]

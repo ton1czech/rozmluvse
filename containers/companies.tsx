@@ -2,13 +2,17 @@
 
 import { Container } from '@/components/container'
 import { InfoText } from '@/components/info-text'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination } from 'swiper/modules'
-import 'swiper/css'
-import 'swiper/css/pagination'
 import { companies } from '@/database/companies'
 import { useLanguage } from '@/store/use-language'
 import Link from 'next/link'
+import { Cols } from '@/components/cols'
+import { SectionTitle } from '@/components/section-title'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion'
 
 export const Companies = () => {
   const { language } = useLanguage()
@@ -16,66 +20,79 @@ export const Companies = () => {
   return (
     <section id='companies' className='scroll-mt-28'>
       <Container>
-        <InfoText
-          textCz='Firemní výuku máme v malíčku. Pendlery rozmluvíme německy, cizince česky a kohokoli anglicky nebo čínsky. Sejít se můžeme v klatovské učebně, u vás ve firmě i online odkudkoli na světě.'
-          textEn='A corporate education? To us a piece of cake. We help people who commute to work to Germany with their spoken German, we help foreigners to start speaking Czech and we help anyone with their spoken English or Chinese. We can meet you in the Klatovy classroom, at your company or even online from anywhere in the world.'
-          textDe='Weiterbildung für Unternehmen ist unsere Kernkompetenz! Pendlerinnen und Pendler machen sich bei uns fit in Deutsch, Ausländerinnen und Ausländer lernen Tschechisch und für jeden haben wir Englisch oder Chinesisch im Angebot. Wir können die Schulungsräume in Klattau nutzen, zu Ihnen in die Firma kommen oder uns irgendwo auf der Welt online zusammenschalten.'
-          textUa='Ми вміємо залучати до корпоративної роботи. Міжнародних працівників навчимо німецької, іноземців чеської та будь-кого англійської або китайської. Ми можемо зустрітись у класі Klatovy, у вашій компанії або онлайн з будь-якої точки світу.'
-        />
+        <Cols>
+          <SectionTitle
+            titleCz='Zapoj firmu'
+            titleEn='Involve your company'
+            titleDe='Firma einbeziehen'
+            titleUa='приєднати фірму'
+          />
 
-        <Swiper
-          modules={[Pagination]}
-          spaceBetween={70}
-          slidesPerView={1}
-          pagination={{ clickable: true, el: '.swiper-pagination' }}
-          breakpoints={{
-            768: {
-              slidesPerView: 2,
-            },
-            1536: {
-              slidesPerView: 3,
-            },
-          }}
-          className='mt-14 !pb-10 2xl:!pb-0 !select-none'
-        >
-          {companies.map(item => (
-            <SwiperSlide
-              key={item.img}
-              className='rounded-3xl min-h-[450px] md:min-h-[520px] 2xl:min-h-[550px]'
-              style={{ background: item.color }}
+          <div>
+            <InfoText
+              textCz='Firemní výuku máme v malíčku. Pendlery rozmluvíme německy, cizince česky a kohokoli anglicky nebo čínsky. Sejít se můžeme v klatovské učebně, u vás ve firmě i online odkudkoli na světě.'
+              textEn='A corporate education? To us a piece of cake. We help people who commute to work to Germany with their spoken German, we help foreigners to start speaking Czech and we help anyone with their spoken English or Chinese. We can meet you in the Klatovy classroom, at your company or even online from anywhere in the world.'
+              textDe='Weiterbildung für Unternehmen ist unsere Kernkompetenz! Pendlerinnen und Pendler machen sich bei uns fit in Deutsch, Ausländerinnen und Ausländer lernen Tschechisch und für jeden haben wir Englisch oder Chinesisch im Angebot. Wir können die Schulungsräume in Klattau nutzen, zu Ihnen in die Firma kommen oder uns irgendwo auf der Welt online zusammenschalten.'
+              textUa='Ми вміємо залучати до корпоративної роботи. Міжнародних працівників навчимо німецької, іноземців чеської та будь-кого англійської або китайської. Ми можемо зустрітись у класі Klatovy, у вашій компанії або онлайн з будь-якої точки світу.'
+            />
+
+            <Accordion
+              type='multiple'
+              className='grid-cols-2 gap-8 mt-14 hidden lg:grid'
             >
-              <Link
-                href={item.link}
-                target='_blank'
-                className='grid place-content-center p-10 min-h-[450px] md:min-h-[520px] 2xl:min-h-[550px] gap-12'
-              >
-                <img
-                  src={item.img}
-                  alt={
-                    language === 'cz'
-                      ? item.textCz
-                      : language === 'en'
-                      ? item.textEn
-                      : language === 'de'
-                      ? item.textDe
-                      : language === 'ua'
-                      ? item.textUa
-                      : ''
-                  }
-                  className='mx-auto max-h-24'
-                />
-                <p className='text-xl lg:text-3xl text-center font-black'>
-                  {language === 'cz' && item.textCz}
-                  {language === 'en' && item.textEn}
-                  {language === 'de' && item.textDe}
-                  {language === 'ua' && item.textUa}
-                </p>
-              </Link>
-            </SwiperSlide>
-          ))}
+              {companies.map(company => (
+                <AccordionItem
+                  value={company.textCz}
+                  style={{ backgroundColor: company.color }}
+                  className='rounded-2xl'
+                >
+                  <AccordionTrigger>{company.title}</AccordionTrigger>
+                  <AccordionContent>
+                    {language === 'cz' && company.textCz}
+                    {language === 'en' && company.textEn}
+                    {language === 'de' && company.textDe}
+                    {language === 'ua' && company.textUa}
 
-          <div className='swiper-pagination w-full space-x-2 !bottom-0' />
-        </Swiper>
+                    <br />
+                    <div className='flex justify-between mt-4 text-xs'>
+                      <Link href={company.link}>web</Link>
+                      <Link href='/personal-info'>
+                        Imprint & Privacy Policy
+                      </Link>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </Cols>
+
+        <Accordion
+          type='multiple'
+          className='grid grid-cols-2 gap-8 mt-14 lg:hidden'
+        >
+          {companies.map(company => (
+            <AccordionItem
+              value={company.textCz}
+              style={{ backgroundColor: company.color }}
+              className='rounded-2xl'
+            >
+              <AccordionTrigger>{company.title}</AccordionTrigger>
+              <AccordionContent>
+                {language === 'cz' && company.textCz}
+                {language === 'en' && company.textEn}
+                {language === 'de' && company.textDe}
+                {language === 'ua' && company.textUa}
+
+                <br />
+                <div className='flex justify-between mt-4 text-xs'>
+                  <Link href={company.link}>web</Link>
+                  <Link href='/personal-info'>Imprint & Privacy Policy</Link>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
       </Container>
     </section>
   )
