@@ -20,12 +20,18 @@ export const Navbar = () => {
           >
             rozmluv se
           </Link>
-          <div className='flex items-center gap-1'>
+          <div className='flex items-center gap-6'>
+            <Link href='linktr.ee/rozmluv.se' className='font-stabil'>
+              Aktuality
+            </Link>
+            <Link href='/shop' className='font-stabil'>
+              Shop
+            </Link>
             <LanguageSelector color='black' />
             <Button
               variant='ghost'
               onClick={() => openMenu()}
-              className='font-stabil hover:bg-transparent'
+              className='font-stabil hover:bg-transparent p-0 m-0'
             >
               Menu
             </Button>

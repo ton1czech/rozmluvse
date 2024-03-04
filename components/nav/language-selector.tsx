@@ -45,7 +45,7 @@ const LanguageSelector = ({ color }: Props) => {
           name='language selector'
           aria-expanded={open}
           className={cn(
-            'border-none bg-transparent gap-2 hover:bg-transparent',
+            'border-none bg-transparent gap-2 hover:bg-transparent p-0 m-0',
             color === 'white' && 'hover:text-white text-white',
             color === 'black' && 'hover:text-black text-black'
           )}

@@ -24,12 +24,21 @@ export const Menu = () => {
           >
             rozmluv se
           </Link>
-          <div className='flex items-center gap-1'>
+          <div className='flex items-center gap-6'>
+            <Link
+              href='linktr.ee/rozmluv.se'
+              className='font-stabil text-white'
+            >
+              Aktuality
+            </Link>
+            <Link href='/shop' className='font-stabil text-white'>
+              Shop
+            </Link>
             <LanguageSelector color='white' />
             <Button
               variant='ghost'
               onClick={() => closeMenu()}
-              className='font-stabil hover:bg-transparent text-white hover:text-white'
+              className='font-stabil hover:bg-transparent text-white hover:text-white m-0 p-0'
             >
               {language === 'cz' && 'Zavřít'}
               {language === 'en' && 'Close'}
