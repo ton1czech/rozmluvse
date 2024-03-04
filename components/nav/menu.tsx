@@ -15,7 +15,7 @@ export const Menu = () => {
   const { openNewsletter } = useNewsletter()
 
   return (
-    <div className='fixed right-0 top-0 w-full lg:h-1/2 bg-[#9C6ACA] py-4'>
+    <div className='fixed right-0 top-0 w-full h-full xl:h-1/2 bg-[#9C6ACA] py-4'>
       <Container className='w-full'>
         <div className='flex justify-between items-center w-full'>
           <Link
@@ -24,7 +24,7 @@ export const Menu = () => {
           >
             rozmluv se
           </Link>
-          <div className='flex items-center gap-6'>
+          <div className='flex items-center gap-3 md:gap-6'>
             <Link
               href='linktr.ee/rozmluv.se'
               className='font-stabil text-white'
