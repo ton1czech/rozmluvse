@@ -69,7 +69,7 @@ export const Companies = () => {
 
         <Accordion
           type='multiple'
-          className='grid grid-cols-2 gap-8 mt-14 lg:hidden'
+          className='grid sm:grid-cols-2 gap-4 mt-14 lg:hidden'
         >
           {companies.map(company => (
             <AccordionItem
