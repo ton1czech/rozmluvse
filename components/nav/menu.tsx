@@ -46,8 +46,8 @@ export const Menu = () => {
           </div>
         </div>
 
-        <div className='grid grid-cols-2 gap-10 pt-16'>
-          <ul className='grid grid-cols-2 gap-4'>
+        <div className='grid xl:grid-cols-2 gap-10 pt-10 sm:pt-16'>
+          <ul className='grid sm:grid-cols-2 gap-4'>
             {links.map(link => (
               <Link
                 key={link.href}
