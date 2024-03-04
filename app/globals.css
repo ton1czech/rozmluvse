@@ -106,13 +106,3 @@
 *::-webkit-scrollbar-track {
   background-color: transparent;
 }
-
-/* SWIPER */
-.swiper-pagination-bullet {
-  width: 11px !important;
-  height: 11px !important;
-}
-
-.swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background: black !important;
-}

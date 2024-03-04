@@ -28,5 +28,5 @@ export const RemoveOneLetterWords = () => {
     })
   }, [])
 
-  return <div className='opacity-0 pointer-events-none'>{content}</div>
+  return <div className='opacity-0 pointer-events-none hidden'>{content}</div>
 }
