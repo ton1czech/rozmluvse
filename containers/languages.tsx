@@ -58,7 +58,7 @@ export const Languages = () => {
           />
         </Cols>
 
-        <div className='grid sm:grid-cols-2 xl:grid-cols-3 gap-8 mt-14'>
+        <div className='grid sm:grid-cols-2 xl:grid-cols-3 gap-4 xl:gap-8 mt-14'>
           {languages.map(item => (
             <Link
               key={item.labelCz}
