@@ -13,7 +13,7 @@ export const Hero = () => {
         <Cols>
           <div />
           <div>
-            <h1 className='text-3xl sm:text-4xl md:text-5xl font-black lg:text-6xl xl:text-7xl'>
+            <h1 className='text-3xl sm:text-4xl md:text-5xl font-black lg:text-6xl'>
               {language === 'cz' && (
                 <>
                   Jazykové studio, <br className='sm:hidden' /> ve kterém <br />{' '}
