@@ -87,7 +87,9 @@ export const Menu = () => {
               </Link>
             </div>
             <div className='flex flex-col gap-4'>
-              <Link href='/blog'>Blog</Link>
+              <Link href='/blog' onClick={() => closeMenu()}>
+                Blog
+              </Link>
               <Button
                 variant='ghost'
                 onClick={() => openNewsletter()}
