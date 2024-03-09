@@ -3,6 +3,7 @@
 import { Cols } from '@/components/cols'
 import { Container } from '@/components/container'
 import { cn } from '@/lib/utils'
+import { useBlog } from '@/store/use-blog'
 import { useLanguage } from '@/store/use-language'
 import Link from 'next/link'
 
@@ -12,6 +13,7 @@ interface Props {
 
 export const Categories = ({ categories }: Props) => {
   const { language } = useLanguage()
+  const { setCategory, setColor } = useBlog()
 
   return (
     <section className='scroll-mt-28'>
@@ -49,8 +51,12 @@ export const Categories = ({ categories }: Props) => {
         <div className='grid sm:grid-cols-2 xl:grid-cols-3 gap-4 xl:gap-8 mt-14'>
           {categories.map((item: any) => (
             <Link
+              key={item.title}
               href='/blog/posts/'
-              key={item.labelCz}
+              onClick={() => {
+                setCategory(item.title)
+                setColor(item.color)
+              }}
               style={{ background: item.color }}
               className={cn(
                 'text-center text-3xl rounded-2xl py-8 font-black',
