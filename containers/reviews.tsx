@@ -18,7 +18,7 @@ export const Reviews = () => {
   const { language } = useLanguage()
 
   return (
-    <section id='pricelist' className='scroll-mt-28'>
+    <section id='references' className='scroll-mt-28'>
       <Container>
         <Cols>
           <SectionTitle
