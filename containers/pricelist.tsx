@@ -40,85 +40,153 @@ export const Pricelist = () => {
               linkUa='це ←'
             />
 
-            <Accordion
-              type='multiple'
-              className='grid-cols-2 gap-8 mt-14 hidden lg:grid'
-            >
-              {pricelist.map(item => (
-                <AccordionItem
-                  value={item.value}
-                  style={{ backgroundColor: item.color }}
-                  className='rounded-2xl'
-                >
-                  <AccordionTrigger>
-                    {language === 'cz' && item.labelCz}
-                    {language === 'en' && item.labelEn}
-                    {language === 'de' && item.labelDe}
-                    {language === 'ua' && item.labelUa}
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    {item.option1Cz && (
-                      <>
-                        {language === 'cz' && item.option1Cz}
-                        {language === 'en' && item.option1En}
-                        {language === 'de' && item.option1De}
-                        {language === 'ua' && item.option1Ua}
-                      </>
-                    )}
-                    <br />
-                    {item.option2Cz && (
-                      <>
-                        {language === 'cz' && item.option2Cz}
-                        {language === 'en' && item.option2En}
-                        {language === 'de' && item.option2De}
-                        {language === 'ua' && item.option2Ua}
-                      </>
-                    )}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
+            <div className='grid-cols-2 gap-8 mt-14 hidden lg:grid'>
+              <Accordion type='multiple' className='grid gap-8'>
+                {pricelist.slice(0, 2).map(item => (
+                  <AccordionItem
+                    value={item.value}
+                    style={{ backgroundColor: item.color }}
+                    className='rounded-2xl'
+                  >
+                    <AccordionTrigger>
+                      {language === 'cz' && item.labelCz}
+                      {language === 'en' && item.labelEn}
+                      {language === 'de' && item.labelDe}
+                      {language === 'ua' && item.labelUa}
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      {item.option1Cz && (
+                        <>
+                          {language === 'cz' && item.option1Cz}
+                          {language === 'en' && item.option1En}
+                          {language === 'de' && item.option1De}
+                          {language === 'ua' && item.option1Ua}
+                        </>
+                      )}
+                      <br />
+                      {item.option2Cz && (
+                        <>
+                          {language === 'cz' && item.option2Cz}
+                          {language === 'en' && item.option2En}
+                          {language === 'de' && item.option2De}
+                          {language === 'ua' && item.option2Ua}
+                        </>
+                      )}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+              <Accordion type='multiple' className='grid gap-8'>
+                {pricelist.slice(2, 4).map(item => (
+                  <AccordionItem
+                    value={item.value}
+                    style={{ backgroundColor: item.color }}
+                    className='rounded-2xl'
+                  >
+                    <AccordionTrigger>
+                      {language === 'cz' && item.labelCz}
+                      {language === 'en' && item.labelEn}
+                      {language === 'de' && item.labelDe}
+                      {language === 'ua' && item.labelUa}
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      {item.option1Cz && (
+                        <>
+                          {language === 'cz' && item.option1Cz}
+                          {language === 'en' && item.option1En}
+                          {language === 'de' && item.option1De}
+                          {language === 'ua' && item.option1Ua}
+                        </>
+                      )}
+                      <br />
+                      {item.option2Cz && (
+                        <>
+                          {language === 'cz' && item.option2Cz}
+                          {language === 'en' && item.option2En}
+                          {language === 'de' && item.option2De}
+                          {language === 'ua' && item.option2Ua}
+                        </>
+                      )}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
           </div>
         </Cols>
 
-        <Accordion
-          type='multiple'
-          className='grid sm:grid-cols-2 gap-4 mt-14 lg:hidden'
-        >
-          {pricelist.map(item => (
-            <AccordionItem
-              value={item.value}
-              style={{ backgroundColor: item.color }}
-              className='rounded-2xl'
-            >
-              <AccordionTrigger className='text-2xl font-black'>
-                {language === 'cz' && item.labelCz}
-                {language === 'en' && item.labelEn}
-                {language === 'de' && item.labelDe}
-                {language === 'ua' && item.labelUa}
-              </AccordionTrigger>
-              <AccordionContent>
-                {item.option1Cz && (
-                  <>
-                    {language === 'cz' && item.option1Cz}
-                    {language === 'en' && item.option1En}
-                    {language === 'de' && item.option1De}
-                    {language === 'ua' && item.option1Ua}
-                  </>
-                )}
-                <br />
-                {item.option2Cz && (
-                  <>
-                    {language === 'cz' && item.option2Cz}
-                    {language === 'en' && item.option2En}
-                    {language === 'de' && item.option2De}
-                    {language === 'ua' && item.option2Ua}
-                  </>
-                )}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+        <div className='grid sm:grid-cols-2 gap-4 mt-14 lg:hidden'>
+          <Accordion type='multiple' className='grid gap-4'>
+            {pricelist.slice(0, 2).map(item => (
+              <AccordionItem
+                value={item.value}
+                style={{ backgroundColor: item.color }}
+                className='rounded-2xl'
+              >
+                <AccordionTrigger className='text-2xl font-black'>
+                  {language === 'cz' && item.labelCz}
+                  {language === 'en' && item.labelEn}
+                  {language === 'de' && item.labelDe}
+                  {language === 'ua' && item.labelUa}
+                </AccordionTrigger>
+                <AccordionContent>
+                  {item.option1Cz && (
+                    <>
+                      {language === 'cz' && item.option1Cz}
+                      {language === 'en' && item.option1En}
+                      {language === 'de' && item.option1De}
+                      {language === 'ua' && item.option1Ua}
+                    </>
+                  )}
+                  <br />
+                  {item.option2Cz && (
+                    <>
+                      {language === 'cz' && item.option2Cz}
+                      {language === 'en' && item.option2En}
+                      {language === 'de' && item.option2De}
+                      {language === 'ua' && item.option2Ua}
+                    </>
+                  )}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+          <Accordion type='multiple' className='grid gap-4'>
+            {pricelist.slice(2, 4).map(item => (
+              <AccordionItem
+                value={item.value}
+                style={{ backgroundColor: item.color }}
+                className='rounded-2xl'
+              >
+                <AccordionTrigger className='text-2xl font-black'>
+                  {language === 'cz' && item.labelCz}
+                  {language === 'en' && item.labelEn}
+                  {language === 'de' && item.labelDe}
+                  {language === 'ua' && item.labelUa}
+                </AccordionTrigger>
+                <AccordionContent>
+                  {item.option1Cz && (
+                    <>
+                      {language === 'cz' && item.option1Cz}
+                      {language === 'en' && item.option1En}
+                      {language === 'de' && item.option1De}
+                      {language === 'ua' && item.option1Ua}
+                    </>
+                  )}
+                  <br />
+                  {item.option2Cz && (
+                    <>
+                      {language === 'cz' && item.option2Cz}
+                      {language === 'en' && item.option2En}
+                      {language === 'de' && item.option2De}
+                      {language === 'ua' && item.option2Ua}
+                    </>
+                  )}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
       </Container>
     </section>
   )
