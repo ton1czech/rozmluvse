@@ -103,7 +103,7 @@ export const Footer = () => {
               </Link>
             </span>
           </p>
-          <Link href='/personal-data'>Imprint & Privacy Policy</Link>
+          <Link href='/personal-info'>Imprint & Privacy Policy</Link>
         </div>
       </Container>
     </footer>
