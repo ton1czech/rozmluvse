@@ -4,6 +4,7 @@ import { Cols } from '@/components/cols'
 import { Container } from '@/components/container'
 import { cn } from '@/lib/utils'
 import { useLanguage } from '@/store/use-language'
+import Link from 'next/link'
 
 interface Props {
   categories: any
@@ -47,7 +48,8 @@ export const Categories = ({ categories }: Props) => {
 
         <div className='grid sm:grid-cols-2 xl:grid-cols-3 gap-4 xl:gap-8 mt-14'>
           {categories.map((item: any) => (
-            <div
+            <Link
+              href='/blog/posts/'
               key={item.labelCz}
               style={{ background: item.color }}
               className={cn(
@@ -57,7 +59,7 @@ export const Categories = ({ categories }: Props) => {
               )}
             >
               {language === 'cz' && item.title}
-            </div>
+            </Link>
           ))}
         </div>
       </Container>
