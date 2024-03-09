@@ -6,9 +6,16 @@ import { Menu } from './menu'
 import { useMenu } from '@/store/use-menu'
 import { Container } from '../container'
 import { Button } from '../ui/button'
+import { usePathname } from 'next/navigation'
+import { Search } from 'lucide-react'
+import { useLanguage } from '@/store/use-language'
 
 export const Navbar = () => {
+  const pathname = usePathname()
+  const { language } = useLanguage()
   const { isMenuOpen, openMenu } = useMenu()
+
+  const blog = pathname.includes('/blog')
 
   return (
     <nav className='fixed top-0 w-full py-4 bg-white z-[1000]'>
@@ -21,12 +28,24 @@ export const Navbar = () => {
             rozmluv se
           </Link>
           <div className='flex items-center gap-3 md:gap-6'>
-            <Link href='linktr.ee/rozmluv.se' className='font-stabil'>
-              Aktuality
-            </Link>
-            <Link href='/shop' className='font-stabil'>
-              Shop
-            </Link>
+            {blog ? (
+              <button className='font-stabil inline-flex gap-1 items-center'>
+                <Search size={15} />
+                {language === 'cz' && 'Hledat'}
+                {language === 'en' && 'Search'}
+                {language === 'de' && '!TEXT!'}
+                {language === 'ua' && '!TEXT!'}
+              </button>
+            ) : (
+              <>
+                <Link href='linktr.ee/rozmluv.se' className='font-stabil'>
+                  Aktuality
+                </Link>
+                <Link href='/shop' className='font-stabil'>
+                  Shop
+                </Link>
+              </>
+            )}
             <LanguageSelector color='black' />
             <Button
               variant='ghost'

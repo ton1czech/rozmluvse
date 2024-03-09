@@ -8,11 +8,17 @@ import { Container } from '../container'
 import LanguageSelector from './language-selector'
 import { Button } from '../ui/button'
 import { useNewsletter } from '@/store/use-newsletter'
+import { usePathname } from 'next/navigation'
+import { Search } from 'lucide-react'
 
 export const Menu = () => {
+  const pathname = usePathname()
+
   const { language } = useLanguage()
   const { closeMenu } = useMenu()
   const { openNewsletter } = useNewsletter()
+
+  const blog = pathname.includes('/blog')
 
   return (
     <div className='fixed right-0 top-0 w-full h-full xl:h-1/2 bg-[#9C6ACA] py-4'>
@@ -25,15 +31,27 @@ export const Menu = () => {
             rozmluv se
           </Link>
           <div className='flex items-center gap-3 md:gap-6'>
-            <Link
-              href='linktr.ee/rozmluv.se'
-              className='font-stabil text-white'
-            >
-              Aktuality
-            </Link>
-            <Link href='/shop' className='font-stabil text-white'>
-              Shop
-            </Link>
+            {blog ? (
+              <button className='font-stabil inline-flex gap-1 items-center text-white'>
+                <Search size={15} />
+                {language === 'cz' && 'Hledat'}
+                {language === 'en' && 'Search'}
+                {language === 'de' && '!TEXT!'}
+                {language === 'ua' && '!TEXT!'}
+              </button>
+            ) : (
+              <>
+                <Link
+                  href='linktr.ee/rozmluv.se'
+                  className='font-stabil text-white'
+                >
+                  Aktuality
+                </Link>
+                <Link href='/shop' className='font-stabil text-white'>
+                  Shop
+                </Link>
+              </>
+            )}
             <LanguageSelector color='white' />
             <Button
               variant='ghost'
