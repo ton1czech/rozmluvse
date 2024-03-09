@@ -12,21 +12,7 @@ export const reviews = [
     textUa:
       'Я абсолютно задоволена. Обидві викладачки завжди йшли мені назустріч',
     color: '#BB4F02',
-  },
-  {
-    nameCz: 'Marie, angličtina ',
-    nameEn: 'Marie, English',
-    nameDe: 'Marie, englisch',
-    nameUa: 'Марія, англійської',
-    textCz:
-      'Naučila jsem se tu používat angličtinu v praxi, to jsem doteď nedokázala.',
-    textEn:
-      "At 'Rozmluv se' I learned to use English in practice, which I haven’t been able to do until now.",
-    textDe:
-      'Ich habe hier gelernt, Englisch in der Praxis anzuwenden, was ich vorher nicht konnte.',
-    textUa:
-      'Тут я навчилась використовувати англійську у практиці, раніше я цього не вміла.',
-    color: '#00A83E',
+    avatar: '/story/barbora.webp',
   },
   {
     nameCz: 'Nataliia, čeština',
@@ -40,5 +26,22 @@ export const reviews = [
     textUa:
       'Завдяки лекціям з чеської мови в компанії rozmluv se я зустріла нових друзів.',
     color: '#00A8D0',
+    avatar: '/story/barbora.webp',
+  },
+  {
+    nameCz: 'Marie, angličtina',
+    nameEn: 'Marie, English',
+    nameDe: 'Marie, englisch',
+    nameUa: 'Марія, англійської',
+    textCz:
+      'Naučila jsem se tu používat angličtinu v praxi, to jsem doteď nedokázala.',
+    textEn:
+      "At 'Rozmluv se' I learned to use English in practice, which I haven’t been able to do until now.",
+    textDe:
+      'Ich habe hier gelernt, Englisch in der Praxis anzuwenden, was ich vorher nicht konnte.',
+    textUa:
+      'Тут я навчилась використовувати англійську у практиці, раніше я цього не вміла.',
+    color: '#00A83E',
+    avatar: '/story/barbora.webp',
   },
 ]

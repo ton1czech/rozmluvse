@@ -50,10 +50,17 @@ export const Reviews = () => {
                     className='rounded-2xl'
                   >
                     <AccordionTrigger>
-                      {language === 'cz' && review.nameCz}
-                      {language === 'en' && review.nameEn}
-                      {language === 'de' && review.nameDe}
-                      {language === 'ua' && review.nameUa}
+                      <div className='flex gap-2 items-center'>
+                        <img
+                          src={review.avatar}
+                          alt={review.nameCz}
+                          className='rounded-full w-10 h-10'
+                        />
+                        {language === 'cz' && review.nameCz}
+                        {language === 'en' && review.nameEn}
+                        {language === 'de' && review.nameDe}
+                        {language === 'ua' && review.nameUa}
+                      </div>
                     </AccordionTrigger>
                     <AccordionContent>
                       "{language === 'cz' && review.textCz}
@@ -79,10 +86,17 @@ export const Reviews = () => {
                     className='rounded-2xl h-min'
                   >
                     <AccordionTrigger>
-                      {language === 'cz' && review.nameCz}
-                      {language === 'en' && review.nameEn}
-                      {language === 'de' && review.nameDe}
-                      {language === 'ua' && review.nameUa}
+                      <div className='flex gap-2 items-center'>
+                        <img
+                          src={review.avatar}
+                          alt={review.nameCz}
+                          className='rounded-full w-10 h-10'
+                        />
+                        {language === 'cz' && review.nameCz}
+                        {language === 'en' && review.nameEn}
+                        {language === 'de' && review.nameDe}
+                        {language === 'ua' && review.nameUa}
+                      </div>
                     </AccordionTrigger>
                     <AccordionContent>
                       "{language === 'cz' && review.textCz}
@@ -113,10 +127,17 @@ export const Reviews = () => {
                 className='rounded-2xl h-min'
               >
                 <AccordionTrigger>
-                  {language === 'cz' && review.nameCz}
-                  {language === 'en' && review.nameEn}
-                  {language === 'de' && review.nameDe}
-                  {language === 'ua' && review.nameUa}
+                  <div className='flex gap-2 items-center'>
+                    <img
+                      src={review.avatar}
+                      alt={review.nameCz}
+                      className='rounded-full w-10 h-10'
+                    />
+                    {language === 'cz' && review.nameCz}
+                    {language === 'en' && review.nameEn}
+                    {language === 'de' && review.nameDe}
+                    {language === 'ua' && review.nameUa}
+                  </div>
                 </AccordionTrigger>
                 <AccordionContent>
                   "{language === 'cz' && review.textCz}
@@ -140,10 +161,17 @@ export const Reviews = () => {
                 className='rounded-2xl h-min'
               >
                 <AccordionTrigger>
-                  {language === 'cz' && review.nameCz}
-                  {language === 'en' && review.nameEn}
-                  {language === 'de' && review.nameDe}
-                  {language === 'ua' && review.nameUa}
+                  <div className='flex gap-2 items-center'>
+                    <img
+                      src={review.avatar}
+                      alt={review.nameCz}
+                      className='rounded-full w-10 h-10'
+                    />
+                    {language === 'cz' && review.nameCz}
+                    {language === 'en' && review.nameEn}
+                    {language === 'de' && review.nameDe}
+                    {language === 'ua' && review.nameUa}
+                  </div>
                 </AccordionTrigger>
                 <AccordionContent>
                   "{language === 'cz' && review.textCz}
