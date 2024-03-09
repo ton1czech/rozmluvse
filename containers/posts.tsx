@@ -14,8 +14,6 @@ interface Props {
 export const Posts = ({ posts }: Props) => {
   const { category, color } = useBlog()
 
-  console.log(posts)
-
   const filteredPosts = posts.filter((post: any) =>
     post.categories.some((cat: any) => cat.title === category)
   )
@@ -34,7 +32,7 @@ export const Posts = ({ posts }: Props) => {
           {filteredPosts.map((post: any) => (
             <Link key={post.slug.current} href={post.slug.current} className=''>
               <div
-                className={cn('aspect-square overflow-hidden rounded-3xl p-8')}
+                className='aspect-square overflow-hidden rounded-3xl p-6'
                 style={{ background: color }}
               >
                 <div className='relative w-full h-full'>
@@ -45,7 +43,7 @@ export const Posts = ({ posts }: Props) => {
                   />
                 </div>
               </div>
-              <h3>{post.title}</h3>
+              <h3 className='text-xl sm:text-2xl'>{post.title}</h3>
             </Link>
           ))}
         </div>
