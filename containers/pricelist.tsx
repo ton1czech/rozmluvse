@@ -41,12 +41,12 @@ export const Pricelist = () => {
             />
 
             <div className='grid-cols-2 gap-8 mt-14 hidden lg:grid'>
-              <Accordion type='multiple' className='grid gap-8'>
+              <Accordion type='multiple' className='flex flex-col gap-8'>
                 {pricelist.slice(0, 2).map(item => (
                   <AccordionItem
                     value={item.value}
                     style={{ backgroundColor: item.color }}
-                    className='rounded-2xl'
+                    className='rounded-2xl h-min'
                   >
                     <AccordionTrigger>
                       {language === 'cz' && item.labelCz}
@@ -76,12 +76,12 @@ export const Pricelist = () => {
                   </AccordionItem>
                 ))}
               </Accordion>
-              <Accordion type='multiple' className='grid gap-8'>
+              <Accordion type='multiple' className='flex flex-col gap-8'>
                 {pricelist.slice(2, 4).map(item => (
                   <AccordionItem
                     value={item.value}
                     style={{ backgroundColor: item.color }}
-                    className='rounded-2xl'
+                    className='rounded-2xl h-min'
                   >
                     <AccordionTrigger>
                       {language === 'cz' && item.labelCz}
@@ -116,12 +116,12 @@ export const Pricelist = () => {
         </Cols>
 
         <div className='grid sm:grid-cols-2 gap-4 mt-14 lg:hidden'>
-          <Accordion type='multiple' className='grid gap-4'>
+          <Accordion type='multiple' className='flex flex-col gap-4'>
             {pricelist.slice(0, 2).map(item => (
               <AccordionItem
                 value={item.value}
                 style={{ backgroundColor: item.color }}
-                className='rounded-2xl'
+                className='rounded-2xl h-min'
               >
                 <AccordionTrigger className='text-2xl font-black'>
                   {language === 'cz' && item.labelCz}
@@ -151,12 +151,12 @@ export const Pricelist = () => {
               </AccordionItem>
             ))}
           </Accordion>
-          <Accordion type='multiple' className='grid gap-4'>
+          <Accordion type='multiple' className='flex flex-col gap-4'>
             {pricelist.slice(2, 4).map(item => (
               <AccordionItem
                 value={item.value}
                 style={{ backgroundColor: item.color }}
-                className='rounded-2xl'
+                className='rounded-2xl h-min'
               >
                 <AccordionTrigger className='text-2xl font-black'>
                   {language === 'cz' && item.labelCz}
