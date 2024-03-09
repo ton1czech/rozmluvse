@@ -38,7 +38,11 @@ export const Navbar = () => {
               </button>
             ) : (
               <>
-                <Link href='linktr.ee/rozmluv.se' className='font-stabil'>
+                <Link
+                  href='https://linktr.ee/rozmluv.se'
+                  target='_blank'
+                  className='font-stabil'
+                >
                   Aktuality
                 </Link>
                 <Link href='/shop' className='font-stabil'>

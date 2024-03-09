@@ -28,7 +28,8 @@ export const Menu = () => {
           </Link>
           <div className='flex items-center gap-3 md:gap-6'>
             <Link
-              href='linktr.ee/rozmluv.se'
+              href='https://linktr.ee/rozmluv.se'
+              target='_blank'
               className='font-stabil text-white'
             >
               Aktuality
@@ -54,6 +55,7 @@ export const Menu = () => {
               <Link
                 key={link.href}
                 href={link.href}
+                target={link.external ? '_blank' : '_parent'}
                 onClick={() => closeMenu()}
                 className='text-3xl font-black ffs-12-hover text-white'
               >

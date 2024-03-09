@@ -5,6 +5,7 @@ export const links = [
     labelDe: 'Aktuell',
     labelUa: 'Течія',
     href: 'https://linktr.ee/rozmluv.se',
+    external: true,
   },
   {
     labelCz: 'Reference',
