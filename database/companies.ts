@@ -13,18 +13,6 @@ export const companies = [
     link: 'https://www.ekonews.cz/',
   },
   {
-    title: 'VK Vacovský',
-    textCz:
-      '„S rozmluv se máme opakovaně velmi dobrou zkušenost. Doporučujeme.“',
-    textEn: `"We have repeatedly had a very good experience with 'Rozmluv se'. Recommended."`,
-    textDe:
-      '"Mit Rozmluv se haben wir immer wieder die besten Erfahrungen gemacht und können es nur empfehlen!"',
-    textUa: '"З rozmluv se ми неодноразово мали гарний досвід. Рекомендуємо. "',
-    img: '/companies/vacovsky.webp',
-    color: '#FAB960',
-    link: 'https://www.vacovsky.cz/',
-  },
-  {
     title: 'Technické Služby',
     textCz:
       '„Jestli ještě váháte, neváhejte. Tohle jazykové studio rozmluví opravdu každého. Rozmluvili nás, rozmluví i vás.“',
@@ -36,5 +24,17 @@ export const companies = [
     img: '/companies/voracek.webp',
     color: '#FAB960',
     link: 'https://www.facebook.com/TechnickeSluzbyVaclavVoracek/?locale=cs_CZ',
+  },
+  {
+    title: 'VK Vacovský',
+    textCz:
+      '„S rozmluv se máme opakovaně velmi dobrou zkušenost. Doporučujeme.“',
+    textEn: `"We have repeatedly had a very good experience with 'Rozmluv se'. Recommended."`,
+    textDe:
+      '"Mit Rozmluv se haben wir immer wieder die besten Erfahrungen gemacht und können es nur empfehlen!"',
+    textUa: '"З rozmluv se ми неодноразово мали гарний досвід. Рекомендуємо. "',
+    img: '/companies/vacovsky.webp',
+    color: '#FAB960',
+    link: 'https://www.vacovsky.cz/',
   },
 ]

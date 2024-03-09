@@ -36,63 +36,109 @@ export const Companies = () => {
               textUa='Ми вміємо залучати до корпоративної роботи. Міжнародних працівників навчимо німецької, іноземців чеської та будь-кого англійської або китайської. Ми можемо зустрітись у класі Klatovy, у вашій компанії або онлайн з будь-якої точки світу.'
             />
 
-            <Accordion
-              type='multiple'
-              className='grid-cols-2 gap-8 mt-14 hidden lg:grid'
-            >
-              {companies.map(company => (
-                <AccordionItem
-                  value={company.textCz}
-                  style={{ backgroundColor: company.color }}
-                  className='rounded-2xl'
-                >
-                  <AccordionTrigger>{company.title}</AccordionTrigger>
-                  <AccordionContent>
-                    {language === 'cz' && company.textCz}
-                    {language === 'en' && company.textEn}
-                    {language === 'de' && company.textDe}
-                    {language === 'ua' && company.textUa}
+            <div className='grid-cols-2 gap-8 mt-14 hidden lg:grid'>
+              <Accordion type='multiple' className='flex flex-col gap-8'>
+                {companies.slice(0, 2).map(company => (
+                  <AccordionItem
+                    value={company.textCz}
+                    style={{ backgroundColor: company.color }}
+                    className='rounded-2xl h-min'
+                  >
+                    <AccordionTrigger>{company.title}</AccordionTrigger>
+                    <AccordionContent>
+                      {language === 'cz' && company.textCz}
+                      {language === 'en' && company.textEn}
+                      {language === 'de' && company.textDe}
+                      {language === 'ua' && company.textUa}
 
-                    <br />
-                    <div className='flex justify-between mt-4 text-xs'>
-                      <Link href={company.link}>web</Link>
-                      <Link href='/personal-info'>
-                        Imprint & Privacy Policy
-                      </Link>
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
+                      <br />
+                      <div className='flex justify-between mt-4 text-xs'>
+                        <Link href={company.link}>web</Link>
+                        <Link href='/personal-info'>
+                          Imprint & Privacy Policy
+                        </Link>
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+              <Accordion type='multiple' className='flex flex-col gap-8'>
+                {companies.slice(2, 3).map(company => (
+                  <AccordionItem
+                    value={company.textCz}
+                    style={{ backgroundColor: company.color }}
+                    className='rounded-2xl h-min'
+                  >
+                    <AccordionTrigger>{company.title}</AccordionTrigger>
+                    <AccordionContent>
+                      {language === 'cz' && company.textCz}
+                      {language === 'en' && company.textEn}
+                      {language === 'de' && company.textDe}
+                      {language === 'ua' && company.textUa}
+
+                      <br />
+                      <div className='flex justify-between mt-4 text-xs'>
+                        <Link href={company.link}>web</Link>
+                        <Link href='/personal-info'>
+                          Imprint & Privacy Policy
+                        </Link>
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
           </div>
         </Cols>
 
-        <Accordion
-          type='multiple'
-          className='grid sm:grid-cols-2 gap-4 mt-14 lg:hidden'
-        >
-          {companies.map(company => (
-            <AccordionItem
-              value={company.textCz}
-              style={{ backgroundColor: company.color }}
-              className='rounded-2xl'
-            >
-              <AccordionTrigger>{company.title}</AccordionTrigger>
-              <AccordionContent>
-                {language === 'cz' && company.textCz}
-                {language === 'en' && company.textEn}
-                {language === 'de' && company.textDe}
-                {language === 'ua' && company.textUa}
+        <div className='grid sm:grid-cols-2 gap-4 mt-14 lg:hidden'>
+          <Accordion type='multiple' className='flex flex-col gap-4'>
+            {companies.slice(0, 2).map(company => (
+              <AccordionItem
+                value={company.textCz}
+                style={{ backgroundColor: company.color }}
+                className='rounded-2xl h-min'
+              >
+                <AccordionTrigger>{company.title}</AccordionTrigger>
+                <AccordionContent>
+                  {language === 'cz' && company.textCz}
+                  {language === 'en' && company.textEn}
+                  {language === 'de' && company.textDe}
+                  {language === 'ua' && company.textUa}
 
-                <br />
-                <div className='flex justify-between mt-4 text-xs'>
-                  <Link href={company.link}>web</Link>
-                  <Link href='/personal-info'>Imprint & Privacy Policy</Link>
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+                  <br />
+                  <div className='flex justify-between mt-4 text-xs'>
+                    <Link href={company.link}>web</Link>
+                    <Link href='/personal-info'>Imprint & Privacy Policy</Link>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+          <Accordion type='multiple' className='flex flex-col gap-4'>
+            {companies.slice(2, 3).map(company => (
+              <AccordionItem
+                value={company.textCz}
+                style={{ backgroundColor: company.color }}
+                className='rounded-2xl h-min'
+              >
+                <AccordionTrigger>{company.title}</AccordionTrigger>
+                <AccordionContent>
+                  {language === 'cz' && company.textCz}
+                  {language === 'en' && company.textEn}
+                  {language === 'de' && company.textDe}
+                  {language === 'ua' && company.textUa}
+
+                  <br />
+                  <div className='flex justify-between mt-4 text-xs'>
+                    <Link href={company.link}>web</Link>
+                    <Link href='/personal-info'>Imprint & Privacy Policy</Link>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
       </Container>
     </section>
   )
