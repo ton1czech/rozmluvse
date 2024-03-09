@@ -27,6 +27,7 @@ export const LookingForQuery = groq`
 export const PostsQuery = groq`
     *[_type=='post'] {
         ...,
+        categories[]->
     }
 `
 
@@ -39,6 +40,7 @@ export const PostsPathsQuery = groq`
 export const PostQuery = groq`
     *[_type == "post" && slug.current == $slug][0]{
         ...
+        categories[]->
     }
 `
 
