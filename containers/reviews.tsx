@@ -41,71 +41,125 @@ export const Reviews = () => {
               linkUa='сюди ←'
             />
 
-            <Accordion
-              type='multiple'
-              className='grid-cols-2 gap-8 mt-14 hidden lg:grid'
-            >
-              {reviews.map(review => (
-                <AccordionItem
-                  value={review.textCz}
-                  style={{ backgroundColor: review.color }}
-                  className='rounded-2xl'
-                >
-                  <AccordionTrigger>
-                    {language === 'cz' && review.nameCz}
-                    {language === 'en' && review.nameEn}
-                    {language === 'de' && review.nameDe}
-                    {language === 'ua' && review.nameUa}
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    "{language === 'cz' && review.textCz}
-                    {language === 'en' && review.textEn}
-                    {language === 'de' && review.textDe}
-                    {language === 'ua' && review.textUa}
-                    "
-                    <br />
-                    <div className='text-right mt-4 text-xs'>
-                      <Link href='/personal-info'>
-                        Imprint & Privacy Policy
-                      </Link>
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
+            <div className='grid-cols-2 gap-8 mt-14 hidden lg:grid'>
+              <Accordion type='multiple' className='flex flex-col gap-8'>
+                {reviews.slice(0, 2).map(review => (
+                  <AccordionItem
+                    value={review.textCz}
+                    style={{ backgroundColor: review.color }}
+                    className='rounded-2xl'
+                  >
+                    <AccordionTrigger>
+                      {language === 'cz' && review.nameCz}
+                      {language === 'en' && review.nameEn}
+                      {language === 'de' && review.nameDe}
+                      {language === 'ua' && review.nameUa}
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      "{language === 'cz' && review.textCz}
+                      {language === 'en' && review.textEn}
+                      {language === 'de' && review.textDe}
+                      {language === 'ua' && review.textUa}
+                      "
+                      <br />
+                      <div className='text-right mt-4 text-xs'>
+                        <Link href='/personal-info'>
+                          Imprint & Privacy Policy
+                        </Link>
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+              <Accordion type='multiple' className='flex flex-col gap-8'>
+                {reviews.slice(2, 3).map(review => (
+                  <AccordionItem
+                    value={review.textCz}
+                    style={{ backgroundColor: review.color }}
+                    className='rounded-2xl h-min'
+                  >
+                    <AccordionTrigger>
+                      {language === 'cz' && review.nameCz}
+                      {language === 'en' && review.nameEn}
+                      {language === 'de' && review.nameDe}
+                      {language === 'ua' && review.nameUa}
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      "{language === 'cz' && review.textCz}
+                      {language === 'en' && review.textEn}
+                      {language === 'de' && review.textDe}
+                      {language === 'ua' && review.textUa}
+                      "
+                      <br />
+                      <div className='text-right mt-4 text-xs'>
+                        <Link href='/personal-info'>
+                          Imprint & Privacy Policy
+                        </Link>
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
           </div>
         </Cols>
 
-        <Accordion
-          type='multiple'
-          className='grid sm:grid-cols-2 gap-4 mt-14 lg:hidden'
-        >
-          {reviews.map(review => (
-            <AccordionItem
-              value={review.textCz}
-              style={{ backgroundColor: review.color }}
-              className='rounded-2xl'
-            >
-              <AccordionTrigger>
-                {language === 'cz' && review.nameCz}
-                {language === 'en' && review.nameEn}
-                {language === 'de' && review.nameDe}
-                {language === 'ua' && review.nameUa}
-              </AccordionTrigger>
-              <AccordionContent>
-                "{language === 'cz' && review.textCz}
-                {language === 'en' && review.textEn}
-                {language === 'de' && review.textDe}
-                {language === 'ua' && review.textUa}
-                "
-                <br />
-                <div className='text-right mt-4 text-xs'>
-                  <Link href='/personal-info'>Imprint & Privacy Policy</Link>
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+        <div className='grid sm:grid-cols-2 gap-4 mt-14 lg:hidden'>
+          <Accordion type='multiple' className='flex flex-col gap-4'>
+            {reviews.slice(0, 2).map(review => (
+              <AccordionItem
+                value={review.textCz}
+                style={{ backgroundColor: review.color }}
+                className='rounded-2xl h-min'
+              >
+                <AccordionTrigger>
+                  {language === 'cz' && review.nameCz}
+                  {language === 'en' && review.nameEn}
+                  {language === 'de' && review.nameDe}
+                  {language === 'ua' && review.nameUa}
+                </AccordionTrigger>
+                <AccordionContent>
+                  "{language === 'cz' && review.textCz}
+                  {language === 'en' && review.textEn}
+                  {language === 'de' && review.textDe}
+                  {language === 'ua' && review.textUa}
+                  "
+                  <br />
+                  <div className='text-right mt-4 text-xs'>
+                    <Link href='/personal-info'>Imprint & Privacy Policy</Link>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+          <Accordion type='multiple' className='flex flex-col gap-4'>
+            {reviews.slice(2, 3).map(review => (
+              <AccordionItem
+                value={review.textCz}
+                style={{ backgroundColor: review.color }}
+                className='rounded-2xl h-min'
+              >
+                <AccordionTrigger>
+                  {language === 'cz' && review.nameCz}
+                  {language === 'en' && review.nameEn}
+                  {language === 'de' && review.nameDe}
+                  {language === 'ua' && review.nameUa}
+                </AccordionTrigger>
+                <AccordionContent>
+                  "{language === 'cz' && review.textCz}
+                  {language === 'en' && review.textEn}
+                  {language === 'de' && review.textDe}
+                  {language === 'ua' && review.textUa}
+                  "
+                  <br />
+                  <div className='text-right mt-4 text-xs'>
+                    <Link href='/personal-info'>Imprint & Privacy Policy</Link>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
       </Container>
     </section>
   )
