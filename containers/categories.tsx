@@ -3,7 +3,6 @@
 import { Cols } from '@/components/cols'
 import { Container } from '@/components/container'
 import { cn } from '@/lib/utils'
-import { useBlog } from '@/store/use-blog'
 import { useLanguage } from '@/store/use-language'
 import Link from 'next/link'
 
@@ -13,7 +12,6 @@ interface Props {
 
 export const Categories = ({ categories }: Props) => {
   const { language } = useLanguage()
-  const { setCategory, setColor } = useBlog()
 
   return (
     <section className='scroll-mt-28'>
@@ -52,12 +50,8 @@ export const Categories = ({ categories }: Props) => {
           {categories.map((item: any) => (
             <Link
               key={item.title}
-              href='/blog/posts/'
-              onClick={() => {
-                setCategory(item.title)
-                setColor(item.color)
-              }}
-              style={{ background: item.color }}
+              href={`/blog/posts?category=${item.title}&color=${item.color}`}
+              style={{ background: `#${item.color}` }}
               className={cn(
                 'text-center text-3xl rounded-2xl py-8 font-black',
                 item.disabled && 'pointer-events-none',

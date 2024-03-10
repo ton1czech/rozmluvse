@@ -8,8 +8,6 @@ import { Container } from '../container'
 import LanguageSelector from './language-selector'
 import { Button } from '../ui/button'
 import { useNewsletter } from '@/store/use-newsletter'
-import { usePathname } from 'next/navigation'
-import { Search } from 'lucide-react'
 
 export const Menu = () => {
   const { language } = useLanguage()
@@ -17,7 +15,7 @@ export const Menu = () => {
   const { openNewsletter } = useNewsletter()
 
   return (
-    <div className='fixed right-0 top-0 w-full h-full xl:h-1/2 bg-[#9C6ACA] py-4'>
+    <div className='fixed right-0 top-0 w-full h-full xl:h-1/2 bg-[#9C6ACA] py-4 z-10'>
       <Container className='w-full'>
         <div className='flex justify-between items-center w-full'>
           <Link
