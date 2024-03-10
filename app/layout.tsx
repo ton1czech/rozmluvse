@@ -6,6 +6,8 @@ import { Navbar } from '@/components/nav/navbar'
 import { Newsletter } from '@/components/newsletter'
 import { RemoveOneLetterWords } from '@/providers/remove-one-letter-words'
 import { Cookies } from '@/components/cookies'
+import { cachedClient } from '@/sanity/lib/client'
+import { PostsQuery } from '@/sanity/lib/queries'
 
 const stabil = localFont({
   src: '../fonts/StabilGrotesk-Regular.otf',
@@ -17,11 +19,19 @@ const labil = localFont({
   variable: '--font-labil',
 })
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export const revalidate = 60
+
+export default async function Layout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  const posts = await cachedClient(PostsQuery)
+
   return (
     <html lang='en' suppressHydrationWarning>
       <body className={cn('font-labil', stabil.variable, labil.variable)}>
-        <Navbar />
+        <Navbar posts={posts} />
         {children}
         <Footer />
 

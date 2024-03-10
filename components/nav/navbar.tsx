@@ -10,14 +10,18 @@ import { usePathname } from 'next/navigation'
 import { Search } from 'lucide-react'
 import { useLanguage } from '@/store/use-language'
 import { useState } from 'react'
-import { Cols } from '../cols'
+import { BlogSearch } from '../blog-search'
 
-export const Navbar = () => {
+interface Props {
+  posts: any
+}
+
+export const Navbar = ({ posts }: Props) => {
   const pathname = usePathname()
   const { language } = useLanguage()
   const { isMenuOpen, openMenu } = useMenu()
 
-  const [searchOpen, setSearchOpen] = useState(false)
+  const [isSearchOpen, setSearchOpen] = useState(false)
 
   const blog = pathname.includes('/blog')
 
@@ -69,31 +73,7 @@ export const Navbar = () => {
         </div>
 
         {isMenuOpen && <Menu />}
-
-        {searchOpen && (
-          <div className='fixed top-32 xl:top-16 w-full left-0 bg-white pb-4'>
-            <Container>
-              <Cols>
-                <div />
-                <input
-                  type='text'
-                  placeholder={
-                    language === 'cz'
-                      ? 'Hledat...'
-                      : language === 'en'
-                      ? 'Search...'
-                      : language === 'de'
-                      ? ''
-                      : language === 'ua'
-                      ? ''
-                      : ''
-                  }
-                  className='text-3xl sm:text-4xl md:text-5xl font-black lg:text-6xl p-0 m-0 h-min placeholder:text-black placeholder:p-0 placeholder:m-0 placeholder:h-min focus-within:outline-none border-b-2 border-b-black'
-                />
-              </Cols>
-            </Container>
-          </div>
-        )}
+        {isSearchOpen && <BlogSearch posts={posts} />}
       </Container>
     </nav>
   )

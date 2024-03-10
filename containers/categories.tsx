@@ -50,7 +50,7 @@ export const Categories = ({ categories }: Props) => {
           {categories.map((item: any) => (
             <Link
               key={item.title}
-              href={`/blog/posts?category=${item.title}&color=${item.color}`}
+              href={`/blog/posts?category=${item.title}`}
               style={{ background: `#${item.color}` }}
               className={cn(
                 'text-center text-3xl rounded-2xl py-8 font-black',
