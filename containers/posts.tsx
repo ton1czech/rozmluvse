@@ -73,7 +73,6 @@ export const Posts = ({ posts }: Props) => {
               <Link
                 key={post.slug.current}
                 href={`/blog/posts/${post.slug.current}`}
-                className=''
               >
                 <div
                   className='aspect-square overflow-hidden rounded-3xl p-6'
