@@ -4,7 +4,6 @@ import { Cols } from '@/components/cols'
 import { Container } from '@/components/container'
 import { urlForImage } from '@/sanity/lib/image'
 import { useLanguage } from '@/store/use-language'
-import { usePosts } from '@/store/use-posts'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 
@@ -19,17 +18,27 @@ export const Posts = ({ posts }: Props) => {
   const category = searchParams.get('category')
   const search = searchParams.get('search')
 
-  function filterPostsByCategory(posts: any, category: string): any {
+  const normalizeText = (text: string) => {
+    return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+  }
+
+  function filterPosts(posts: any, category: string): any {
     if (search === '' || search === null || search === undefined) {
       return posts.filter((post: any) =>
         post.categories.some((cat: any) => cat.title === category)
       )
     } else {
-      return posts.filter((post: any) => post.title.includes(search))
+      return posts.filter(
+        (post: any) =>
+          normalizeText(post.title.toLowerCase()).includes(search) ||
+          normalizeText(post.title).includes(search) ||
+          post.title.toLowerCase().includes(search) ||
+          post.title.includes(search)
+      )
     }
   }
 
-  const filteredPosts = filterPostsByCategory(posts, category!)
+  const filteredPosts = filterPosts(posts, category!)
 
   return (
     <section className='scroll-mt-28'>
@@ -59,7 +68,7 @@ export const Posts = ({ posts }: Props) => {
             </h1>
           </div>
         ) : (
-          <div className='grid sm:grid-cols-2 xl:grid-cols-3 mt-14'>
+          <div className='grid sm:grid-cols-2 xl:grid-cols-3 mt-14 gap-4 xl:gap-8'>
             {filteredPosts.map((post: any) => (
               <Link
                 key={post.slug.current}
