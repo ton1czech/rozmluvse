@@ -7,10 +7,10 @@ export default function Page() {
   const { language } = useLanguage()
 
   return (
-    <main className='mt-28 md:mt-32 font-stabil'>
+    <main className='mt-28 md:mt-32 font-stabil text-lg'>
       <Container>
         <div>
-          <h2 className='font-labil text-2xl sm:text-3xl xl:text-3xl font-black'>
+          <h2 className='font-labil text-2xl sm:text-3xl font-black'>
             {language === 'cz' && 'Ochrana osobních údajů'}
             {language === 'en' && 'Personal Data Protection'}
             {language === 'de' && ''}
@@ -35,7 +35,7 @@ export default function Page() {
         </div>
 
         <div className='mt-8'>
-          <h2 className='font-labil text-2xl sm:text-3xl xl:text-3xl font-black'>
+          <h2 className='font-labil text-2xl sm:text-3xl font-black'>
             {language === 'cz' && 'Kontaktní údaje'}
             {language === 'en' && 'Contact Details'}
             {language === 'de' && ''}
@@ -78,7 +78,7 @@ export default function Page() {
         </div>
 
         <div className='mt-8'>
-          <h2 className='font-labil text-2xl sm:text-3xl xl:text-3xl font-black'>
+          <h2 className='font-labil text-2xl sm:text-3xl font-black'>
             {language === 'cz' && 'Účel zpracování Osobních údajů'}
             {language === 'en' && 'Purpose of Personal Data Processing'}
             {language === 'de' && ''}
@@ -185,7 +185,7 @@ export default function Page() {
         </div>
 
         <div className='mt-8'>
-          <h2 className='font-labil text-2xl sm:text-3xl xl:text-3xl font-black'>
+          <h2 className='font-labil text-2xl sm:text-3xl font-black'>
             {language === 'cz' && 'Další příjemci Osobních údajů'}
             {language === 'en' && 'Other Recipients of Personal Data'}
             {language === 'de' && ''}
@@ -235,7 +235,7 @@ export default function Page() {
         </div>
 
         <div className='mt-8'>
-          <h2 className='font-labil text-2xl sm:text-3xl xl:text-3xl font-black'>
+          <h2 className='font-labil text-2xl sm:text-3xl font-black'>
             {language === 'cz' && 'Doba uložení Osobních údajů'}
             {language === 'en' && 'Period of storage of Personal Data'}
             {language === 'de' && ''}
@@ -252,7 +252,7 @@ export default function Page() {
         </div>
 
         <div className='mt-8'>
-          <h2 className='font-labil text-2xl sm:text-3xl xl:text-3xl font-black'>
+          <h2 className='font-labil text-2xl sm:text-3xl font-black'>
             {language === 'cz' && 'Práva Subjektu údajů'}
             {language === 'en' && 'Rights of the Data Subject'}
             {language === 'de' && ''}
@@ -335,7 +335,7 @@ export default function Page() {
         </div>
 
         <div className='mt-8'>
-          <h2 className='font-labil text-2xl sm:text-3xl xl:text-3xl font-black'>
+          <h2 className='font-labil text-2xl sm:text-3xl font-black'>
             {language === 'cz' && 'Mlčenlivost'}
             {language === 'en' && 'Confidentiality'}
             {language === 'de' && ''}
