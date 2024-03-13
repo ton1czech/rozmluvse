@@ -23,7 +23,20 @@ export const Posts = ({ posts }: Props) => {
   }
 
   function filterPosts(posts: any, category: string): any {
-    if (search === '' || search === null || search === undefined) {
+    if (
+      (category === 'null' ||
+        category === null ||
+        category === undefined ||
+        category === '') &&
+      (search === '' || search === null || search === undefined)
+    ) {
+      return posts
+    } else if (
+      search === '' ||
+      search === 'null' ||
+      search === null ||
+      search === undefined
+    ) {
       return posts.filter((post: any) =>
         post.categories.some((cat: any) => cat.title === category)
       )
@@ -46,7 +59,22 @@ export const Posts = ({ posts }: Props) => {
         <Cols>
           <div />
           <h1 className='text-3xl sm:text-4xl md:text-5xl font-black lg:text-6xl'>
-            {search === '' || search === undefined || search === null ? (
+            {category === '' ||
+            category === 'null' ||
+            category === null ||
+            category === undefined ? (
+              <>
+                {language === 'cz' && 'Všechny Příspěvky'}
+                {language === 'en' && 'All Posts'}
+                {language === 'de' && '!text!'}
+                {language === 'ua' && '!text!'}
+                <br />
+                <br />
+              </>
+            ) : search === '' ||
+              search === undefined ||
+              search === null ||
+              search === 'null' ? (
               <>
                 {category} <br /> <br />
               </>
