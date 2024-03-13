@@ -73,7 +73,7 @@ export const Navbar = ({ posts }: Props) => {
         </div>
 
         {isMenuOpen && <Menu />}
-        {isSearchOpen && <BlogSearch posts={posts} />}
+        {isSearchOpen && blog && <BlogSearch posts={posts} />}
       </Container>
     </nav>
   )
