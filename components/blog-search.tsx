@@ -8,7 +8,6 @@ interface Props {
   posts: any
 }
 
-// Funkce pro normalizaci textu a odstranění diakritiky
 const normalizeText = (text: string) => {
   return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
 }
@@ -61,7 +60,7 @@ export const BlogSearch = ({ posts }: Props) => {
   }
 
   return (
-    <div className='fixed top-16 pt-16 xl:pt-0 w-full left-0 bg-white pb-4 z-0'>
+    <div className='fixed top-16 pt-16 xl:pt-0 w-full left-0 bg-white pb-8 xl:pb-12 z-0'>
       <Container>
         <Cols>
           <div />
@@ -74,9 +73,9 @@ export const BlogSearch = ({ posts }: Props) => {
                   : language === 'en'
                   ? 'Search...'
                   : language === 'de'
-                  ? ''
+                  ? '!text!'
                   : language === 'ua'
-                  ? ''
+                  ? '!text!'
                   : ''
               }
               className='text-3xl sm:text-4xl md:text-5xl font-black lg:text-6xl p-0 m-0 h-min placeholder:text-black placeholder:p-0 placeholder:m-0 placeholder:h-min focus-within:outline-none border-b-2 border-b-black'
@@ -111,4 +110,3 @@ export const BlogSearch = ({ posts }: Props) => {
     </div>
   )
 }
-;``
