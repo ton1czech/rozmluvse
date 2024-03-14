@@ -1,30 +1,70 @@
 'use client'
 
+import { Cols } from '@/components/cols'
+import { Container } from '@/components/container'
 import { urlForImage } from '@/sanity/lib/image'
 import { useLanguage } from '@/store/use-language'
+import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 
 export const Lector = ({ lector }: { lector: any }) => {
   const { language } = useLanguage()
 
   return (
-    <main className='absolute top-0 left-0 w-full h-full z-[2000] bg-white'>
-      <Link href='/#about' className='absolute right-5 top-5'>
-        <img src='/icons/x.svg' alt='close button' />
-      </Link>
+    <main className='mt-32 lg:mt-0'>
+      <Container className='min-h-screen grid place-content-center'>
+        <Cols>
+          <Link
+            href='/#about'
+            className='flex gap-1 items-center font-stabil text-lg xl:text-2xl'
+          >
+            Zpět <ArrowLeft size={18} />
+          </Link>
 
-      <div className='flex flex-col xl:flex-row gap-4 xl:gap-32 h-full w-full py-10 px-10'>
-        <img src={urlForImage(lector.altImage)} className='rounded-3xl' />
-        <div className='grid place-content-center'>
-          <h3 className='text-xl xl:text-4xl mb-2 xl:mb-6'>{lector.name}</h3>
-          <p className='font-stabil text-lg xl:text-3xl'>
-            {language === 'cz' && lector.bioCz}
-            {language === 'en' && lector.bioEn}
-            {language === 'de' && lector.bioDe}
-            {language === 'ua' && lector.bioUa}
-          </p>
-        </div>
-      </div>
+          <div className='lg:grid grid-cols-[2fr_1fr] hidden gap-10'>
+            <div className='flex flex-col justify-center'>
+              <h3 className='text-5xl mb-2'>{lector.name}</h3>
+              <p className='font-stabil mb-6'>
+                {language === 'cz' && lector.roleCz}
+                {language === 'en' && lector.roleEn}
+                {language === 'de' && lector.roleDe}
+                {language === 'ua' && lector.roleUa}
+              </p>
+              <p className='font-stabil text-lg'>
+                {language === 'cz' && lector.bioCz}
+                {language === 'en' && lector.bioEn}
+                {language === 'de' && lector.bioDe}
+                {language === 'ua' && lector.bioUa}
+              </p>
+            </div>
+
+            <img
+              src={urlForImage(lector.altImage)}
+              className='rounded-3xl mb-2'
+            />
+          </div>
+
+          <div className='flex flex-col lg:hidden'>
+            <h3 className='text-3xl mb-2'>{lector.name}</h3>
+            <p className='font-stabil mb-6'>
+              {language === 'cz' && lector.roleCz}
+              {language === 'en' && lector.roleEn}
+              {language === 'de' && lector.roleDe}
+              {language === 'ua' && lector.roleUa}
+            </p>
+            <img
+              src={urlForImage(lector.altImage)}
+              className='rounded-3xl mb-2'
+            />
+            <p className='font-stabil text-lg'>
+              {language === 'cz' && lector.bioCz}
+              {language === 'en' && lector.bioEn}
+              {language === 'de' && lector.bioDe}
+              {language === 'ua' && lector.bioUa}
+            </p>
+          </div>
+        </Cols>
+      </Container>
     </main>
   )
 }
