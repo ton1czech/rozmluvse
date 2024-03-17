@@ -28,14 +28,14 @@ export const Navbar = ({ posts }: Props) => {
   return (
     <nav className='fixed top-0 w-full py-4 bg-white z-[1000]'>
       <Container>
-        <div className='flex justify-between items-center'>
+        <div className='flex justify-between items-end'>
           <Link
             href='/#home'
             className='text-2xl md:text-3xl lg:text-4xl place-self-center ffs-12'
           >
             rozmluv se
           </Link>
-          <div className='flex items-center gap-3 md:gap-6'>
+          <div className='flex items-center gap-3 md:gap-6 pt-1'>
             {blog ? (
               <button
                 className='font-stabil inline-flex gap-1 items-center'
@@ -65,7 +65,7 @@ export const Navbar = ({ posts }: Props) => {
             <Button
               variant='ghost'
               onClick={() => openMenu()}
-              className='font-stabil hover:bg-transparent p-0 m-0'
+              className='font-stabil hover:bg-transparent p-0 m-0 text-base'
             >
               Menu
             </Button>

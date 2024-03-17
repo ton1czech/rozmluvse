@@ -24,7 +24,7 @@ export const Menu = () => {
           >
             rozmluv se
           </Link>
-          <div className='flex items-center gap-3 md:gap-6'>
+          <div className='flex items-center gap-3 md:gap-6 pt-1'>
             <Link
               href='https://linktr.ee/rozmluv.se'
               target='_blank'
@@ -39,10 +39,12 @@ export const Menu = () => {
             <Button
               variant='ghost'
               onClick={() => closeMenu()}
-              className='font-stabil hover:bg-transparent text-white hover:text-white m-0 p-0'
+              className='font-stabil hover:bg-transparent text-white hover:text-white m-0 p-0 text-base'
             >
               {language === 'cz' && 'Zavřít'}
               {language === 'en' && 'Close'}
+              {language === 'de' && '!text!'}
+              {language === 'ua' && '!text!'}
             </Button>
           </div>
         </div>
@@ -65,7 +67,7 @@ export const Menu = () => {
             ))}
           </ul>
 
-          <div className='flex gap-20 text-base text-zinc-200'>
+          <div className='flex gap-20 text-base text-white font-stabil'>
             <div className='flex flex-col gap-4'>
               <Link href='https://www.facebook.com/rozmluv.se' target='_blank'>
                 Facebook
@@ -93,7 +95,7 @@ export const Menu = () => {
               <Button
                 variant='ghost'
                 onClick={() => openNewsletter()}
-                className='hover:bg-transparent p-0 m-0 h-auto w-auto hover:text-zinc-200 !text-base'
+                className='hover:bg-transparent p-0 m-0 h-auto w-auto text-base'
               >
                 Newsletter
               </Button>

@@ -45,7 +45,7 @@ const LanguageSelector = ({ color }: Props) => {
           name='language selector'
           aria-expanded={open}
           className={cn(
-            'border-none bg-transparent gap-2 hover:bg-transparent p-0 m-0',
+            'border-none bg-transparent gap-2 hover:bg-transparent p-0 m-0 text-base',
             color === 'white' && 'hover:text-white text-white',
             color === 'black' && 'hover:text-black text-black'
           )}
@@ -71,7 +71,7 @@ const LanguageSelector = ({ color }: Props) => {
                     language === value ? 'opacity-100' : 'opacity-0'
                   )}
                 />
-                <p className='uppercase font-stabil'>{value}</p>
+                <p className='uppercase font-stabil text-base'>{value}</p>
               </CommandItem>
             ))}
           </CommandGroup>
