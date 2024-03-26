@@ -50,10 +50,12 @@ export const Pricelist = () => {
                     className='rounded-2xl h-min'
                   >
                     <AccordionTrigger>
-                      {language === 'cz' && item.labelCz}
-                      {language === 'en' && item.labelEn}
-                      {language === 'de' && item.labelDe}
-                      {language === 'ua' && item.labelUa}
+                      <span className='line-clamp-1 text-left'>
+                        {language === 'cz' && item.labelCz}
+                        {language === 'en' && item.labelEn}
+                        {language === 'de' && item.labelDe}
+                        {language === 'ua' && item.labelUa}
+                      </span>
                     </AccordionTrigger>
                     <AccordionContent>
                       {item.option1Cz && (
@@ -86,10 +88,12 @@ export const Pricelist = () => {
                     className='rounded-2xl h-min'
                   >
                     <AccordionTrigger>
-                      {language === 'cz' && item.labelCz}
-                      {language === 'en' && item.labelEn}
-                      {language === 'de' && item.labelDe}
-                      {language === 'ua' && item.labelUa}
+                      <span className='line-clamp-1 text-left'>
+                        {language === 'cz' && item.labelCz}
+                        {language === 'en' && item.labelEn}
+                        {language === 'de' && item.labelDe}
+                        {language === 'ua' && item.labelUa}
+                      </span>
                     </AccordionTrigger>
                     <AccordionContent>
                       {item.option1Cz && (
@@ -127,10 +131,12 @@ export const Pricelist = () => {
                 className='rounded-2xl h-min'
               >
                 <AccordionTrigger className='text-2xl font-black'>
-                  {language === 'cz' && item.labelCz}
-                  {language === 'en' && item.labelEn}
-                  {language === 'de' && item.labelDe}
-                  {language === 'ua' && item.labelUa}
+                  <span className='line-clamp-1 text-left'>
+                    {language === 'cz' && item.labelCz}
+                    {language === 'en' && item.labelEn}
+                    {language === 'de' && item.labelDe}
+                    {language === 'ua' && item.labelUa}
+                  </span>
                 </AccordionTrigger>
                 <AccordionContent>
                   {item.option1Cz && (
@@ -163,10 +169,12 @@ export const Pricelist = () => {
                 className='rounded-2xl h-min'
               >
                 <AccordionTrigger className='text-2xl font-black'>
-                  {language === 'cz' && item.labelCz}
-                  {language === 'en' && item.labelEn}
-                  {language === 'de' && item.labelDe}
-                  {language === 'ua' && item.labelUa}
+                  <span className='line-clamp-1 text-left'>
+                    {language === 'cz' && item.labelCz}
+                    {language === 'en' && item.labelEn}
+                    {language === 'de' && item.labelDe}
+                    {language === 'ua' && item.labelUa}
+                  </span>
                 </AccordionTrigger>
                 <AccordionContent>
                   {item.option1Cz && (
