@@ -32,7 +32,7 @@ export const InfoText: FC<Props> = ({
   const { language } = useLanguage()
 
   return (
-    <span className='font-stabil text-lg xl:text-2xl'>
+    <span className='font-stabil text-lg !leading-tight xl:text-2xl xl:!leading-8'>
       <>
         {language === 'cz' && textCz}
         {language === 'en' && textEn}
@@ -43,7 +43,7 @@ export const InfoText: FC<Props> = ({
         <Link
           href={href}
           target={external ? '_blank' : ''}
-          className='font-labil font-black ffs-12-hover'
+          className='font-labil font-black ffs-12-hover inline-flex'
         >
           {language === 'cz' && linkCz}
           {language === 'en' && linkEn}
