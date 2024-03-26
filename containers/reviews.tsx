@@ -56,7 +56,7 @@ export const Reviews = () => {
                           alt={review.nameCz}
                           className='rounded-full w-10 h-10'
                         />
-                        <span>
+                        <span className='line-clamp-1 text-left'>
                           {language === 'cz' && review.nameCz}
                           {language === 'en' && review.nameEn}
                           {language === 'de' && review.nameDe}
@@ -89,10 +89,12 @@ export const Reviews = () => {
                           alt={review.nameCz}
                           className='rounded-full w-10 h-10'
                         />
-                        {language === 'cz' && review.nameCz}
-                        {language === 'en' && review.nameEn}
-                        {language === 'de' && review.nameDe}
-                        {language === 'ua' && review.nameUa}
+                        <span className='line-clamp-1 text-left'>
+                          {language === 'cz' && review.nameCz}
+                          {language === 'en' && review.nameEn}
+                          {language === 'de' && review.nameDe}
+                          {language === 'ua' && review.nameUa}
+                        </span>
                       </div>
                     </AccordionTrigger>
                     <AccordionContent>
@@ -125,10 +127,12 @@ export const Reviews = () => {
                       alt={review.nameCz}
                       className='rounded-full w-10 h-10'
                     />
-                    {language === 'cz' && review.nameCz}
-                    {language === 'en' && review.nameEn}
-                    {language === 'de' && review.nameDe}
-                    {language === 'ua' && review.nameUa}
+                    <span className='line-clamp-1 text-left'>
+                      {language === 'cz' && review.nameCz}
+                      {language === 'en' && review.nameEn}
+                      {language === 'de' && review.nameDe}
+                      {language === 'ua' && review.nameUa}
+                    </span>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent>
@@ -156,10 +160,12 @@ export const Reviews = () => {
                       alt={review.nameCz}
                       className='rounded-full w-10 h-10'
                     />
-                    {language === 'cz' && review.nameCz}
-                    {language === 'en' && review.nameEn}
-                    {language === 'de' && review.nameDe}
-                    {language === 'ua' && review.nameUa}
+                    <span className='line-clamp-1 text-left'>
+                      {language === 'cz' && review.nameCz}
+                      {language === 'en' && review.nameEn}
+                      {language === 'de' && review.nameDe}
+                      {language === 'ua' && review.nameUa}
+                    </span>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent>
