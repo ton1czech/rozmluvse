@@ -24,14 +24,14 @@ export const Contact = () => {
           />
 
           <div className='hidden xl:block'>
-            <div className='font-stabil text-lg xl:text-2xl grid grid-cols-[1fr_2.5fr] gap-y-10 gap-x-24'>
+            <div className='font-stabil text-lg xl:text-2xl grid grid-cols-[1fr_1.9fr] gap-y-10 gap-x-24'>
               <div className='grid'>
                 <p>Pavlíkova 7, Klatovy</p>
                 <p>Křížová 162, Klatovy</p>
                 <a href='mailto:ciao@rozmluv.se'>ciao@rozmluv.se</a>
                 <a href='tel:+420734675810'>+420 734 675 810</a>
                 <button
-                  className='font-labil font-black place-self-start ffs-12-hover'
+                  className='font-labil font-black place-self-start ffs-12-hover inline-flex'
                   onClick={() => openNewsletter()}
                 >
                   {language === 'cz' && 'Odběr newsletteru ←'}
