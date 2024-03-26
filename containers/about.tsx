@@ -5,26 +5,11 @@ import { InfoText } from '@/components/info-text'
 import Link from 'next/link'
 import { urlForImage } from '@/sanity/lib/image'
 import { useLanguage } from '@/store/use-language'
-import { Button } from '@/components/ui/button'
 import { Cols } from '@/components/cols'
 import { SectionTitle } from '@/components/section-title'
 
 export const About = ({ lectors }: { lectors: any }) => {
   const { language } = useLanguage()
-
-  const offer = {
-    titleCz: 'Chceš se stát součástí lektorského týmu?',
-    titleEn: "Would you like to join the lecturers' team?",
-    titleDe: 'Willst du Teil unseres Lektor*innenteams werden?',
-    titleUa: '',
-    buttonCz: 'To teda',
-    buttonEn: 'Hell yeah',
-    buttonDe: 'Aber sowas von!',
-    buttonUa: '',
-    color: '#FD828C',
-  }
-
-  const lectorsWithOffer = [...lectors, offer]
 
   return (
     <section id='about' className='scroll-mt-28'>
@@ -51,12 +36,10 @@ export const About = ({ lectors }: { lectors: any }) => {
 
         <div className='grid grid-cols-2 sm:grid-cols-4 gap-8 mt-14'>
           {lectors.map((lector: any) => (
-            // <>
-            //   {lector.name ? (
             <Link
               key={lector.name}
               href={`/lectors/${lector.slug.current}`}
-              className='grid place-content-center rounded-2xl'
+              className='rounded-2xl'
             >
               <img
                 src={urlForImage(lector.image)}
@@ -71,31 +54,6 @@ export const About = ({ lectors }: { lectors: any }) => {
                 {language === 'ua' && lector.roleUa}
               </p>
             </Link>
-            //   ) : (
-            //     <div
-            //       style={{ background: lector.color }}
-            //       className='grid place-content-center rounded-2xl text-center'
-            //     >
-            //       <h2 className='text-xl sm:text-3xl mb-8'>
-            //         {language === 'cz' && lector.titleCz}
-            //         {language === 'en' && lector.titleEn}
-            //         {language === 'de' && lector.titleDe}
-            //         {language === 'ua' && lector.titleUa}
-            //       </h2>
-            //       <Link href='/for-lectors'>
-            //         <Button
-            //           className='rounded-full bg-white hover:bg-zinc-100 text-lg sm:text-xl py-6 px-10'
-            //           size='lg'
-            //         >
-            //           {language === 'cz' && lector.buttonCz}
-            //           {language === 'en' && lector.buttonEn}
-            //           {language === 'de' && lector.buttonDe}
-            //           {language === 'ua' && lector.buttonUa}
-            //         </Button>
-            //       </Link>
-            //     </div>
-            //   )}
-            // </>
           ))}
         </div>
       </Container>
