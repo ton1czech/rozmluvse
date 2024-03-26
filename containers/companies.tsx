@@ -40,6 +40,7 @@ export const Companies = () => {
               <Accordion type='multiple' className='flex flex-col gap-8'>
                 {companies.slice(0, 2).map(company => (
                   <AccordionItem
+                key={company.link}
                     value={company.textCz}
                     style={{ backgroundColor: company.color }}
                     className='rounded-2xl h-min'
@@ -53,10 +54,7 @@ export const Companies = () => {
 
                       <br />
                       <div className='flex justify-between mt-4 text-xs'>
-                        <Link href={company.link}>web</Link>
-                        <Link href='/personal-info'>
-                          Imprint & Privacy Policy
-                        </Link>
+                        <Link href={company.link}>{company.link}</Link>
                       </div>
                     </AccordionContent>
                   </AccordionItem>
@@ -65,6 +63,7 @@ export const Companies = () => {
               <Accordion type='multiple' className='flex flex-col gap-8'>
                 {companies.slice(2, 3).map(company => (
                   <AccordionItem
+                key={company.link}
                     value={company.textCz}
                     style={{ backgroundColor: company.color }}
                     className='rounded-2xl h-min'
@@ -78,10 +77,7 @@ export const Companies = () => {
 
                       <br />
                       <div className='flex justify-between mt-4 text-xs'>
-                        <Link href={company.link}>web</Link>
-                        <Link href='/personal-info'>
-                          Imprint & Privacy Policy
-                        </Link>
+                        <Link href={company.link}>{company.link}</Link>
                       </div>
                     </AccordionContent>
                   </AccordionItem>
@@ -95,6 +91,7 @@ export const Companies = () => {
           <Accordion type='multiple' className='flex flex-col gap-4'>
             {companies.slice(0, 2).map(company => (
               <AccordionItem
+                key={company.link}
                 value={company.textCz}
                 style={{ backgroundColor: company.color }}
                 className='rounded-2xl h-min'
@@ -108,8 +105,7 @@ export const Companies = () => {
 
                   <br />
                   <div className='flex justify-between mt-4 text-xs'>
-                    <Link href={company.link}>web</Link>
-                    <Link href='/personal-info'>Imprint & Privacy Policy</Link>
+                    <Link href={company.link}>{company.link}</Link>
                   </div>
                 </AccordionContent>
               </AccordionItem>
@@ -118,6 +114,7 @@ export const Companies = () => {
           <Accordion type='multiple' className='flex flex-col gap-4'>
             {companies.slice(2, 3).map(company => (
               <AccordionItem
+                key={company.link}
                 value={company.textCz}
                 style={{ backgroundColor: company.color }}
                 className='rounded-2xl h-min'
@@ -131,8 +128,7 @@ export const Companies = () => {
 
                   <br />
                   <div className='flex justify-between mt-4 text-xs'>
-                    <Link href={company.link}>web</Link>
-                    <Link href='/personal-info'>Imprint & Privacy Policy</Link>
+                    <Link href={company.link}>{company.link}</Link>
                   </div>
                 </AccordionContent>
               </AccordionItem>

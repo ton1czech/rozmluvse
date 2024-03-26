@@ -44,6 +44,7 @@ export const Pricelist = () => {
               <Accordion type='multiple' className='flex flex-col gap-8'>
                 {pricelist.slice(0, 2).map(item => (
                   <AccordionItem
+                    key={item.labelCz + item.option1Cz}
                     value={item.value}
                     style={{ backgroundColor: item.color }}
                     className='rounded-2xl h-min'
@@ -79,6 +80,7 @@ export const Pricelist = () => {
               <Accordion type='multiple' className='flex flex-col gap-8'>
                 {pricelist.slice(2, 4).map(item => (
                   <AccordionItem
+                    key={item.labelCz + item.option1Cz}
                     value={item.value}
                     style={{ backgroundColor: item.color }}
                     className='rounded-2xl h-min'
@@ -119,6 +121,7 @@ export const Pricelist = () => {
           <Accordion type='multiple' className='flex flex-col gap-4'>
             {pricelist.slice(0, 2).map(item => (
               <AccordionItem
+                key={item.labelCz + item.option1Cz}
                 value={item.value}
                 style={{ backgroundColor: item.color }}
                 className='rounded-2xl h-min'
@@ -154,6 +157,7 @@ export const Pricelist = () => {
           <Accordion type='multiple' className='flex flex-col gap-4'>
             {pricelist.slice(2, 4).map(item => (
               <AccordionItem
+                key={item.labelCz + item.option1Cz}
                 value={item.value}
                 style={{ backgroundColor: item.color }}
                 className='rounded-2xl h-min'

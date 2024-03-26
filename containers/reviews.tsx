@@ -12,7 +12,6 @@ import {
 } from '@/components/ui/accordion'
 import { SectionTitle } from '@/components/section-title'
 import { reviews } from '@/database/reviews'
-import Link from 'next/link'
 
 export const Reviews = () => {
   const { language } = useLanguage()
@@ -45,21 +44,24 @@ export const Reviews = () => {
               <Accordion type='multiple' className='flex flex-col gap-8'>
                 {reviews.slice(0, 2).map(review => (
                   <AccordionItem
+                    key={review.textCz + review.nameCz}
                     value={review.textCz}
                     style={{ backgroundColor: review.color }}
                     className='rounded-2xl'
                   >
                     <AccordionTrigger>
-                      <div className='flex gap-2 items-center'>
+                      <div className='flex gap-2 items-center truncate'>
                         <img
                           src={review.avatar}
                           alt={review.nameCz}
                           className='rounded-full w-10 h-10'
                         />
-                        {language === 'cz' && review.nameCz}
-                        {language === 'en' && review.nameEn}
-                        {language === 'de' && review.nameDe}
-                        {language === 'ua' && review.nameUa}
+                        <span>
+                          {language === 'cz' && review.nameCz}
+                          {language === 'en' && review.nameEn}
+                          {language === 'de' && review.nameDe}
+                          {language === 'ua' && review.nameUa}
+                        </span>
                       </div>
                     </AccordionTrigger>
                     <AccordionContent>
@@ -68,12 +70,6 @@ export const Reviews = () => {
                       {language === 'de' && review.textDe}
                       {language === 'ua' && review.textUa}
                       "
-                      <br />
-                      <div className='text-right mt-4 text-xs'>
-                        <Link href='/personal-info'>
-                          Imprint & Privacy Policy
-                        </Link>
-                      </div>
                     </AccordionContent>
                   </AccordionItem>
                 ))}
@@ -81,6 +77,7 @@ export const Reviews = () => {
               <Accordion type='multiple' className='flex flex-col gap-8'>
                 {reviews.slice(2, 3).map(review => (
                   <AccordionItem
+                    key={review.textCz + review.nameCz}
                     value={review.textCz}
                     style={{ backgroundColor: review.color }}
                     className='rounded-2xl h-min'
@@ -104,12 +101,6 @@ export const Reviews = () => {
                       {language === 'de' && review.textDe}
                       {language === 'ua' && review.textUa}
                       "
-                      <br />
-                      <div className='text-right mt-4 text-xs'>
-                        <Link href='/personal-info'>
-                          Imprint & Privacy Policy
-                        </Link>
-                      </div>
                     </AccordionContent>
                   </AccordionItem>
                 ))}
@@ -122,6 +113,7 @@ export const Reviews = () => {
           <Accordion type='multiple' className='flex flex-col gap-4'>
             {reviews.slice(0, 2).map(review => (
               <AccordionItem
+                key={review.textCz + review.nameCz}
                 value={review.textCz}
                 style={{ backgroundColor: review.color }}
                 className='rounded-2xl h-min'
@@ -145,10 +137,6 @@ export const Reviews = () => {
                   {language === 'de' && review.textDe}
                   {language === 'ua' && review.textUa}
                   "
-                  <br />
-                  <div className='text-right mt-4 text-xs'>
-                    <Link href='/personal-info'>Imprint & Privacy Policy</Link>
-                  </div>
                 </AccordionContent>
               </AccordionItem>
             ))}
@@ -156,6 +144,7 @@ export const Reviews = () => {
           <Accordion type='multiple' className='flex flex-col gap-4'>
             {reviews.slice(2, 3).map(review => (
               <AccordionItem
+                key={review.textCz + review.nameCz}
                 value={review.textCz}
                 style={{ backgroundColor: review.color }}
                 className='rounded-2xl h-min'
@@ -179,10 +168,6 @@ export const Reviews = () => {
                   {language === 'de' && review.textDe}
                   {language === 'ua' && review.textUa}
                   "
-                  <br />
-                  <div className='text-right mt-4 text-xs'>
-                    <Link href='/personal-info'>Imprint & Privacy Policy</Link>
-                  </div>
                 </AccordionContent>
               </AccordionItem>
             ))}

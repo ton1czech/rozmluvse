@@ -56,7 +56,7 @@ export const ForLectors = ({ lookingFor }: { lookingFor: any }) => {
         {language === 'ua' && 'ми шукаємо: '}
       </h3>
       {lookingFor.map((item: any) => (
-        <ul className='list-disc list-inside space-y-2'>
+        <ul key={item.textCz} className='list-disc list-inside space-y-2'>
           {item.textCz && item.textEn && item.textDe && item.textUa && (
             <li>
               {language === 'cz' && item.textCz}
