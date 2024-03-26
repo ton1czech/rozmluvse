@@ -5,9 +5,14 @@ import { useNewsletter } from '@/store/use-newsletter'
 import { Button } from './ui/button'
 import { useEffect } from 'react'
 import { X } from 'lucide-react'
+import { usePathname } from 'next/navigation'
+import { cn } from '@/lib/utils'
 
 export const Newsletter = () => {
+  const pathname = usePathname()
+
   const { language } = useLanguage()
+
   const {
     closeNewsletter,
     closeNewsletterPermanently,
@@ -25,10 +30,17 @@ export const Newsletter = () => {
     return () => clearTimeout(newsletterTimeout)
   }, [openNewsletter])
 
+  const studio = pathname.includes('/studio')
+
   return (
     <>
       {isOpen && (
-        <div className='fixed w-screen h-screen top-0 left-0 grid place-content-center z-[1005] bg-black/60 backdrop-blur-sm'>
+        <div
+          className={cn(
+            'w-screen h-screen top-0 left-0 grid place-content-center z-[1005] bg-black/60 backdrop-blur-sm',
+            studio ? 'hidden' : 'fixed'
+          )}
+        >
           <div className='relative max-w-[500px] max-h-[500px] aspect-square mx-4 bg-[#9F6ACD] p-4 rounded-3xl'>
             <Button
               onClick={() => closeNewsletter()}
