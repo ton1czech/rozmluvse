@@ -79,7 +79,7 @@ export const Footer = () => {
                   <Button
                     variant='ghost'
                     onClick={() => openNewsletter()}
-                    className='hover:bg-transparent p-0 m-0 h-auto w-auto hover:text-zinc-200 !text-base'
+                    className='hover:bg-transparent p-0 m-0 h-auto w-auto !text-base'
                   >
                     Newsletter
                   </Button>
