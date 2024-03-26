@@ -58,7 +58,7 @@ export const Posts = ({ posts }: Props) => {
       <Container>
         <Cols>
           <div />
-          <h1 className='text-3xl sm:text-4xl md:text-5xl font-black lg:text-6xl'>
+          <h1 className='text-3xl sm:text-4xl md:text-5xl font-black lg:text-6xl mt-2'>
             {category === '' ||
             category === 'null' ||
             category === null ||
