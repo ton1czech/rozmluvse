@@ -16,7 +16,7 @@ export const Lector = ({ lector }: { lector: any }) => {
         <Cols>
           <Link
             href='/#about'
-            className='flex gap-1 items-center font-stabil text-lg xl:text-2xl'
+            className='flex gap-1 items-center font-stabil text-lg'
           >
             Zpět <ArrowLeft size={18} />
           </Link>
@@ -24,7 +24,7 @@ export const Lector = ({ lector }: { lector: any }) => {
           <div className='lg:grid grid-cols-[2fr_1fr] hidden gap-10'>
             <div className='flex flex-col justify-center'>
               <h3 className='text-5xl mb-2'>{lector.name}</h3>
-              <p className='font-stabil mb-6'>
+              <p className='font-stabil mb-6 text-lg'>
                 {language === 'cz' && lector.roleCz}
                 {language === 'en' && lector.roleEn}
                 {language === 'de' && lector.roleDe}
