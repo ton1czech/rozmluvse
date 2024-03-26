@@ -45,6 +45,11 @@ export default defineType({
       type: 'datetime',
     }),
     defineField({
+      name: 'minutes',
+      title: 'Minut k přečtení',
+      type: 'string',
+    }),
+    defineField({
       name: 'body',
       title: 'Obsah',
       type: 'blockContent',
