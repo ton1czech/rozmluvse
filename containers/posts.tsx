@@ -103,14 +103,14 @@ export const Posts = ({ posts }: Props) => {
                 href={`/blog/posts/${post.slug.current}`}
               >
                 <div
-                  className='aspect-square overflow-hidden rounded-3xl p-6'
+                  className='aspect-square overflow-hidden rounded-3xl p-4'
                   style={{ background: `#${post.categories[0].color}` }}
                 >
                   <div className='relative w-full h-full'>
                     <img
                       src={urlForImage(post.mainImage)}
                       alt={post.title}
-                      className='absolute inset-0 w-full h-full object-cover hover:scale-105 transition rounded-xl'
+                      className='absolute inset-0 w-full h-full object-cover hover:scale-[102%] transition rounded-xl'
                     />
                   </div>
                 </div>
