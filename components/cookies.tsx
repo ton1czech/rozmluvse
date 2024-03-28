@@ -42,7 +42,7 @@ export const Cookies = () => {
   return (
     <>
       {isOpen && (
-        <div className='bg-[#00ABD3] fixed w-screen min-h-1/4 left-0 bottom-0 py-4 lg:py-12 z-[999]'>
+        <div className='bg-[#00ABD3] fixed w-screen left-0 bottom-0 py-4 lg:py-12 z-[999]'>
           <Container className='flex flex-col sm:grid sm:grid-cols-2 gap-8 lg:gap-20'>
             <h3>
               {language === 'cz' &&
@@ -78,60 +78,75 @@ export const Cookies = () => {
       )}
 
       {isSettingsOpen && (
-        <div className='bg-[#00AB3E] fixed w-screen lg:w-1/4 h-screen left-0 top-0 pt-56 lg:pt-32 px-12'>
-          <h2 className='text-3xl lg:text-4xl mb-6'>
-            {language === 'cz' && 'Vyber si podle chuti:'}
-            {language === 'en' && 'Choose up to your taste:'}
-            {language === 'de' && 'Wähle nach Belieben aus:'}
-            {language === 'ua' && ''}
-          </h2>
-
-          <h3 className='flex gap-2 text-2xl font-stabil items-center mb-3 lg:text-3xl'>
-            <ArrowRight />
-            {language === 'cz' && 'funkční cookies'}
-            {language === 'en' && 'functional cookies'}
-            {language === 'de' && 'Funktions-Cookies'}
-            {language === 'ua' && ''}
-          </h3>
-          <p className='font-stabil text-xl'>
-            {language === 'cz' &&
-              'Zajišťují správné a bezpečné fungování webu, bez nich by žádné internetové stránky nefungovaly. Nejdou vypnout, promiň.'}
-            {language === 'en' &&
-              "They enable the web to work correctly and safely, without them any website wouldn't work. They can't be turned off, sorry."}
-            {language === 'de' &&
-              'Die gewährleisten das korrekte und sichere Funktionieren unserer Webseite. Ohne sie könnte keine Internetseite laufen. Kann nicht ausgeschaltet werden, sorry.'}
-            {language === 'ua' && ''}
-          </p>
-
-          <div className='flex justify-between mt-10'>
-            <h3 className='flex gap-2 text-2xl items-center mb-3 lg:text-3xl'>
-              <ArrowRight />
-              {language === 'cz' && 'analytické cookies'}
-              {language === 'en' && 'analytical cookies'}
-              {language === 'de' && 'Analytische Cookies'}
+        <div className='bg-[#00AB3E] fixed w-screen left-0 bottom-0'>
+          <Container>
+            <h2 className='text-2xl mb-6 mt-4'>
+              {language === 'cz' && 'Vyber si podle chuti:'}
+              {language === 'en' && 'Choose up to your taste:'}
+              {language === 'de' && 'Wähle nach Belieben aus:'}
               {language === 'ua' && ''}
-            </h3>
-            <input type='checkbox' name='' id='' />
-          </div>
-          <p className='font-stabil text-xl'>
-            {language === 'cz' &&
-              'Sledují, jak se na našem webu pohybuješ. Přeloženo do češtiny - vidíme, kam klikáš a příště ti nabídneme obsah, který tě zajímá nejvíc.'}
-            {language === 'en' &&
-              'They watch how you move along our website. In other words - we can see where you click and next time can offer you the content you are interested in most.'}
-            {language === 'de' &&
-              'Die verfolgen, wo du dich auf unseren Seitern herumtreibst. Oder auf Deutsch - wir sehen, worauf du klickst und das nächste Mal präsentieren wir Dir genau das, was dich am meisten interessiert. '}
-            {language === 'ua' && ''}
-          </p>
+            </h2>
 
-          <Button
-            onClick={confirmSettings}
-            className='bg-white rounded-full py-7 text-xl text-black hover:bg-zinc-50 w-full mt-6 ffs-12-hover'
-          >
-            {language === 'cz' && 'uložit a sníst'}
-            {language === 'en' && ''}
-            {language === 'de' && ''}
-            {language === 'ua' && ''}
-          </Button>
+            <div className='flex flex-col sm:grid sm:grid-cols-2 gap-12 max-w-[66%]'>
+              <div className='flex flex-col gap-3'>
+                <div className='flex gap-2'>
+                  <input type='radio' name='func-cookies' id='func-cookies' />
+                  <h3 className='font-stabil items-center'>
+                    {language === 'cz' && 'funkční cookies'}
+                    {language === 'en' && 'functional cookies'}
+                    {language === 'de' && 'Funktions-Cookies'}
+                    {language === 'ua' && ''}
+                  </h3>
+                </div>
+                <p className='font-stabil'>
+                  {language === 'cz' &&
+                    'Zajišťují správné a bezpečné fungování webu, bez nich by žádné internetové stránky nefungovaly. Nejdou vypnout, promiň.'}
+                  {language === 'en' &&
+                    "They enable the web to work correctly and safely, without them any website wouldn't work. They can't be turned off, sorry."}
+                  {language === 'de' &&
+                    'Die gewährleisten das korrekte und sichere Funktionieren unserer Webseite. Ohne sie könnte keine Internetseite laufen. Kann nicht ausgeschaltet werden, sorry.'}
+                  {language === 'ua' && ''}
+                </p>
+              </div>
+
+              <div className='flex flex-col gap-3'>
+                <div className='flex gap-2'>
+                  <input
+                    type='radio'
+                    name='analytic-cookies'
+                    id='analytic-cookies'
+                  />
+                  <h3 className='font-stabil items-center'>
+                    {language === 'cz' && 'analytické cookies'}
+                    {language === 'en' && 'analytical cookies'}
+                    {language === 'de' && 'Analytische Cookies'}
+                    {language === 'ua' && ''}
+                  </h3>
+                </div>
+                <p className='font-stabil'>
+                  {language === 'cz' &&
+                    'Sledují, jak se na našem webu pohybuješ. Přeloženo do češtiny - vidíme, kam klikáš a příště ti nabídneme obsah, který tě zajímá nejvíc.'}
+                  {language === 'en' &&
+                    'They watch how you move along our website. In other words - we can see where you click and next time can offer you the content you are interested in most.'}
+                  {language === 'de' &&
+                    'Die verfolgen, wo du dich auf unseren Seitern herumtreibst. Oder auf Deutsch - wir sehen, worauf du klickst und das nächste Mal präsentieren wir Dir genau das, was dich am meisten interessiert. '}
+                  {language === 'ua' && ''}
+                </p>
+              </div>
+            </div>
+
+            <div className='flex justify-end'>
+              <Button
+                onClick={confirmSettings}
+                className='bg-white rounded-2xl py-7 sm:py-6 text-2xl sm:text-lg text-black hover:bg-zinc-50 w-full md:w-1/2 xl:w-1/4 ffs-12-hover mt-10 mb-4'
+              >
+                {language === 'cz' && 'uložit a sníst'}
+                {language === 'en' && ''}
+                {language === 'de' && ''}
+                {language === 'ua' && ''}
+              </Button>
+            </div>
+          </Container>
         </div>
       )}
     </>
