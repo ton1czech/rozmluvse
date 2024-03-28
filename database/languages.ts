@@ -60,7 +60,7 @@ export const languages = [
     labelEn: 'Korean',
     labelDe: 'Koreanisch',
     labelUa: '',
-    color: '#FDBC60',
+    color: '#BB4F02',
   },
   {
     labelCz: 'indonéština',
