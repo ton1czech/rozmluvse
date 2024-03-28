@@ -73,7 +73,7 @@ export const Newsletter = () => {
               />
               <div className='flex items-center justify-between mb-6'>
                 <div className='flex gap-2'>
-                  <input type='radio' name='lang' id='lang' />
+                  <input type='radio' name='lang' id='lang' defaultChecked />
                   <h3 className='font-stabil text-white items-center'>
                     {language === 'cz' && 'v češtině'}
                     {language === 'en' && ''}
