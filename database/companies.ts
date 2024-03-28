@@ -23,7 +23,7 @@ export const companies = [
       '"Якщо ви усе ще вагаєтесь, не вагайтесь. Ця мовна студія розговорить справді кожного. Розговорили нас, розговорять і вас."',
     img: '/companies/voracek.webp',
     color: '#FAB960',
-    link: 'https://www.facebook.com/TechnickeSluzbyVaclavVoracek/?locale=cs_CZ',
+    link: 'https://www.facebook.com/TechnickeSluzbyVaclavVoracek',
   },
   {
     title: 'VK Vacovský',
