@@ -5,6 +5,7 @@ import { useLanguage } from '@/store/use-language'
 import { Button } from './ui/button'
 import { useEffect, useState } from 'react'
 import { ArrowRight } from 'lucide-react'
+import { Container } from './container'
 
 export const Cookies = () => {
   const { language } = useLanguage()
@@ -41,36 +42,38 @@ export const Cookies = () => {
   return (
     <>
       {isOpen && (
-        <div className='bg-[#00ABD3] fixed w-screen min-h-1/4 left-0 bottom-0 py-4 lg:py-12 px-4 lg:px-96 flex flex-col lg:flex-row gap-8 lg:gap-20 z-[999]'>
-          <h3 className='text-xl max-w-prose'>
-            {language === 'cz' &&
-              'Máš chuť na cookies, bánh quy nebo 饼干? Ve všech třech případech jde o sušenky. Ty naše naštěstí nedrobí a ani po nich nepřibereš. Ťukni na „v pořádku“ a my soubory cookies využijeme pro účely personalizace a analýzy.'}
-            {language === 'en' &&
-              "Would you like some cookies, banh quy or ...? In all three cases those are sweets. Luckily, ours don't crumble or make one put on weight. Tap on 'all right' so we may use the cookie files for personalisation and analysis purposes."}
-            {language === 'de' &&
-              'Hast du Bock auf Cookies, bánh quy oder 饼干? In allen drei Fällen geht es um - Kekse. Die unseren bröseln zum Glück nicht und machen auch nicht dick. Klicke einfach auf „Akzeptieren“ und wir verwenden die cookie-Dateien für Personalisierungs- und Analysezwecke.'}
-            {language === 'ua' && ''}
-          </h3>
-          <div className='flex lg:flex-col gap-4 max-lg:justify-between'>
-            <Button
-              onClick={handleSettings}
-              className='bg-white rounded-full py-7 text-xl text-black hover:bg-zinc-50 w-full lg:min-w-64 ffs-12-hover'
-            >
-              {language === 'cz' && 'nastavení'}
-              {language === 'en' && 'setting'}
-              {language === 'de' && 'einstellungen'}
+        <div className='bg-[#00ABD3] fixed w-screen min-h-1/4 left-0 bottom-0 py-4 lg:py-12 z-[999]'>
+          <Container className='flex flex-col sm:grid sm:grid-cols-2 gap-8 lg:gap-20'>
+            <h3>
+              {language === 'cz' &&
+                'Máš chuť na cookies, bánh quy nebo 饼干? Ve všech třech případech jde o sušenky. Ty naše naštěstí nedrobí a ani po nich nepřibereš. Ťukni na „v pořádku“ a my soubory cookies využijeme pro účely personalizace a analýzy.'}
+              {language === 'en' &&
+                "Would you like some cookies, banh quy or ...? In all three cases those are sweets. Luckily, ours don't crumble or make one put on weight. Tap on 'all right' so we may use the cookie files for personalisation and analysis purposes."}
+              {language === 'de' &&
+                'Hast du Bock auf Cookies, bánh quy oder 饼干? In allen drei Fällen geht es um - Kekse. Die unseren bröseln zum Glück nicht und machen auch nicht dick. Klicke einfach auf „Akzeptieren“ und wir verwenden die cookie-Dateien für Personalisierungs- und Analysezwecke.'}
               {language === 'ua' && ''}
-            </Button>
-            <Button
-              onClick={handleSubmit}
-              className='bg-white rounded-full py-7 text-xl text-black hover:bg-zinc-50 w-full lg:min-w-64 ffs-12-hover'
-            >
-              {language === 'cz' && 'v pořádku'}
-              {language === 'en' && 'all right'}
-              {language === 'de' && 'einstellungen'}
-              {language === 'ua' && ''}
-            </Button>
-          </div>
+            </h3>
+            <div className='flex flex-col sm:flex-row gap-4 sm:self-end'>
+              <Button
+                onClick={handleSettings}
+                className='bg-white rounded-2xl py-7 sm:py-6 text-2xl sm:text-lg text-black hover:bg-zinc-50 w-full lg:min-w-64 ffs-12-hover'
+              >
+                {language === 'cz' && 'nastavení'}
+                {language === 'en' && 'setting'}
+                {language === 'de' && 'einstellungen'}
+                {language === 'ua' && ''}
+              </Button>
+              <Button
+                onClick={handleSubmit}
+                className='bg-white rounded-2xl py-7 sm:py-6 text-2xl sm:text-lg text-black hover:bg-zinc-50 w-full lg:min-w-64 ffs-12-hover'
+              >
+                {language === 'cz' && 'v pořádku'}
+                {language === 'en' && 'all right'}
+                {language === 'de' && 'einstellungen'}
+                {language === 'ua' && ''}
+              </Button>
+            </div>
+          </Container>
         </div>
       )}
 

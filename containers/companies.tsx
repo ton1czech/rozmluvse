@@ -40,7 +40,7 @@ export const Companies = () => {
               <Accordion type='multiple' className='flex flex-col gap-8'>
                 {companies.slice(0, 2).map(company => (
                   <AccordionItem
-                key={company.link}
+                    key={company.link}
                     value={company.textCz}
                     style={{ backgroundColor: company.color }}
                     className='rounded-2xl h-min'
@@ -63,7 +63,7 @@ export const Companies = () => {
               <Accordion type='multiple' className='flex flex-col gap-8'>
                 {companies.slice(2, 3).map(company => (
                   <AccordionItem
-                key={company.link}
+                    key={company.link}
                     value={company.textCz}
                     style={{ backgroundColor: company.color }}
                     className='rounded-2xl h-min'
