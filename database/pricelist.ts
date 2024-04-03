@@ -44,9 +44,9 @@ export const pricelist = [
     value: 'dual',
   },
   {
-    labelCz: 'dětská skupina (7-10 osob)',
-    labelEn: "children's group (7-10 persons)",
-    labelDe: 'Kindergruppe (7-10 Personen)',
+    labelCz: 'děti (7-10 osob)',
+    labelEn: 'children (7-10 persons)',
+    labelDe: 'Kinder (7-10 Personen)',
     labelUa: '!TEXT! (!TEXT!)',
     option1Cz: '60 min. / 190 Kč (za 1 osobu)',
     option1En: '60 min. / 190 Kč (per 1 person)',
