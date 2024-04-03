@@ -20,10 +20,10 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'author',
+      name: 'writtenby',
       title: 'Autor',
       type: 'reference',
-      to: { type: 'lector' },
+      to: { type: 'author' },
     }),
     defineField({
       name: 'mainImage',
@@ -59,7 +59,7 @@ export default defineType({
   preview: {
     select: {
       title: 'title',
-      author: 'author.name',
+      author: 'writtenby.name',
       media: 'mainImage',
     },
     prepare(selection) {

@@ -30,15 +30,14 @@ export const Post = ({ post }: Props) => {
             <p>{formattedDate}</p>
             <p>{post.minutes} min. čtení</p>
             <p className='mt-5'>Text</p>
-            <p>{post.author.name}</p>
+            <p>{post.writtenby.name}</p>
             <div className='mt-5'>
               {post.categories.map((category: any) => (
                 <p
                   style={{ background: `#${category.color}` }}
                   className='text-center rounded-2xl py-1 text-xs lg:w-1/2'
                 >
-                  {/* {category.title} */}
-                  Byznys a práce
+                  {category.title}
                 </p>
               ))}
             </div>
