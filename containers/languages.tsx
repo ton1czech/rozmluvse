@@ -4,12 +4,15 @@ import { Cols } from '@/components/cols'
 import { Container } from '@/components/container'
 import { InfoText } from '@/components/info-text'
 import { SectionTitle } from '@/components/section-title'
-import { languages } from '@/database/languages'
 import { cn } from '@/lib/utils'
 import { useLanguage } from '@/store/use-language'
 import Link from 'next/link'
 
-export const Languages = () => {
+interface Props {
+  languages: any[]
+}
+
+export const Languages = ({ languages }: Props) => {
   const { language } = useLanguage()
 
   return (
@@ -61,19 +64,19 @@ export const Languages = () => {
         <div className='grid sm:grid-cols-2 xl:grid-cols-3 gap-4 xl:gap-8 mt-14'>
           {languages.map(item => (
             <Link
-              key={item.labelCz}
+              key={item.titleCz}
               href={item.disabled ? '' : '/form'}
-              style={{ background: item.color }}
+              style={{ background: `#${item.color}` }}
               className={cn(
                 'text-center text-3xl rounded-2xl py-8 font-black',
                 item.disabled && 'pointer-events-none',
                 !item.disabled && 'ffs-12-hover'
               )}
             >
-              {language === 'cz' && item.labelCz}
-              {language === 'en' && item.labelEn}
-              {language === 'de' && item.labelDe}
-              {language === 'ua' && item.labelUa}
+              {language === 'cz' && item.titleCz}
+              {language === 'en' && item.titleEn}
+              {language === 'de' && item.titleDe}
+              {language === 'ua' && item.titleUa}
             </Link>
           ))}
         </div>

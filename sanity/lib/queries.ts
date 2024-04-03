@@ -50,3 +50,9 @@ export const CategoriesQuery = groq`
         ...,
     }
 `
+
+export const LanguagesQuery = groq`
+    *[_type=='language'] {
+        ...,
+    }
+`
