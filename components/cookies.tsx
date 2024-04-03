@@ -6,6 +6,7 @@ import { Button } from './ui/button'
 import { useEffect, useState } from 'react'
 import { Container } from './container'
 import { usePathname } from 'next/navigation'
+import { X } from 'lucide-react'
 
 export const Cookies = () => {
   const pathname = usePathname()
@@ -45,8 +46,9 @@ export const Cookies = () => {
   return (
     <>
       {!studio && isOpen && (
-        <div className='bg-[#00ABD3] fixed w-screen left-0 bottom-0 py-4 lg:py-12 z-[999]'>
-          <Container className='flex flex-col sm:grid sm:grid-cols-2 gap-8 lg:gap-20'>
+        <div className='bg-[#00ABD3] fixed w-screen left-0 bottom-0 z-[999]'>
+          <Container className='relative flex flex-col sm:grid sm:grid-cols-2 gap-8 lg:gap-20 py-4 lg:py-12'>
+            <X className='absolute right-5 top-3' onClick={closeCookies} />
             <h3>
               {language === 'cz' &&
                 'Máš chuť na cookies, bánh quy nebo 饼干? Ve všech třech případech jde o sušenky. Ty naše naštěstí nedrobí a ani po nich nepřibereš. Ťukni na „v pořádku“ a my soubory cookies využijeme pro účely personalizace a analýzy.'}
@@ -59,7 +61,7 @@ export const Cookies = () => {
             <div className='flex flex-col sm:flex-row gap-4 sm:self-end'>
               <Button
                 onClick={handleSettings}
-                className='bg-white rounded-2xl py-7 sm:py-6 text-2xl sm:text-lg text-black hover:bg-zinc-50 w-full lg:min-w-64 ffs-12-hover'
+                className='bg-white rounded-full py-7 sm:py-6 text-2xl sm:text-lg text-black hover:bg-zinc-50 w-full lg:min-w-64 ffs-12-hover'
               >
                 {language === 'cz' && 'nastavení'}
                 {language === 'en' && 'setting'}
@@ -68,7 +70,7 @@ export const Cookies = () => {
               </Button>
               <Button
                 onClick={handleSubmit}
-                className='bg-white rounded-2xl py-7 sm:py-6 text-2xl sm:text-lg text-black hover:bg-zinc-50 w-full lg:min-w-64 ffs-12-hover'
+                className='bg-white rounded-full py-7 sm:py-6 text-2xl sm:text-lg text-black hover:bg-zinc-50 w-full lg:min-w-64 ffs-12-hover'
               >
                 {language === 'cz' && 'v pořádku'}
                 {language === 'en' && 'all right'}
@@ -80,7 +82,7 @@ export const Cookies = () => {
         </div>
       )}
 
-      {isSettingsOpen && (
+      {!studio && isSettingsOpen && (
         <div className='bg-[#00AB3E] fixed w-screen left-0 bottom-0'>
           <Container>
             <h2 className='text-2xl mb-6 mt-4'>
@@ -141,7 +143,7 @@ export const Cookies = () => {
             <div className='flex justify-end'>
               <Button
                 onClick={confirmSettings}
-                className='bg-white rounded-2xl py-7 sm:py-6 text-2xl sm:text-lg text-black hover:bg-zinc-50 w-full md:w-1/2 xl:w-1/4 ffs-12-hover mt-10 mb-4'
+                className='bg-white rounded-full py-7 sm:py-6 text-2xl sm:text-lg text-black hover:bg-zinc-50 w-full md:w-1/2 xl:w-1/4 ffs-12-hover mt-10 mb-4'
               >
                 {language === 'cz' && 'uložit a sníst'}
                 {language === 'en' && ''}
