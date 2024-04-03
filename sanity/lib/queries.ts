@@ -56,3 +56,9 @@ export const LanguagesQuery = groq`
         ...,
     }
 `
+
+export const CompaniesQuery = groq`
+    *[_type=='company'] {
+        ...,
+    }
+`

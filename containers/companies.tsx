@@ -2,7 +2,6 @@
 
 import { Container } from '@/components/container'
 import { InfoText } from '@/components/info-text'
-import { companies } from '@/database/companies'
 import { useLanguage } from '@/store/use-language'
 import Link from 'next/link'
 import { Cols } from '@/components/cols'
@@ -14,7 +13,11 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion'
 
-export const Companies = () => {
+interface Props {
+  companies: any[]
+}
+
+export const Companies = ({ companies }: Props) => {
   const { language } = useLanguage()
 
   return (
@@ -42,7 +45,7 @@ export const Companies = () => {
                   <AccordionItem
                     key={company.link}
                     value={company.textCz}
-                    style={{ backgroundColor: company.color }}
+                    style={{ backgroundColor: `#${company.color}` }}
                     className='rounded-2xl h-min'
                   >
                     <AccordionTrigger>{company.title}</AccordionTrigger>
@@ -54,7 +57,7 @@ export const Companies = () => {
 
                       <br />
                       <div className='flex justify-between mt-4 text-xs'>
-                        <Link href={company.link}>{company.link}</Link>
+                        <Link href={company.link}>{company.linkPreview}</Link>
                       </div>
                     </AccordionContent>
                   </AccordionItem>
@@ -65,7 +68,7 @@ export const Companies = () => {
                   <AccordionItem
                     key={company.link}
                     value={company.textCz}
-                    style={{ backgroundColor: company.color }}
+                    style={{ backgroundColor: `#${company.color}` }}
                     className='rounded-2xl h-min'
                   >
                     <AccordionTrigger>{company.title}</AccordionTrigger>
@@ -77,7 +80,7 @@ export const Companies = () => {
 
                       <br />
                       <div className='flex justify-between mt-4 text-xs'>
-                        <Link href={company.link}>{company.link}</Link>
+                        <Link href={company.link}>{company.linkPreview}</Link>
                       </div>
                     </AccordionContent>
                   </AccordionItem>
@@ -93,7 +96,7 @@ export const Companies = () => {
               <AccordionItem
                 key={company.link}
                 value={company.textCz}
-                style={{ backgroundColor: company.color }}
+                style={{ backgroundColor: `#${company.color}` }}
                 className='rounded-2xl h-min'
               >
                 <AccordionTrigger>{company.title}</AccordionTrigger>
@@ -105,7 +108,7 @@ export const Companies = () => {
 
                   <br />
                   <div className='flex justify-between mt-4 text-xs'>
-                    <Link href={company.link}>{company.link}</Link>
+                    <Link href={company.link}>{company.linkPreview}</Link>
                   </div>
                 </AccordionContent>
               </AccordionItem>
@@ -116,7 +119,7 @@ export const Companies = () => {
               <AccordionItem
                 key={company.link}
                 value={company.textCz}
-                style={{ backgroundColor: company.color }}
+                style={{ backgroundColor: `#${company.color}` }}
                 className='rounded-2xl h-min'
               >
                 <AccordionTrigger>{company.title}</AccordionTrigger>
@@ -128,7 +131,7 @@ export const Companies = () => {
 
                   <br />
                   <div className='flex justify-between mt-4 text-xs'>
-                    <Link href={company.link}>{company.link}</Link>
+                    <Link href={company.link}>{company.linkPreview}</Link>
                   </div>
                 </AccordionContent>
               </AccordionItem>
