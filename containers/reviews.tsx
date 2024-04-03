@@ -11,9 +11,13 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion'
 import { SectionTitle } from '@/components/section-title'
-import { reviews } from '@/database/reviews'
+import { urlForImage } from '@/sanity/lib/image'
 
-export const Reviews = () => {
+interface Props {
+  reviews: any[]
+}
+
+export const Reviews = ({ reviews }: Props) => {
   const { language } = useLanguage()
 
   return (
@@ -46,13 +50,13 @@ export const Reviews = () => {
                   <AccordionItem
                     key={review.textCz + review.nameCz}
                     value={review.textCz}
-                    style={{ backgroundColor: review.color }}
+                    style={{ backgroundColor: `${review.color}` }}
                     className='rounded-2xl'
                   >
                     <AccordionTrigger>
                       <div className='flex gap-2 items-center truncate'>
                         <img
-                          src={review.avatar}
+                          src={urlForImage(review.image)}
                           alt={review.nameCz}
                           className='rounded-full w-10 h-10'
                         />
@@ -68,8 +72,7 @@ export const Reviews = () => {
                       "{language === 'cz' && review.textCz}
                       {language === 'en' && review.textEn}
                       {language === 'de' && review.textDe}
-                      {language === 'ua' && review.textUa}
-                      "
+                      {language === 'ua' && review.textUa}"
                     </AccordionContent>
                   </AccordionItem>
                 ))}
@@ -79,13 +82,13 @@ export const Reviews = () => {
                   <AccordionItem
                     key={review.textCz + review.nameCz}
                     value={review.textCz}
-                    style={{ backgroundColor: review.color }}
+                    style={{ backgroundColor: `${review.color}` }}
                     className='rounded-2xl h-min'
                   >
                     <AccordionTrigger>
                       <div className='flex gap-2 items-center'>
                         <img
-                          src={review.avatar}
+                          src={urlForImage(review.image)}
                           alt={review.nameCz}
                           className='rounded-full w-10 h-10'
                         />
@@ -101,8 +104,7 @@ export const Reviews = () => {
                       "{language === 'cz' && review.textCz}
                       {language === 'en' && review.textEn}
                       {language === 'de' && review.textDe}
-                      {language === 'ua' && review.textUa}
-                      "
+                      {language === 'ua' && review.textUa}"
                     </AccordionContent>
                   </AccordionItem>
                 ))}
@@ -117,13 +119,13 @@ export const Reviews = () => {
               <AccordionItem
                 key={review.textCz + review.nameCz}
                 value={review.textCz}
-                style={{ backgroundColor: review.color }}
+                style={{ backgroundColor: `${review.color}` }}
                 className='rounded-2xl h-min'
               >
                 <AccordionTrigger>
                   <div className='flex gap-2 items-center'>
                     <img
-                      src={review.avatar}
+                      src={urlForImage(review.image)}
                       alt={review.nameCz}
                       className='rounded-full w-10 h-10'
                     />
@@ -139,8 +141,7 @@ export const Reviews = () => {
                   "{language === 'cz' && review.textCz}
                   {language === 'en' && review.textEn}
                   {language === 'de' && review.textDe}
-                  {language === 'ua' && review.textUa}
-                  "
+                  {language === 'ua' && review.textUa}"
                 </AccordionContent>
               </AccordionItem>
             ))}
@@ -150,13 +151,13 @@ export const Reviews = () => {
               <AccordionItem
                 key={review.textCz + review.nameCz}
                 value={review.textCz}
-                style={{ backgroundColor: review.color }}
+                style={{ backgroundColor: `${review.color}` }}
                 className='rounded-2xl h-min'
               >
                 <AccordionTrigger>
                   <div className='flex gap-2 items-center'>
                     <img
-                      src={review.avatar}
+                      src={urlForImage(review.image)}
                       alt={review.nameCz}
                       className='rounded-full w-10 h-10'
                     />
@@ -172,8 +173,7 @@ export const Reviews = () => {
                   "{language === 'cz' && review.textCz}
                   {language === 'en' && review.textEn}
                   {language === 'de' && review.textDe}
-                  {language === 'ua' && review.textUa}
-                  "
+                  {language === 'ua' && review.textUa}"
                 </AccordionContent>
               </AccordionItem>
             ))}

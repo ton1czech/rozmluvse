@@ -62,3 +62,9 @@ export const CompaniesQuery = groq`
         ...,
     }
 `
+
+export const ReviewsQuery = groq`
+    *[_type=='review'] {
+        ...,
+    }
+`

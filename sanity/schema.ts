@@ -8,11 +8,13 @@ import lookingFor from './schemas/lookingFor'
 import author from './schemas/author'
 import language from './schemas/language'
 import company from './schemas/company'
+import review from './schemas/review'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
     language,
     company,
+    review,
     post,
     category,
     lector,

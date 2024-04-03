@@ -10,6 +10,7 @@ import {
   CompaniesQuery,
   LanguagesQuery,
   LectorsQuery,
+  ReviewsQuery,
 } from '@/sanity/lib/queries'
 
 export const revalidate = 60
@@ -18,13 +19,14 @@ export default async function Page() {
   const lectors = await cachedClient(LectorsQuery)
   const languages = await cachedClient(LanguagesQuery)
   const companies = await cachedClient(CompaniesQuery)
+  const reviews = await cachedClient(ReviewsQuery)
 
   return (
     <main className='mt-32 xl:mt-24 space-y-16 xl:space-y-24'>
       <Hero />
       <Languages languages={languages} />
       <Pricelist />
-      <Reviews />
+      <Reviews reviews={reviews} />
       <About lectors={lectors} />
       <Companies companies={companies} />
       <Contact />
