@@ -50,7 +50,7 @@ export const Reviews = ({ reviews }: Props) => {
                   <AccordionItem
                     key={review.textCz + review.nameCz}
                     value={review.textCz}
-                    style={{ backgroundColor: `${review.color}` }}
+                    style={{ backgroundColor: `#${review.color}` }}
                     className='rounded-2xl'
                   >
                     <AccordionTrigger>
@@ -82,7 +82,7 @@ export const Reviews = ({ reviews }: Props) => {
                   <AccordionItem
                     key={review.textCz + review.nameCz}
                     value={review.textCz}
-                    style={{ backgroundColor: `${review.color}` }}
+                    style={{ backgroundColor: `#${review.color}` }}
                     className='rounded-2xl h-min'
                   >
                     <AccordionTrigger>
@@ -119,7 +119,7 @@ export const Reviews = ({ reviews }: Props) => {
               <AccordionItem
                 key={review.textCz + review.nameCz}
                 value={review.textCz}
-                style={{ backgroundColor: `${review.color}` }}
+                style={{ backgroundColor: `#${review.color}` }}
                 className='rounded-2xl h-min'
               >
                 <AccordionTrigger>
@@ -151,7 +151,7 @@ export const Reviews = ({ reviews }: Props) => {
               <AccordionItem
                 key={review.textCz + review.nameCz}
                 value={review.textCz}
-                style={{ backgroundColor: `${review.color}` }}
+                style={{ backgroundColor: `#${review.color}` }}
                 className='rounded-2xl h-min'
               >
                 <AccordionTrigger>
