@@ -7,10 +7,12 @@ import { links } from '@/database/links'
 import { useLanguage } from '@/store/use-language'
 import { Button } from './ui/button'
 import { useNewsletter } from '@/store/use-newsletter'
+import { useCookies } from '@/store/use-cookies'
 
 export const Footer = () => {
   const { language } = useLanguage()
   const { openNewsletter } = useNewsletter()
+  const { openCookies } = useCookies()
 
   return (
     <footer className='font-stabil text-[8px] sm:text-[10px] bg-[#D9D9D9] py-4'>
@@ -82,6 +84,15 @@ export const Footer = () => {
                     className='hover:bg-transparent p-0 m-0 h-auto w-auto !text-base'
                   >
                     Newsletter
+                  </Button>
+                </li>
+                <li>
+                  <Button
+                    variant='ghost'
+                    onClick={() => openCookies()}
+                    className='hover:bg-transparent p-0 m-0 h-auto w-auto !text-base'
+                  >
+                    Cookies
                   </Button>
                 </li>
               </div>
