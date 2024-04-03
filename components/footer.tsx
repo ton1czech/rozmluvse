@@ -13,7 +13,7 @@ export const Footer = () => {
   const { openNewsletter } = useNewsletter()
 
   return (
-    <footer className='font-stabil text-[8px] sm:text-[10px] mt-6 bg-[#D9D9D9] py-4'>
+    <footer className='font-stabil text-[8px] sm:text-[10px] bg-[#D9D9D9] py-4'>
       <Container className='space-y-8'>
         <Link
           href='/#home'

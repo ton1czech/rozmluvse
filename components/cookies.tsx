@@ -4,10 +4,11 @@ import { useCookies } from '@/store/use-cookies'
 import { useLanguage } from '@/store/use-language'
 import { Button } from './ui/button'
 import { useEffect, useState } from 'react'
-import { ArrowRight } from 'lucide-react'
 import { Container } from './container'
+import { usePathname } from 'next/navigation'
 
 export const Cookies = () => {
+  const pathname = usePathname()
   const { language } = useLanguage()
   const {
     closeCookies,
@@ -16,6 +17,8 @@ export const Cookies = () => {
     setAnalyticsEnabled,
     closeCookiesPermanently,
   } = useCookies()
+
+  const studio = pathname.includes('/studio')
 
   const [isSettingsOpen, setIsSettingsOpen] = useState<boolean>(false)
 
@@ -41,7 +44,7 @@ export const Cookies = () => {
 
   return (
     <>
-      {isOpen && (
+      {!studio && isOpen && (
         <div className='bg-[#00ABD3] fixed w-screen left-0 bottom-0 py-4 lg:py-12 z-[999]'>
           <Container className='flex flex-col sm:grid sm:grid-cols-2 gap-8 lg:gap-20'>
             <h3>
