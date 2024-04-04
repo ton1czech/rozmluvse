@@ -21,7 +21,7 @@ export default function Page() {
   }, [language])
 
   return (
-    <main className='font-stabil mt-28 md:mt-32 text-lg lg:text-2xl'>
+    <main className='font-stabil mt-28 md:mt-32 text-lg lg:text-2xl mb-8'>
       <Container className='grid gap-4 lg:gap-10 lg:grid-cols-2'>
         <img src='/story/barbora.webp' alt='barbora' className='rounded-3xl' />
         <div>

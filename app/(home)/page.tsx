@@ -22,7 +22,7 @@ export default async function Page() {
   const reviews = await cachedClient(ReviewsQuery)
 
   return (
-    <main className='mt-32 xl:mt-24 space-y-16 xl:space-y-24'>
+    <main className='mt-32 xl:mt-24 space-y-16 xl:space-y-24 mb-8'>
       <Hero />
       <Languages languages={languages} />
       <Pricelist />

@@ -7,7 +7,7 @@ export default function Page() {
   const { language } = useLanguage()
 
   return (
-    <main className='mt-28 md:mt-32 font-stabil text-lg'>
+    <main className='mt-28 md:mt-32 font-stabil text-lg mb-8'>
       <Container>
         <div>
           <h2 className='font-labil text-2xl sm:text-3xl font-black'>

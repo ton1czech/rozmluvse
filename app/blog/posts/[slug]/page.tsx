@@ -16,7 +16,7 @@ export default async function Page({ params }: { params: any }) {
   })
 
   return (
-    <main className='mt-32 xl:mt-16'>
+    <main className='mt-32 xl:mt-16 mb-8'>
       <Post post={post} />
     </main>
   )
