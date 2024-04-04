@@ -3,6 +3,7 @@
 import { Cols } from '@/components/cols'
 import { Container } from '@/components/container'
 import { cn } from '@/lib/utils'
+import { urlForImage } from '@/sanity/lib/image'
 import { useLanguage } from '@/store/use-language'
 import Link from 'next/link'
 
@@ -53,12 +54,13 @@ export const Categories = ({ categories }: Props) => {
               href={`/blog/posts?category=${item.title}`}
               style={{ background: `#${item.color}` }}
               className={cn(
-                'text-center text-3xl rounded-2xl py-8 font-black',
+                'flex justify-between items-center text-3xl rounded-2xl p-5 font-black',
                 item.disabled && 'pointer-events-none',
                 !item.disabled && 'ffs-12-hover'
               )}
             >
-              {language === 'cz' && item.title}
+              <img src={urlForImage(item.image)} alt={item.title} />
+              {item.title}
             </Link>
           ))}
         </div>
