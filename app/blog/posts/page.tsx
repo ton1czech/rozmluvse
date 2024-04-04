@@ -8,7 +8,7 @@ export default async function Page() {
   const posts = await cachedClient(PostsQuery)
 
   return (
-    <main className='mt-32 xl:mt-16'>
+    <main className='mt-32 xl:mt-16 mb-8'>
       <Posts posts={posts} />
     </main>
   )
