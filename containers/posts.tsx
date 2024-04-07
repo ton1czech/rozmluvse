@@ -53,6 +53,13 @@ export const Posts = ({ posts }: Props) => {
 
   const filteredPosts = filterPosts(posts, category!)
 
+  const getCategoryColor = (post: any, categoryName: string) => {
+    const categoryObject = post.categories.find(
+      (cat: any) => cat.title === categoryName
+    )
+    return categoryObject ? `#${categoryObject.color}` : '#FFFFFF' // Vrací bílou barvu, pokud kategorie není nalezena
+  }
+
   return (
     <section className='scroll-mt-28'>
       <Container>
@@ -103,16 +110,14 @@ export const Posts = ({ posts }: Props) => {
                 href={`/blog/posts/${post.slug.current}`}
               >
                 <div
-                  className='aspect-square overflow-hidden rounded-3xl p-4'
-                  style={{ background: `#${post.categories[0].color}` }}
+                  className='aspect-square overflow-hidden rounded-3xl relative'
+                  style={{ background: getCategoryColor(post, category!) }}
                 >
-                  <div className='relative w-full h-full aspect-square'>
-                    <img
-                      src={urlForImage(post.mainImage)}
-                      alt={post.title}
-                      className='absolute inset-0 w-full h-full object-cover hover:scale-[102%] transition rounded-xl aspect-square'
-                    />
-                  </div>
+                  <img
+                    src={urlForImage(post.mainImage)}
+                    alt={post.title}
+                    className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 object-cover hover:scale-[102%] transition rounded-xl aspect-square overflow-hidden w-[90%] h-[90%]'
+                  />
                 </div>
 
                 <h3 className='text-xl sm:text-2xl mt-1'>
@@ -121,7 +126,7 @@ export const Posts = ({ posts }: Props) => {
                         .split(new RegExp(`(${search})`, 'gi'))
                         .map((part: string, index: number) =>
                           part.toLowerCase() === search?.toLowerCase() ? (
-                            <span key={index} className='bg-yellow-500'>
+                            <span key={index} className='bg-[#FFC600]'>
                               {part}
                             </span>
                           ) : (
