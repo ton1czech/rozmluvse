@@ -35,7 +35,7 @@ export const Post = ({ post }: Props) => {
               {post.categories.map((category: any) => (
                 <p
                   style={{ background: `#${category.color}` }}
-                  className='text-center rounded-2xl py-1 text-xs lg:w-1/2'
+                  className='text-center rounded-2xl py-1 text-xs lg:w-1/2 mb-1'
                 >
                   {category.title}
                 </p>

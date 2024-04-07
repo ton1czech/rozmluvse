@@ -40,7 +40,7 @@ export const PostsPathsQuery = groq`
 export const PostQuery = groq`
     *[_type == "post" && slug.current == $slug][0]{
         ...,
-        author->,
+        writtenby->,
         categories[]->
     }
 `
