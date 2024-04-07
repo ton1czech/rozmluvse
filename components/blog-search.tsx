@@ -60,7 +60,7 @@ export const BlogSearch = ({ posts }: Props) => {
   }
 
   return (
-    <div className='fixed top-16 pt-16 xl:pt-0 w-full left-0 bg-white pb-8 xl:pb-12 z-0'>
+    <div className='fixed top-16 pt-16 xl:pt-0 w-full left-0 bg-white pb-20 z-0'>
       <Container>
         <Cols>
           <div />
