@@ -57,7 +57,9 @@ export const Posts = ({ posts }: Props) => {
     const categoryObject = post.categories.find(
       (cat: any) => cat.title === categoryName
     )
-    return categoryObject ? `#${categoryObject.color}` : '#FFFFFF' // Vrací bílou barvu, pokud kategorie není nalezena
+    return categoryObject
+      ? `#${categoryObject.color}`
+      : `#${post.categories[0].color}`
   }
 
   return (
