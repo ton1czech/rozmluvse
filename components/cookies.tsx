@@ -48,7 +48,10 @@ export const Cookies = () => {
       {!studio && isOpen && (
         <div className='bg-[#00ABD3] fixed w-screen left-0 bottom-0 z-[999]'>
           <Container className='relative flex flex-col sm:grid sm:grid-cols-2 gap-8 lg:gap-20 py-4 lg:py-12'>
-            <X className='absolute right-5 top-3' onClick={closeCookies} />
+            <X
+              className='absolute right-5 top-3 cursor-pointer'
+              onClick={closeCookies}
+            />
             <h3>
               {language === 'cz' &&
                 'Máš chuť na cookies, bánh quy nebo 饼干? Ve všech třech případech jde o sušenky. Ty naše naštěstí nedrobí a ani po nich nepřibereš. Ťukni na „v pořádku“ a my soubory cookies využijeme pro účely personalizace a analýzy.'}
@@ -56,12 +59,12 @@ export const Cookies = () => {
                 "Would you like some cookies, banh quy or ...? In all three cases those are sweets. Luckily, ours don't crumble or make one put on weight. Tap on 'all right' so we may use the cookie files for personalisation and analysis purposes."}
               {language === 'de' &&
                 'Hast du Bock auf Cookies, bánh quy oder 饼干? In allen drei Fällen geht es um - Kekse. Die unseren bröseln zum Glück nicht und machen auch nicht dick. Klicke einfach auf „Akzeptieren“ und wir verwenden die cookie-Dateien für Personalisierungs- und Analysezwecke.'}
-              {language === 'ua' && ''}
+              {language === 'ua' && '!text!'}
             </h3>
             <div className='flex flex-col sm:flex-row gap-4 sm:self-end'>
               <Button
                 onClick={handleSettings}
-                className='bg-white rounded-full py-7 sm:py-6 text-2xl sm:text-lg text-black hover:bg-zinc-50 w-full lg:min-w-64 ffs-12-hover'
+                className='bg-white rounded-full py-7 sm:py-6 text-2xl sm:text-lg text-black hover:bg-zinc-50 w-full ffs-12-hover'
               >
                 {language === 'cz' && 'nastavení'}
                 {language === 'en' && 'setting'}
@@ -70,7 +73,7 @@ export const Cookies = () => {
               </Button>
               <Button
                 onClick={handleSubmit}
-                className='bg-white rounded-full py-7 sm:py-6 text-2xl sm:text-lg text-black hover:bg-zinc-50 w-full lg:min-w-64 ffs-12-hover'
+                className='bg-white rounded-full py-7 sm:py-6 text-2xl sm:text-lg text-black hover:bg-zinc-50 w-full ffs-12-hover'
               >
                 {language === 'cz' && 'v pořádku'}
                 {language === 'en' && 'all right'}
