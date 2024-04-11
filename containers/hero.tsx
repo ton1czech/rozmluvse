@@ -14,7 +14,7 @@ export const Hero = () => {
           <div />
           <div>
             <h1 className='text-3xl sm:text-4xl md:text-5xl font-black lg:text-6xl'>
-              {language === 'cz' && (
+              {/* {language === 'cz' && (
                 <>
                   Jazykové studio, <br className='sm:hidden' /> ve kterém <br />{' '}
                   se nebudeš bát <br className='sm:hidden' /> dělat chyby.
@@ -38,13 +38,27 @@ export const Hero = () => {
                   Мовні курси, <br className='sm:hidden' /> де ти не <br />{' '}
                   будеш боятись <br className='sm:hidden' /> помилитись.
                 </>
+              )} */}
+              {language === 'cz' && (
+                <>Jazykové studio, ve kterém se nebudeš bát dělat chyby.</>
+              )}
+              {language === 'en' && (
+                <>
+                  A language studio where you are not afraid of making mistakes.
+                </>
+              )}
+              {language === 'de' && (
+                <>Das Sprachstudio, wo du keine Angst vor Fehlern hast.</>
+              )}
+              {language === 'ua' && (
+                <>Мовні курси, де ти не будеш боятись помилитись.</>
               )}
             </h1>
             <p className='font-stabil text-lg mt-8 xl:text-2xl'>
               {language === 'cz' && (
                 <>
-                  Dopřej si lingvistický wellness a nauč se anglicky,{' '}
-                  <br className='hidden xl:block' /> německy nebo klidně čínsky.
+                  Dopřej si lingvistický wellness a nauč se anglicky, německy
+                  nebo klidně čínsky.
                 </>
               )}
               {language === 'en' && (
