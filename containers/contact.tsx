@@ -22,7 +22,7 @@ export const Contact = () => {
           />
 
           <div className='hidden xl:block'>
-            <div className='font-stabil text-lg xl:text-2xl grid grid-cols-[1fr_1.85fr] gap-y-10 gap-x-24'>
+            <div className='font-stabil text-lg xl:text-2xl grid grid-cols-[1fr_1.8fr] gap-y-10 gap-x-24'>
               <div className='grid'>
                 <p>Pavlíkova 7, Klatovy</p>
                 <p>Křížová 162, Klatovy</p>
