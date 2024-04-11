@@ -15,19 +15,35 @@ export const Cookies = () => {
     closeCookies,
     openCookies,
     isOpen,
+    analyticsEnabled,
     setAnalyticsEnabled,
+    setAnalyticsDisabled,
+    functionalEnabled,
+    setFunctionalEnabled,
+    setFunctionalDisabled,
     closeCookiesPermanently,
   } = useCookies()
 
   const studio = pathname.includes('/studio')
 
   const [isSettingsOpen, setIsSettingsOpen] = useState<boolean>(false)
+  const [analyticsOn, setAnalyticsOn] = useState<boolean>(false)
+  const [functionalOn, setFunctionalOn] = useState<boolean>(false)
 
-  useEffect(() => {
-    if (!document.cookie.includes('cookiesClosed')) {
-      openCookies()
-    }
-  }, [openCookies])
+  console.log('analytics', analyticsOn)
+  console.log('functional', functionalOn)
+
+  const handleAnalyticsCheckboxChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setAnalyticsOn(event.target.checked)
+  }
+
+  const handleFunctionalCheckboxChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setFunctionalOn(event.target.checked)
+  }
 
   const handleSettings = () => {
     setIsSettingsOpen(true)
@@ -41,7 +57,19 @@ export const Cookies = () => {
 
   const confirmSettings = () => {
     closeCookiesPermanently()
+    setIsSettingsOpen(false)
+
+    if (analyticsOn) setAnalyticsEnabled()
+    if (!analyticsOn) setAnalyticsDisabled()
+    if (functionalOn) setFunctionalEnabled()
+    if (!functionalOn) setFunctionalDisabled()
   }
+
+  useEffect(() => {
+    if (!document.cookie.includes('cookiesClosed')) {
+      openCookies()
+    }
+  }, [openCookies])
 
   return (
     <>
@@ -92,18 +120,24 @@ export const Cookies = () => {
               {language === 'cz' && 'Vyber si podle chuti:'}
               {language === 'en' && 'Choose up to your taste:'}
               {language === 'de' && 'Wähle nach Belieben aus:'}
-              {language === 'ua' && ''}
+              {language === 'ua' && '!text!'}
             </h2>
 
             <div className='flex flex-col sm:grid sm:grid-cols-2 gap-12 max-w-[66%]'>
               <div className='flex flex-col gap-3'>
                 <div className='flex gap-2'>
-                  <input type='radio' name='func-cookies' id='func-cookies' />
+                  <input
+                    type='checkbox'
+                    name='func-cookies'
+                    id='func-cookies'
+                    defaultChecked={functionalEnabled}
+                    onChange={handleFunctionalCheckboxChange}
+                  />
                   <h3 className='font-stabil items-center'>
                     {language === 'cz' && 'funkční cookies'}
                     {language === 'en' && 'functional cookies'}
                     {language === 'de' && 'Funktions-Cookies'}
-                    {language === 'ua' && ''}
+                    {language === 'ua' && '!text!'}
                   </h3>
                 </div>
                 <p className='font-stabil'>
@@ -113,22 +147,24 @@ export const Cookies = () => {
                     "They enable the web to work correctly and safely, without them any website wouldn't work. They can't be turned off, sorry."}
                   {language === 'de' &&
                     'Die gewährleisten das korrekte und sichere Funktionieren unserer Webseite. Ohne sie könnte keine Internetseite laufen. Kann nicht ausgeschaltet werden, sorry.'}
-                  {language === 'ua' && ''}
+                  {language === 'ua' && '!text!'}
                 </p>
               </div>
 
               <div className='flex flex-col gap-3'>
                 <div className='flex gap-2'>
                   <input
-                    type='radio'
+                    type='checkbox'
                     name='analytic-cookies'
                     id='analytic-cookies'
+                    defaultChecked={analyticsEnabled}
+                    onChange={handleAnalyticsCheckboxChange}
                   />
                   <h3 className='font-stabil items-center'>
                     {language === 'cz' && 'analytické cookies'}
                     {language === 'en' && 'analytical cookies'}
                     {language === 'de' && 'Analytische Cookies'}
-                    {language === 'ua' && ''}
+                    {language === 'ua' && '!text!'}
                   </h3>
                 </div>
                 <p className='font-stabil'>
@@ -138,7 +174,7 @@ export const Cookies = () => {
                     'They watch how you move along our website. In other words - we can see where you click and next time can offer you the content you are interested in most.'}
                   {language === 'de' &&
                     'Die verfolgen, wo du dich auf unseren Seitern herumtreibst. Oder auf Deutsch - wir sehen, worauf du klickst und das nächste Mal präsentieren wir Dir genau das, was dich am meisten interessiert. '}
-                  {language === 'ua' && ''}
+                  {language === 'ua' && '!text!'}
                 </p>
               </div>
             </div>
@@ -149,9 +185,9 @@ export const Cookies = () => {
                 className='bg-white rounded-full py-7 sm:py-6 text-2xl sm:text-lg text-black hover:bg-zinc-50 w-full md:w-1/2 xl:w-1/4 ffs-12-hover mt-10 mb-4'
               >
                 {language === 'cz' && 'uložit a sníst'}
-                {language === 'en' && ''}
-                {language === 'de' && ''}
-                {language === 'ua' && ''}
+                {language === 'en' && '!text!'}
+                {language === 'de' && '!text!'}
+                {language === 'ua' && '!text!'}
               </Button>
             </div>
           </Container>
