@@ -3,7 +3,7 @@
 import { useLanguage } from '@/store/use-language'
 import { useNewsletter } from '@/store/use-newsletter'
 import { Button } from './ui/button'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { X } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
@@ -19,6 +19,8 @@ export const Newsletter = () => {
     openNewsletter,
     isOpen,
   } = useNewsletter()
+
+  const [lang, setLang] = useState('cz')
 
   useEffect(() => {
     const newsletterTimeout = setTimeout(() => {
@@ -50,7 +52,12 @@ export const Newsletter = () => {
               <X className='text-zinc-200' />
             </Button>
 
-            <div className='w-[65%] mx-auto mt-12'>
+            <form
+              method='post'
+              action={process.env.NEXT_PUBLIC_ECOMAIL}
+              onSubmit={() => closeNewsletterPermanently}
+              className='w-[65%] mx-auto mt-12'
+            >
               <h2 className='text-3xl text-center text-white'>
                 {language === 'cz' &&
                   'Novinky ve výuce, tipy na učení i pohled do zákulisí ti pošleme v newsletteru na'}
@@ -63,17 +70,26 @@ export const Newsletter = () => {
               </h2>
               <input
                 type='email'
+                name='email'
                 className='mt-8 mb-2 bg-transparent border border-zinc-200 w-full placeholder:text-white text-center font-stabil text-lg rounded-3xl py-1 text-white'
                 placeholder='tvuj@email.com'
               />
               <input
                 type='text'
+                name='name'
                 className='mb-2 bg-transparent border border-zinc-200 w-full placeholder:text-white text-center font-stabil text-lg rounded-3xl py-1 text-white'
                 placeholder='Tvoje jméno'
               />
               <div className='flex items-center justify-between mb-6'>
                 <div className='flex gap-2'>
-                  <input type='radio' name='lang' id='lang' defaultChecked />
+                  <input
+                    type='radio'
+                    name='lang'
+                    id='lang'
+                    value='cz'
+                    defaultChecked
+                    onChange={e => setLang(e.currentTarget.value)}
+                  />
                   <h3 className='font-stabil text-white items-center'>
                     {language === 'cz' && 'v češtině'}
                     {language === 'en' && ''}
@@ -82,7 +98,13 @@ export const Newsletter = () => {
                   </h3>
                 </div>
                 <div className='flex gap-2'>
-                  <input type='radio' name='lang' id='lang' />
+                  <input
+                    type='radio'
+                    name='lang'
+                    id='lang'
+                    value='en'
+                    onChange={e => setLang(e.currentTarget.value)}
+                  />
                   <h3 className='font-stabil text-white items-center'>
                     {language === 'cz' && 'v angličtině'}
                     {language === 'en' && ''}
@@ -90,10 +112,17 @@ export const Newsletter = () => {
                     {language === 'ua' && ''}
                   </h3>
                 </div>
+                <input
+                  type='text'
+                  name='custom_fields[language]'
+                  id='custom_fields[language]'
+                  className='hidden'
+                  value={lang}
+                />
               </div>
               <div className='flex flex-col gap-4'>
                 <Button
-                  onClick={() => closeNewsletterPermanently()}
+                  type='submit'
                   className='bg-white rounded-full py-5 text-xl text-black hover:bg-zinc-50 ffs-12-hover font-labil font-black'
                 >
                   {language === 'cz' && 'odebírej'}
@@ -102,7 +131,7 @@ export const Newsletter = () => {
                   {language === 'ua' && 'слідкуй'}
                 </Button>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       )}
