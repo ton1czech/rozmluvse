@@ -3,8 +3,10 @@
 import { Cols } from '@/components/cols'
 import { Container } from '@/components/container'
 import { RichText } from '@/components/rich-text'
+import { Button } from '@/components/ui/button'
 import { PortableText } from '@portabletext/react'
 import { parseISO, format } from 'date-fns'
+import Link from 'next/link'
 
 interface Props {
   post: any
@@ -42,6 +44,12 @@ export const Post = ({ post }: Props) => {
           </div>
           <div>
             <PortableText value={post.body} components={RichText} />
+            <Link
+              href='/lessons'
+              className='bg-[#FFC600] rounded-full text-xl px-7 py-4 font-labil mt-10'
+            >
+              přihlaš se na lekce
+            </Link>
           </div>
         </Cols>
       </Container>
