@@ -14,31 +14,6 @@ export const Hero = () => {
           <div />
           <div>
             <h1 className='text-3xl sm:text-4xl md:text-5xl font-black lg:text-6xl'>
-              {/* {language === 'cz' && (
-                <>
-                  Jazykové studio, <br className='sm:hidden' /> ve kterém <br />{' '}
-                  se nebudeš bát <br className='sm:hidden' /> dělat chyby.
-                </>
-              )}
-              {language === 'en' && (
-                <>
-                  A language studio <br className='sm:hidden' /> where you{' '}
-                  <br /> are not afraid <br className='sm:hidden' /> of making
-                  mistakes.
-                </>
-              )}
-              {language === 'de' && (
-                <>
-                  Das Sprachstudio, <br className='sm:hidden' /> wo du keine
-                  <br /> Angst vor <br className='sm:hidden' /> Fehlern hast.
-                </>
-              )}
-              {language === 'ua' && (
-                <>
-                  Мовні курси, <br className='sm:hidden' /> де ти не <br />{' '}
-                  будеш боятись <br className='sm:hidden' /> помилитись.
-                </>
-              )} */}
               {language === 'cz' && (
                 <>Jazykové studio, ve kterém se nebudeš bát dělat chyby.</>
               )}
