@@ -25,11 +25,25 @@ export const Menu = () => {
     >
       <motion.div
         key='menu'
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
+        initial={{ opacity: 0, scaleY: 0.5 }}
+        animate={{
+          opacity: 1,
+          scaleY: 1,
+
+          transition: {
+            duration: 0.2,
+            ease: [0.82, 0, 0.19, 0],
+          },
+        }}
+        exit={{
+          opacity: 0,
+          transition: {
+            duration: 0.2,
+            ease: [0.22, 1, 0.36, 1],
+          },
+        }}
         transition={{ delay: 0.1 }}
-        className='fixed right-0 top-0 w-full h-full xl:h-1/2 bg-[#9C6ACA] py-4 z-10'
+        className='fixed right-0 top-0 w-full h-full xl:h-1/2 bg-[#9C6ACA] py-4 z-10 origin-top'
       >
         <Container className='w-full'>
           <div className='flex justify-between items-center w-full'>
