@@ -8,6 +8,7 @@ import { RemoveOneLetterWords } from '@/providers/remove-one-letter-words'
 import { Cookies } from '@/components/cookies'
 import { cachedClient } from '@/sanity/lib/client'
 import { PostsQuery } from '@/sanity/lib/queries'
+import { GoogleAnalyticsProvider } from '@/providers/google-analytics-provider'
 
 const stabil = localFont({
   src: '../fonts/StabilGrotesk-Regular.otf',
@@ -39,6 +40,7 @@ export default async function Layout({
         <Cookies />
 
         <RemoveOneLetterWords />
+        <GoogleAnalyticsProvider />
       </body>
     </html>
   )
