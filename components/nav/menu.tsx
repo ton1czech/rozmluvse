@@ -8,7 +8,7 @@ import { Container } from '../container'
 import LanguageSelector from './language-selector'
 import { Button } from '../ui/button'
 import { useNewsletter } from '@/store/use-newsletter'
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 export const Menu = () => {
   const { language } = useLanguage()
@@ -50,6 +50,7 @@ export const Menu = () => {
             <Link
               href='/#home'
               className='text-2xl md:text-3xl lg:text-4xl place-self-center text-white ffs-12'
+              onClick={() => closeMenu()}
             >
               rozmluv se
             </Link>
