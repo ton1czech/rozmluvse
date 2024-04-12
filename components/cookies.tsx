@@ -30,9 +30,6 @@ export const Cookies = () => {
   const [analyticsOn, setAnalyticsOn] = useState<boolean>(false)
   const [functionalOn, setFunctionalOn] = useState<boolean>(false)
 
-  console.log('analytics', analyticsOn)
-  console.log('functional', functionalOn)
-
   const handleAnalyticsCheckboxChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {

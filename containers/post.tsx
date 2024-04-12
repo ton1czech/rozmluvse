@@ -11,8 +11,6 @@ interface Props {
 }
 
 export const Post = ({ post }: Props) => {
-  console.log(post)
-
   const parsedDate = parseISO(post.publishedAt)
   const formattedDate = format(parsedDate, 'dd. MM. yy')
 
