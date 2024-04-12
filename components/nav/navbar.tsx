@@ -11,6 +11,7 @@ import { Search } from 'lucide-react'
 import { useLanguage } from '@/store/use-language'
 import { useState } from 'react'
 import { BlogSearch } from '../blog-search'
+import { AnimatePresence } from 'framer-motion'
 
 interface Props {
   posts: any
@@ -72,7 +73,7 @@ export const Navbar = ({ posts }: Props) => {
           </div>
         </div>
 
-        {isMenuOpen && <Menu />}
+        <AnimatePresence>{isMenuOpen && <Menu />}</AnimatePresence>
         {isSearchOpen && blog && <BlogSearch posts={posts} />}
       </Container>
     </nav>
