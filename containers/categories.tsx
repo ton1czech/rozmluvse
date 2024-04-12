@@ -59,7 +59,11 @@ export const Categories = ({ categories }: Props) => {
                 !item.disabled && 'ffs-12-hover'
               )}
             >
-              <img src={urlForImage(item.image)} alt={item.title} />
+              <img
+                src={urlForImage(item.image)}
+                alt={item.title}
+                className='size-10'
+              />
               {item.title}
             </Link>
           ))}
