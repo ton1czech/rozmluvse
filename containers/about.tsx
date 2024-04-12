@@ -7,6 +7,7 @@ import { urlForImage } from '@/sanity/lib/image'
 import { useLanguage } from '@/store/use-language'
 import { Cols } from '@/components/cols'
 import { SectionTitle } from '@/components/section-title'
+import { Button } from '@/components/ui/button'
 
 export const About = ({ lectors }: { lectors: any }) => {
   const { language } = useLanguage()
@@ -55,6 +56,24 @@ export const About = ({ lectors }: { lectors: any }) => {
               </p>
             </Link>
           ))}
+          <div className='grid place-content-center rounded-2xl text-center bg-[#FD828C] p-2'>
+            <h2 className='lg:text-2xl mb-6'>
+              {language === 'cz' && 'Chceš se stát součástí lektorského týmu?'}
+              {language === 'en' &&
+                "Would you like to join the lecturers' team?"}
+              {language === 'de' &&
+                'Willst du Teil unseres Lektor*innenteams werden?'}
+              {language === 'ua' && '!text!'}
+            </h2>
+            <Link href='/for-lectors'>
+              <button className='rounded-full bg-white hover:bg-zinc-100 py-2 px-6 lg:text-xl'>
+                {language === 'cz' && 'To teda'}
+                {language === 'en' && 'Hell yeah'}
+                {language === 'de' && 'Aber sowas von!'}
+                {language === 'ua' && '!text!'}
+              </button>
+            </Link>
+          </div>
         </div>
       </Container>
     </section>
