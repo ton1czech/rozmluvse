@@ -54,6 +54,16 @@ export default defineType({
       title: 'Obsah',
       type: 'blockContent',
     }),
+    defineField({
+      name: 'ctaLabel',
+      title: 'CTA Text',
+      type: 'string',
+    }),
+    defineField({
+      name: 'ctaUrl',
+      title: 'CTA Odkaz',
+      type: 'string',
+    }),
   ],
 
   preview: {

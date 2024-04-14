@@ -44,11 +44,13 @@ export const Post = ({ post }: Props) => {
           </div>
           <div>
             <PortableText value={post.body} components={RichText} />
+            <div className='mt-10' />
             <Link
-              href='/lessons'
-              className='bg-[#FFC600] rounded-full text-xl px-7 py-4 font-labil mt-10'
+              href={post.ctaUrl}
+              target='_blank'
+              className='bg-[#FFC600] rounded-full text-xl px-7 py-4 font-labil'
             >
-              přihlaš se na lekce
+              {post.ctaLabel}
             </Link>
           </div>
         </Cols>
