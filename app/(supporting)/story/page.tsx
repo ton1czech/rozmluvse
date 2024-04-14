@@ -16,7 +16,7 @@ export default function Page() {
         : language === 'de'
         ? 'Die Story | rozmluv se'
         : language === 'ua'
-        ? '| rozmluv se'
+        ? 'Про створення студії | rozmluv se'
         : ''
   }, [language])
 
