@@ -91,7 +91,7 @@ export const Newsletter = () => {
                   type='text'
                   name='name'
                   className='mb-2 bg-transparent border border-zinc-200 w-full placeholder:text-white text-center font-stabil text-lg rounded-3xl py-1 text-white'
-                  placeholder='Tvoje jméno'
+                  placeholder='tvoje jméno'
                 />
                 <div className='flex items-center justify-between mb-6'>
                   <div className='flex gap-2'>
