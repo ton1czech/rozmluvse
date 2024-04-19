@@ -10,7 +10,7 @@ export const GoogleAnalyticsProvider = () => {
   return (
     <>
       {analyticsEnabled ||
-        (window.localStorage
+        (window?.localStorage
           .getItem('cookies-storage')
           ?.includes('"analyticsEnabled":true') && (
           <>
