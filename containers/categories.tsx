@@ -15,7 +15,7 @@ export const Categories = ({ categories }: Props) => {
   const { language } = useLanguage()
 
   return (
-    <section className='scroll-mt-28'>
+    <section className='scroll-mt-28 min-h-[75vh]'>
       <Container>
         <Cols>
           <div />
@@ -54,7 +54,7 @@ export const Categories = ({ categories }: Props) => {
               href={`/blog/posts?category=${item.title}`}
               style={{ background: `#${item.color}` }}
               className={cn(
-                'flex justify-between items-center text-3xl rounded-2xl p-5 font-black',
+                'flex justify-between items-center text-2xl rounded-2xl py-6 px-9 font-black',
                 item.disabled && 'pointer-events-none',
                 !item.disabled && 'ffs-12-hover'
               )}
