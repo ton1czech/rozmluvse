@@ -9,6 +9,9 @@ import { Cookies } from '@/components/cookies'
 import { cachedClient } from '@/sanity/lib/client'
 import { PostsQuery } from '@/sanity/lib/queries'
 import { GoogleAnalyticsProvider } from '@/providers/google-analytics-provider'
+import { Metadata } from 'next'
+
+export const revalidate = 60
 
 const stabil = localFont({
   src: '../fonts/StabilGrotesk-Regular.otf',
@@ -20,7 +23,11 @@ const labil = localFont({
   variable: '--font-labil',
 })
 
-export const revalidate = 60
+export const metadata: Metadata = {
+  metadataBase: new URL('https://rozmluv.se'),
+  description: 'language studio',
+  authors: [{ name: 'Daniel Anthony Baudyš', url: 'https://baudys.dev' }],
+}
 
 export default async function Layout({
   children,
