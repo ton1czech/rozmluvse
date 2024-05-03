@@ -36,7 +36,7 @@ export const Navbar = ({ posts }: Props) => {
           >
             rozmluv se
           </Link>
-          <div className='flex items-center gap-3 md:gap-6 pt-1'>
+          <div className='flex items-center gap-2 sm:gap-3 md:gap-6 pt-1 text-sm sm:text-base'>
             {blog ? (
               <button
                 className='font-stabil inline-flex gap-1 items-center'
@@ -66,7 +66,7 @@ export const Navbar = ({ posts }: Props) => {
             <Button
               variant='ghost'
               onClick={() => openMenu()}
-              className='font-stabil hover:bg-transparent p-0 m-0 text-base'
+              className='font-stabil hover:bg-transparent p-0 m-0 sm:!text-base'
             >
               Menu
             </Button>

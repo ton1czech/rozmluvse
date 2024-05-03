@@ -50,7 +50,9 @@ const LanguageSelector = ({ color }: Props) => {
             color === 'black' && 'hover:text-black text-black'
           )}
         >
-          <p className='uppercase font-stabil'>{language}</p>
+          <p className='uppercase font-stabil text-sm sm:text-base'>
+            {language}
+          </p>
         </Button>
       </PopoverTrigger>
       <PopoverContent className='w-[100px] p-2 z-[1001] bg-zinc-100 backdrop-blur-lg border-zinc-500/40'>
