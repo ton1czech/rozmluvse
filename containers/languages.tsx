@@ -65,7 +65,7 @@ export const Languages = ({ languages }: Props) => {
           {languages.map(item => (
             <Link
               key={item.titleCz}
-              href={item.disabled ? '' : '/form'}
+              href={item.disabled ? '' : '/lesson'}
               style={{ background: `#${item.color}` }}
               className={cn(
                 'text-center text-3xl rounded-2xl py-8 font-black',
