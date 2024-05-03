@@ -54,7 +54,8 @@ export const Menu = () => {
             >
               rozmluv se
             </Link>
-            <div className='flex items-center gap-3 md:gap-6 pt-1'>
+
+            <div className='flex items-center gap-2 sm:gap-3 md:gap-6 pt-1 text-sm sm:text-base'>
               <Link
                 href='https://linktr.ee/rozmluv.se'
                 target='_blank'
@@ -69,7 +70,7 @@ export const Menu = () => {
               <Button
                 variant='ghost'
                 onClick={() => closeMenu()}
-                className='font-stabil hover:bg-transparent text-white hover:text-white m-0 p-0 text-base'
+                className='font-stabil hover:bg-transparent text-white hover:text-white m-0 p-0 sm:text-base'
               >
                 {language === 'cz' && 'Zavřít'}
                 {language === 'en' && 'Close'}
