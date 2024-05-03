@@ -55,7 +55,7 @@ export const Newsletter = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ delay: 0.1 }}
-              className='relative max-w-[500px] max-h-[500px] aspect-square mx-4 bg-[#9F6ACD] p-4 rounded-3xl'
+              className='relative max-w-[333px] sm:max-w-[500px] max-h-[500px] aspect-square mx-4 bg-[#9F6ACD] p-4 rounded-3xl'
             >
               <Button
                 onClick={() => closeNewsletter()}
@@ -69,7 +69,7 @@ export const Newsletter = () => {
                 method='post'
                 action={process.env.NEXT_PUBLIC_ECOMAIL}
                 onSubmit={() => closeNewsletterPermanently}
-                className='w-[65%] mx-auto mt-12'
+                className='w-[85%] sm:w-[65%] mx-auto mt-12'
               >
                 <h2 className='text-3xl text-center text-white'>
                   {language === 'cz' &&
