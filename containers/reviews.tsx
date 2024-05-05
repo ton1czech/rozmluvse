@@ -20,6 +20,9 @@ interface Props {
 export const Reviews = ({ reviews }: Props) => {
   const { language } = useLanguage()
 
+  const totalItems = reviews.length
+  const itemsPerColumn = Math.ceil(totalItems / 2)
+
   return (
     <section id='references' className='scroll-mt-28'>
       <Container>
@@ -46,7 +49,7 @@ export const Reviews = ({ reviews }: Props) => {
 
             <div className='grid-cols-2 gap-8 mt-14 hidden lg:grid'>
               <Accordion type='multiple' className='flex flex-col gap-8'>
-                {reviews.slice(0, 2).map(review => (
+                {reviews.slice(0, itemsPerColumn).map(review => (
                   <AccordionItem
                     key={review.textCz + review.nameCz}
                     value={review.textCz}
@@ -78,7 +81,7 @@ export const Reviews = ({ reviews }: Props) => {
                 ))}
               </Accordion>
               <Accordion type='multiple' className='flex flex-col gap-8'>
-                {reviews.slice(2, 3).map(review => (
+                {reviews.slice(itemsPerColumn).map(review => (
                   <AccordionItem
                     key={review.textCz + review.nameCz}
                     value={review.textCz}
@@ -115,7 +118,7 @@ export const Reviews = ({ reviews }: Props) => {
 
         <div className='grid sm:grid-cols-2 gap-4 mt-14 lg:hidden'>
           <Accordion type='multiple' className='flex flex-col gap-4'>
-            {reviews.slice(0, 2).map(review => (
+            {reviews.slice(0, itemsPerColumn).map(review => (
               <AccordionItem
                 key={review.textCz + review.nameCz}
                 value={review.textCz}
@@ -147,7 +150,7 @@ export const Reviews = ({ reviews }: Props) => {
             ))}
           </Accordion>
           <Accordion type='multiple' className='flex flex-col gap-4'>
-            {reviews.slice(2, 3).map(review => (
+            {reviews.slice(itemsPerColumn).map(review => (
               <AccordionItem
                 key={review.textCz + review.nameCz}
                 value={review.textCz}

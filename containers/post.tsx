@@ -3,7 +3,6 @@
 import { Cols } from '@/components/cols'
 import { Container } from '@/components/container'
 import { RichText } from '@/components/rich-text'
-import { Button } from '@/components/ui/button'
 import { PortableText } from '@portabletext/react'
 import { parseISO, format } from 'date-fns'
 import Link from 'next/link'

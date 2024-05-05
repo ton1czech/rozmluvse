@@ -20,6 +20,9 @@ interface Props {
 export const Companies = ({ companies }: Props) => {
   const { language } = useLanguage()
 
+  const totalItems = companies.length
+  const itemsPerColumn = Math.ceil(totalItems / 2)
+
   return (
     <section id='companies' className='scroll-mt-28'>
       <Container>
@@ -41,7 +44,7 @@ export const Companies = ({ companies }: Props) => {
 
             <div className='grid-cols-2 gap-8 mt-14 hidden lg:grid'>
               <Accordion type='multiple' className='flex flex-col gap-8'>
-                {companies.slice(0, 2).map(company => (
+                {companies.slice(0, itemsPerColumn).map(company => (
                   <AccordionItem
                     key={company.link}
                     value={company.textCz}
@@ -64,7 +67,7 @@ export const Companies = ({ companies }: Props) => {
                 ))}
               </Accordion>
               <Accordion type='multiple' className='flex flex-col gap-8'>
-                {companies.slice(2, 3).map(company => (
+                {companies.slice(itemsPerColumn).map(company => (
                   <AccordionItem
                     key={company.link}
                     value={company.textCz}
@@ -92,7 +95,7 @@ export const Companies = ({ companies }: Props) => {
 
         <div className='grid sm:grid-cols-2 gap-4 mt-14 lg:hidden'>
           <Accordion type='multiple' className='flex flex-col gap-4'>
-            {companies.slice(0, 2).map(company => (
+            {companies.slice(0, itemsPerColumn).map(company => (
               <AccordionItem
                 key={company.link}
                 value={company.textCz}
@@ -115,7 +118,7 @@ export const Companies = ({ companies }: Props) => {
             ))}
           </Accordion>
           <Accordion type='multiple' className='flex flex-col gap-4'>
-            {companies.slice(2, 3).map(company => (
+            {companies.slice(itemsPerColumn).map(company => (
               <AccordionItem
                 key={company.link}
                 value={company.textCz}

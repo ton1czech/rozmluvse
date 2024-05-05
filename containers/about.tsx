@@ -7,7 +7,6 @@ import { urlForImage } from '@/sanity/lib/image'
 import { useLanguage } from '@/store/use-language'
 import { Cols } from '@/components/cols'
 import { SectionTitle } from '@/components/section-title'
-import { Button } from '@/components/ui/button'
 
 export const About = ({ lectors }: { lectors: any }) => {
   const { language } = useLanguage()
