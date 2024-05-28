@@ -43,7 +43,7 @@ export const Menu = () => {
           },
         }}
         transition={{ delay: 0.1 }}
-        className='fixed right-0 top-0 w-full h-full xl:h-[55%] bg-[#9C6ACA] py-4 z-10 origin-top'
+        className='fixed right-0 top-0 w-full h-full xl:h-[57%] bg-[#9C6ACA] py-4 z-10 origin-top'
       >
         <Container className='w-full'>
           <div className='flex justify-between items-center w-full'>
