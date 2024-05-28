@@ -55,7 +55,7 @@ export const About = ({ lectors }: { lectors: any }) => {
               </p>
             </Link>
           ))}
-          <div className='grid place-content-center rounded-2xl text-center bg-[#FD828C] p-2'>
+          <div className='grid place-content-center rounded-2xl text-center bg-[#FD828C] p-2 aspect-[9/13.55]'>
             <h2 className='lg:text-2xl mb-6'>
               {language === 'cz' && 'Chceš se stát součástí lektorského týmu?'}
               {language === 'en' &&
