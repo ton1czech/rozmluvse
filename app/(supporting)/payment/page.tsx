@@ -1,29 +1,17 @@
-'use client'
-
 import { Container } from '@/components/container'
-import { useLanguage } from '@/store/use-language'
-import { useEffect } from 'react'
+import { Payment } from '@/containers/payment'
+import { cachedClient } from '@/sanity/lib/client'
+import { PaymentQuery } from '@/sanity/lib/queries'
 
-export default function Page() {
-  const { language } = useLanguage()
-
-  useEffect(() => {
-    document.title =
-      language === 'cz'
-        ? 'PLATBA  A STORNO | rozmluv se'
-        : language === 'en'
-        ? 'PAYMENT & CANCELLATION | rozmluv se'
-        : language === 'de'
-        ? 'ZAHLUNGSWEISE UND STORNO | rozmluv se'
-        : language === 'ua'
-        ? 'ОПЛАТА ТА СКАСУВАННЯ | rozmluv se'
-        : ''
-  }, [language])
+export default async function Page() {
+  const data = await cachedClient(PaymentQuery)
 
   return (
     <main className='font-stabil mt-28 md:mt-32 text-lg mb-8'>
       <Container>
-        <h2 className='font-labil font-black text-4xl sm:text-5xl'>
+        <Payment data={data} />
+
+        {/* <h2 className='font-labil font-black text-4xl sm:text-5xl'>
           {language === 'cz' && 'Platební podmínky'}
           {language === 'en' && 'Payment terms'}
           {language === 'de' && 'Zahlungsbedingungen'}
@@ -145,7 +133,7 @@ export default function Page() {
               {language === 'ua' && ''}
             </li>
           </ul>
-        </div>
+        </div> */}
       </Container>
     </main>
   )

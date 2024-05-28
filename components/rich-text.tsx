@@ -18,10 +18,10 @@ export const RichText = {
 
   list: {
     bullet: ({ children }: any) => (
-      <ul className='py-5 ml-10 space-y-5 list-disc list-inside'>{children}</ul>
+      <ul className='list-disc my-4 space-y-2 list-inside'>{children}</ul>
     ),
     number: ({ children }: any) => (
-      <ol className='list-decimal mt-lg list-inside'>{children}</ol>
+      <ol className='list-decimal list-inside'>{children}</ol>
     ),
   },
 
@@ -35,10 +35,12 @@ export const RichText = {
       </h1>
     ),
     h2: ({ children }: any) => (
-      <h2 className='mt-10 mb-2 text-4xl font-bold font-labil'>{children}</h2>
+      <h2 className='mt-10 mb-2 text-4xl sm:text-5xl font-bold font-labil'>
+        {children}
+      </h2>
     ),
     h3: ({ children }: any) => (
-      <h3 className='mt-10 mb-2 text-4xl xl:text-5xl font-bold font-labil'>
+      <h3 className='mb-2 text-2xl sm:text-3xl font-bold font-labil mt-5'>
         {children}
       </h3>
     ),

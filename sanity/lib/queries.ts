@@ -68,3 +68,9 @@ export const ReviewsQuery = groq`
         ...,
     }
 `
+
+export const PaymentQuery = groq`
+    *[_type=='payment'] {
+        ...,
+    }
+`
