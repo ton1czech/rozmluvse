@@ -13,8 +13,6 @@ import {
   ReviewsQuery,
 } from '@/sanity/lib/queries'
 
-export const revalidate = 60
-
 export default async function Page() {
   const lectors = await cachedClient(LectorsQuery)
   const languages = await cachedClient(LanguagesQuery)
