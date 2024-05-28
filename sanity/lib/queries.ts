@@ -24,16 +24,10 @@ export const LookingForQuery = groq`
     }
 `
 
-// export const PostsQuery = groq`
-//     *[_type=='post'] {
-//         ...,
-//         categories[]->
-//     }
-// `
-
 export const PostsQuery = groq`
     *[_type=='post'] {
         ...,
+        categories[]->
     }
 `
 
