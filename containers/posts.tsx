@@ -53,14 +53,14 @@ export const Posts = ({ posts }: Props) => {
 
   const filteredPosts = filterPosts(posts, category!)
 
-  const getCategoryColor = (post: any, categoryName: string) => {
-    const categoryObject = post.categories.find(
-      (cat: any) => cat.title === categoryName
-    )
-    return categoryObject
-      ? `#${categoryObject.color}`
-      : `#${post.categories[0].color}`
-  }
+  //   const getCategoryColor = (post: any, categoryName: string) => {
+  //     const categoryObject = post.categories.find(
+  //       (cat: any) => cat.title === categoryName
+  //     )
+  //     return categoryObject
+  //       ? `#${categoryObject.color}`
+  //       : `#${post.categories[0].color}`
+  //   }
 
   return (
     <section className='scroll-mt-28'>
@@ -95,7 +95,7 @@ export const Posts = ({ posts }: Props) => {
           </h1>
         </Cols>
 
-        {filteredPosts.length === 0 ? (
+        {posts.length === 0 ? (
           <div className='mt-14'>
             <h1 className='text-3xl sm:text-4xl md:text-5xl font-black lg:text-6xl text-center min-h-[50vh]'>
               {language === 'cz' && <>Žádné Výsledky</>}
@@ -106,14 +106,14 @@ export const Posts = ({ posts }: Props) => {
           </div>
         ) : (
           <div className='grid sm:grid-cols-2 xl:grid-cols-3 mt-14 gap-4 xl:gap-8'>
-            {filteredPosts.map((post: any) => (
+            {posts.map((post: any) => (
               <Link
                 key={post.slug.current}
                 href={`/blog/posts/${post.slug.current}`}
               >
                 <div
                   className='aspect-square overflow-hidden rounded-3xl relative'
-                  style={{ background: getCategoryColor(post, category!) }}
+                  //   style={{ background: getCategoryColor(post, category!) }}
                 >
                   <img
                     src={urlForImage(post.mainImage)}
