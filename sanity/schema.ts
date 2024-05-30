@@ -10,6 +10,7 @@ import language from './schemas/language'
 import company from './schemas/company'
 import review from './schemas/review'
 import payment from './schemas/payment'
+import pricelist from './schemas/pricelist'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -22,6 +23,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     author,
     lookingFor,
     payment,
+    pricelist,
     blockContent,
   ],
 }

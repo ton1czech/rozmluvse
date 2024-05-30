@@ -10,6 +10,7 @@ import {
   CompaniesQuery,
   LanguagesQuery,
   LectorsQuery,
+  PricelistQuery,
   ReviewsQuery,
 } from '@/sanity/lib/queries'
 
@@ -18,12 +19,13 @@ export default async function Page() {
   const languages = await cachedClient(LanguagesQuery)
   const companies = await cachedClient(CompaniesQuery)
   const reviews = await cachedClient(ReviewsQuery)
+  const pricelist = await cachedClient(PricelistQuery)
 
   return (
     <main className='mt-32 xl:mt-24 space-y-16 xl:space-y-24 mb-8'>
       <Hero />
       <Languages languages={languages} />
-      <Pricelist />
+      <Pricelist data={pricelist} />
       <Reviews reviews={reviews} />
       <About lectors={lectors} />
       <Companies companies={companies} />

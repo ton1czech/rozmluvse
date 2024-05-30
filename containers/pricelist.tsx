@@ -2,7 +2,6 @@
 
 import { Container } from '@/components/container'
 import { InfoText } from '@/components/info-text'
-import { pricelist } from '@/database/pricelist'
 import { useLanguage } from '@/store/use-language'
 import { Cols } from '@/components/cols'
 import {
@@ -13,7 +12,11 @@ import {
 } from '@/components/ui/accordion'
 import { SectionTitle } from '@/components/section-title'
 
-export const Pricelist = () => {
+interface Props {
+  data: any
+}
+
+export const Pricelist = ({ data }: Props) => {
   const { language } = useLanguage()
 
   return (
@@ -42,11 +45,11 @@ export const Pricelist = () => {
 
             <div className='grid-cols-2 gap-8 mt-14 hidden lg:grid'>
               <Accordion type='multiple' className='flex flex-col gap-8'>
-                {pricelist.slice(0, 2).map(item => (
+                {data.slice(0, 2).map((item: any) => (
                   <AccordionItem
-                    key={item.labelCz + item.option1Cz}
-                    value={item.value}
-                    style={{ backgroundColor: item.color }}
+                    key={item.labelCz + item.row1Cz}
+                    value={item.labelCz}
+                    style={{ backgroundColor: `#${item.color}` }}
                     className='rounded-2xl h-min'
                   >
                     <AccordionTrigger>
@@ -58,21 +61,21 @@ export const Pricelist = () => {
                       </span>
                     </AccordionTrigger>
                     <AccordionContent>
-                      {item.option1Cz && (
+                      {item.row1Cz && (
                         <>
-                          {language === 'cz' && item.option1Cz}
-                          {language === 'en' && item.option1En}
-                          {language === 'de' && item.option1De}
-                          {language === 'ua' && item.option1Ua}
+                          {language === 'cz' && item.row1Cz}
+                          {language === 'en' && item.row1En}
+                          {language === 'de' && item.row1De}
+                          {language === 'ua' && item.row1Ua}
                         </>
                       )}
                       <br />
-                      {item.option2Cz && (
+                      {item.row2Cz && (
                         <>
-                          {language === 'cz' && item.option2Cz}
-                          {language === 'en' && item.option2En}
-                          {language === 'de' && item.option2De}
-                          {language === 'ua' && item.option2Ua}
+                          {language === 'cz' && item.row2Cz}
+                          {language === 'en' && item.row2En}
+                          {language === 'de' && item.row2De}
+                          {language === 'ua' && item.row2Ua}
                         </>
                       )}
                     </AccordionContent>
@@ -80,11 +83,11 @@ export const Pricelist = () => {
                 ))}
               </Accordion>
               <Accordion type='multiple' className='flex flex-col gap-8'>
-                {pricelist.slice(2, 4).map(item => (
+                {data.slice(2, 4).map((item: any) => (
                   <AccordionItem
-                    key={item.labelCz + item.option1Cz}
-                    value={item.value}
-                    style={{ backgroundColor: item.color }}
+                    key={item.labelCz + item.row1Cz}
+                    value={item.labelCz}
+                    style={{ backgroundColor: `#${item.color}` }}
                     className='rounded-2xl h-min'
                   >
                     <AccordionTrigger>
@@ -96,21 +99,21 @@ export const Pricelist = () => {
                       </span>
                     </AccordionTrigger>
                     <AccordionContent>
-                      {item.option1Cz && (
+                      {item.row1Cz && (
                         <>
-                          {language === 'cz' && item.option1Cz}
-                          {language === 'en' && item.option1En}
-                          {language === 'de' && item.option1De}
-                          {language === 'ua' && item.option1Ua}
+                          {language === 'cz' && item.row1Cz}
+                          {language === 'en' && item.row1En}
+                          {language === 'de' && item.row1De}
+                          {language === 'ua' && item.row1Ua}
                         </>
                       )}
                       <br />
-                      {item.option2Cz && (
+                      {item.row2Cz && (
                         <>
-                          {language === 'cz' && item.option2Cz}
-                          {language === 'en' && item.option2En}
-                          {language === 'de' && item.option2De}
-                          {language === 'ua' && item.option2Ua}
+                          {language === 'cz' && item.row2Cz}
+                          {language === 'en' && item.row2En}
+                          {language === 'de' && item.row2De}
+                          {language === 'ua' && item.row2Ua}
                         </>
                       )}
                     </AccordionContent>
@@ -123,11 +126,11 @@ export const Pricelist = () => {
 
         <div className='grid sm:grid-cols-2 gap-4 mt-14 lg:hidden'>
           <Accordion type='multiple' className='flex flex-col gap-4'>
-            {pricelist.slice(0, 2).map(item => (
+            {data.slice(0, 2).map((item: any) => (
               <AccordionItem
-                key={item.labelCz + item.option1Cz}
-                value={item.value}
-                style={{ backgroundColor: item.color }}
+                key={item.labelCz + item.row1Cz}
+                value={item.labelCz}
+                style={{ backgroundColor: `#${item.color}` }}
                 className='rounded-2xl h-min'
               >
                 <AccordionTrigger className='text-2xl font-black'>
@@ -139,21 +142,21 @@ export const Pricelist = () => {
                   </span>
                 </AccordionTrigger>
                 <AccordionContent>
-                  {item.option1Cz && (
+                  {item.row1Cz && (
                     <>
-                      {language === 'cz' && item.option1Cz}
-                      {language === 'en' && item.option1En}
-                      {language === 'de' && item.option1De}
-                      {language === 'ua' && item.option1Ua}
+                      {language === 'cz' && item.row1Cz}
+                      {language === 'en' && item.row1En}
+                      {language === 'de' && item.row1De}
+                      {language === 'ua' && item.row1Ua}
                     </>
                   )}
                   <br />
-                  {item.option2Cz && (
+                  {item.row2Cz && (
                     <>
-                      {language === 'cz' && item.option2Cz}
-                      {language === 'en' && item.option2En}
-                      {language === 'de' && item.option2De}
-                      {language === 'ua' && item.option2Ua}
+                      {language === 'cz' && item.row2Cz}
+                      {language === 'en' && item.row2En}
+                      {language === 'de' && item.row2De}
+                      {language === 'ua' && item.row2Ua}
                     </>
                   )}
                 </AccordionContent>
@@ -161,11 +164,11 @@ export const Pricelist = () => {
             ))}
           </Accordion>
           <Accordion type='multiple' className='flex flex-col gap-4'>
-            {pricelist.slice(2, 4).map(item => (
+            {data.slice(2, 4).map((item: any) => (
               <AccordionItem
-                key={item.labelCz + item.option1Cz}
-                value={item.value}
-                style={{ backgroundColor: item.color }}
+                key={item.labelCz + item.row1Cz}
+                value={item.labelCz}
+                style={{ backgroundColor: `#${item.color}` }}
                 className='rounded-2xl h-min'
               >
                 <AccordionTrigger className='text-2xl font-black'>
@@ -177,21 +180,21 @@ export const Pricelist = () => {
                   </span>
                 </AccordionTrigger>
                 <AccordionContent>
-                  {item.option1Cz && (
+                  {item.row1Cz && (
                     <>
-                      {language === 'cz' && item.option1Cz}
-                      {language === 'en' && item.option1En}
-                      {language === 'de' && item.option1De}
-                      {language === 'ua' && item.option1Ua}
+                      {language === 'cz' && item.row1Cz}
+                      {language === 'en' && item.row1En}
+                      {language === 'de' && item.row1De}
+                      {language === 'ua' && item.row1Ua}
                     </>
                   )}
                   <br />
-                  {item.option2Cz && (
+                  {item.row2Cz && (
                     <>
-                      {language === 'cz' && item.option2Cz}
-                      {language === 'en' && item.option2En}
-                      {language === 'de' && item.option2De}
-                      {language === 'ua' && item.option2Ua}
+                      {language === 'cz' && item.row2Cz}
+                      {language === 'en' && item.row2En}
+                      {language === 'de' && item.row2De}
+                      {language === 'ua' && item.row2Ua}
                     </>
                   )}
                 </AccordionContent>

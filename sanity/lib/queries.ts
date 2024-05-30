@@ -74,3 +74,9 @@ export const PaymentQuery = groq`
         ...,
     }
 `
+
+export const PricelistQuery = groq`
+    *[_type=='pricelist'] {
+        ...,
+    } | order(order asc)
+`
