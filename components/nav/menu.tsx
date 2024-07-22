@@ -63,9 +63,7 @@ export const Menu = () => {
               >
                 Aktuality
               </Link>
-              <Link href='/shop' className='font-stabil text-white'>
-                Shop
-              </Link>
+              <p className='font-stabil text-white'>Shop</p>
               <LanguageSelector color='white' />
               <Button
                 variant='ghost'

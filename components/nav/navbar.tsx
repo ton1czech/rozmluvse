@@ -57,9 +57,7 @@ export const Navbar = ({ posts }: Props) => {
                 >
                   Aktuality
                 </Link>
-                <Link href='/shop' className='font-stabil'>
-                  Shop
-                </Link>
+                <p className='font-stabil'>Shop</p>
               </>
             )}
             <LanguageSelector color='black' />
