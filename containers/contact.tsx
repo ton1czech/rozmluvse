@@ -50,7 +50,7 @@ export const Contact = () => {
               </p>
               <div className='grid'>
                 <p>Fakturační údaje:</p>
-                <p>rozmluv se s. r. o.</p>
+                <p>Rozmluv se, s. r. o.</p>
                 <p>Pavlíkova 7, Klatovy</p>
                 <p>IČO: 19647964</p>
               </div>
