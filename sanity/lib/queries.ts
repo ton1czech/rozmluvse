@@ -54,7 +54,7 @@ export const CategoriesQuery = groq`
 export const LanguagesQuery = groq`
     *[_type=='language'] {
         ...,
-    }
+    } | order(order asc)
 `
 
 export const CompaniesQuery = groq`

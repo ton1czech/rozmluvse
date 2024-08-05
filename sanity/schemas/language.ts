@@ -26,6 +26,11 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'order',
+      title: 'Pořadí',
+      type: 'number',
+    }),
+    defineField({
       name: 'disabled',
       title: 'Neaktivní',
       type: 'boolean',
