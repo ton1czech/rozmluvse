@@ -15,6 +15,7 @@
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-popover": "^1.0.7",
     "@radix-ui/react-slot": "^1.0.2",
+    "@rivercode/facebook-conversion-api-nextjs": "^4.3.2",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.24.1",
     "@typeform/embed-react": "^3.17.0",
@@ -43,6 +44,8 @@
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
     "postcss": "^8",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.6",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
   }
