@@ -4,7 +4,7 @@ import { useCookies } from '@/store/use-cookies'
 import Script from 'next/script'
 import { useEffect, useState } from 'react'
 
-export const GoogleAnalyticsProvider = () => {
+export const FacebookProvider = () => {
   const { analyticsEnabled } = useCookies()
 
   const [mounted, setMounted] = useState(false)

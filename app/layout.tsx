@@ -10,6 +10,7 @@ import { cachedClient } from '@/sanity/lib/client'
 import { PostsQuery } from '@/sanity/lib/queries'
 import { GoogleAnalyticsProvider } from '@/providers/google-analytics-provider'
 import { Metadata } from 'next'
+import { FacebookProvider } from '@/providers/facebook-provider'
 
 export const revalidate = 60
 
@@ -38,6 +39,9 @@ export default async function Layout({
 
   return (
     <html lang='en' suppressHydrationWarning>
+      <GoogleAnalyticsProvider />
+      <FacebookProvider />
+
       <body className={cn('font-labil', stabil.variable, labil.variable)}>
         <Navbar posts={posts} />
         {children}
@@ -47,7 +51,6 @@ export default async function Layout({
         <Cookies />
 
         <RemoveOneLetterWords />
-        <GoogleAnalyticsProvider />
       </body>
     </html>
   )
