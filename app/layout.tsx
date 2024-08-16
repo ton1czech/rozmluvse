@@ -26,7 +26,9 @@ const labil = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://rozmluv.se'),
-  description: 'language studio',
+  title: 'Jazykové studio | rozmluv se',
+  description:
+    'Jazykovka, kde se rozmluvíš nejen anglicky a německy, ale třeba i španělsky. Online odkudkoli nebo naživo v Klatovech. Individuálně, ve dvojicích nebo v malé skupince.',
   authors: [{ name: 'Daniel Anthony Baudyš', url: 'https://baudys.dev' }],
 }
 
